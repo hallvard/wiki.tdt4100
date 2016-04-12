@@ -2,7 +2,7 @@ package kont2011;
 
 public class Song {
 
-	private static String vowels = "aeiouy¾¿Œ";
+	private static String vowels = "aeiouyÃ¦Ã¸Ã¥";
 	
 	public static boolean isVowel(char c) {
 		return vowels.indexOf(Character.toLowerCase(c)) >= 0;

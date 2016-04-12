@@ -53,7 +53,7 @@ public class GPSData implements Iterable<GPSSample> {
 	public static void main(String[] args) {
 		GPSData gpsData = new GPSData();
 		for (GPSSample sample: gpsData) {
-			// gjør etter eller annet med sample
+			// gj√∏r etter eller annet med sample
 		}
 
 		Iterator<GPSSample> it = gpsData.iterator();

@@ -82,6 +82,7 @@ public class WordListTest extends TestCase {
 		WordList wordList = new WordList();
 		try {
 			wordList.read(new StringBufferInputStream(line));
+			testWordList(wordList, Arrays.asList(words));
 		} catch (IOException e) {
 			fail();
 		}
@@ -89,8 +90,8 @@ public class WordListTest extends TestCase {
 
 	public void testRead() {
 		testRead("# kommentarlinje");
-		testRead("java # enkeltordformat: legger “java” inn i lista", "java");
-		testRead("2-1,2,3 # prefiks med liste med endelser, legger “21”, “22” og “23” inn i lista", "21", "22", "23");
-		testRead("tretti - # prefiks med tom liste av endelser: legger “tretti” inn i lista", "tretti");
+		testRead("java # enkeltordformat: legger \"java\" inn i lista", "java");
+		testRead("2-1,2,3 # prefiks med liste med endelser, legger \"21\", \"22\" og \"23\" inn i lista", "21", "22", "23");
+		testRead("tretti - # prefiks med tom liste av endelser: legger \"tretti\" inn i lista", "tretti");
 	}
 }

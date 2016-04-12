@@ -32,8 +32,8 @@ public class RadioAlphabetTest extends TestCase {
 		assertEquals("hotel alfa lima lima victor alfa romeo delta", radioAlphabet.convert("hallvard"));
 		radioAlphabet.setWord("lala");
 		assertEquals("hotel alfa lala lala victor alfa romeo delta", radioAlphabet.convert("hallvard"));
-		radioAlphabet.setWord("åring");
-		assertEquals("hotel victor alfa romeo delta", radioAlphabet.convert("håvard"));
+		radioAlphabet.setWord("√•ring");
+		assertEquals("hotel victor alfa romeo delta", radioAlphabet.convert("h√•vard"));
 	}
 
 	public void testRemoveWord() {
