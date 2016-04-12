@@ -1,0 +1,67 @@
+test patterns.delegation.FilteringLogger
+
+import java.io.ByteArrayOutputStream
+
+instance String formatString = "%s: %s (%s)"
+
+instance ByteArrayOutputStream stream = new ByteArrayOutputStream()
+instance StreamLogger subLogger = new StreamLogger(stream)
+
+sequence FilteringLoggerNoSeverities {
+	instance FilteringLogger logger = new FilteringLogger(subLogger)
+	--> state {
+		! logger.isLogging(ILogger.INFO)
+		! logger.isLogging(ILogger.WARNING)
+		! logger.isLogging(ILogger.ERROR)
+	}
+}
+
+sequence FilteringLoggerErrorAndInfo {
+	instance FilteringLogger logger = new FilteringLogger(subLogger, ILogger.ERROR, ILogger.INFO)
+	--> state {
+			logger.isLogging(ILogger.INFO)
+		! 	logger.isLogging(ILogger.WARNING)
+			logger.isLogging(ILogger.ERROR)
+	}
+}
+
+sequence FilteringLoggerWarningSetIsLoggingError {
+	instance FilteringLogger logger = new FilteringLogger(subLogger, ILogger.WARNING)
+	--> 
+	state {
+		! 	logger.isLogging(ILogger.INFO)
+			logger.isLogging(ILogger.WARNING)
+		! 	logger.isLogging(ILogger.ERROR)
+	} 
+	-- logger.setIsLogging(ILogger.ERROR, true) -->
+	state {
+		! 	logger.isLogging(ILogger.INFO)
+			logger.isLogging(ILogger.WARNING)
+			logger.isLogging(ILogger.ERROR)
+	}
+}
+
+sequence errorLogging {
+	instance IllegalStateException exception = new IllegalStateException
+	instance FilteringLogger logger = new FilteringLogger(subLogger, ILogger.ERROR)
+	
+	"Logger med alvorlighetsgrad ERROR"-- subLogger.setFormatString(formatString), logger.log(ILogger.ERROR, "Noe er feil!", exception)  
+	--> state {
+		stream == String.format(formatString, ILogger.ERROR, "Noe er feil!", exception)
+	}
+}
+
+sequence infoToErrorLogger{
+	instance IllegalStateException exception = new IllegalStateException
+	instance FilteringLogger logger = new FilteringLogger(subLogger, ILogger.ERROR)
+	
+	"Logger med alvorlighetsgrad INFO"-- subLogger.setFormatString(formatString), logger.log(ILogger.INFO, "Noe er feil!", exception)  
+	--> state {
+		stream == ""
+	}
+}
+
+method boolean operator_equals(ByteArrayOutputStream stream, String content){
+	// ignore leadning and trailing whitespace
+	return stream.toString().trim() == content.trim()
+}

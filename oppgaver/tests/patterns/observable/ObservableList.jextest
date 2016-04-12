@@ -1,0 +1,67 @@
+test patterns.observable.ObservableList
+
+instance observableList = [Object element | element instanceof Integer]
+
+sequence constructor {
+	-->
+	state observableList {
+		size() == 0
+	}
+}
+
+sequence acceptsElement {
+	-->
+	state observableList {
+		acceptsElement(5)
+		! acceptsElement("5")
+	}
+	-- observableList.addElement("5") throws IllegalArgumentException
+}
+
+sequence addElement {
+	-- observableList.addElement(5) -->
+	state {
+		observableList ?= #[5]
+	}
+	-- observableList.addElement(6) -->
+	state {
+		observableList ?= #[5, 6]
+	}
+	-- observableList.addElement(0, 2) -->
+	state {
+		observableList ?= #[2, 5, 6]
+	}
+}
+
+val int pos1 = -1, int pos2 = -1
+
+method void addElement(int pos, int element) {
+	pos1 = pos
+	observableList.addElement(pos, element)
+	assertEquals(pos1, pos2)
+}
+
+sequence listListener {
+	-- observableList.addObservableListListener([list, pos | pos2 = pos]),
+	addElement(0, 5) -->
+	state {
+		observableList ?= #[5]
+	}
+	-- addElement(1, 6) -->
+	state {
+		observableList ?= #[5, 6]
+	}
+	-- addElement(0, 2) -->
+	state {
+		observableList ?= #[2, 5, 6]
+	}
+}
+
+method operator_assertEquals(ObservableList observableList, int[] elements) {
+	elements.length ?= observableList.size()
+	var i = 0
+	for (element : elements) {
+		element ?= observableList.getElement(i)
+		i++
+	}
+}
