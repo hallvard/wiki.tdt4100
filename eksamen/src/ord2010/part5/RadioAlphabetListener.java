@@ -1,0 +1,1 @@
+package ord2010.part5;public interface RadioAlphabetListener {   public void radioAlphabetChanged(RadioAlphabet radioAlphabet, char c);}
