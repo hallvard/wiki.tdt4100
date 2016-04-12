@@ -19,7 +19,7 @@ public class Person {
 	}
 	public void setDate(Date date) throws Exception {
 		if (pnr != null) {
-			throw new Exception("Kan ikke endre dato når pnr er satt");
+			throw new Exception("Kan ikke endre dato n√•r pnr er satt");
 		}
 		this.date = date;
 	}
