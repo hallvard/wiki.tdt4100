@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ 
+<?import javafx.scene.layout.BorderPane?>
+<?import games.imagegrid.ImageGrid?>
+
+<?import java.lang.String?>
+<?import java.util.ArrayList?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Button?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml" fx:controller="games.game2048.Game2048">
+	 <top>
+	 	<Button text="New game" onAction="#newAction"/>
+	 </top>
+	 <center>
+		<ImageGrid fx:id="imageGrid" 
+			onMouseClicked="#mouseClicked"
+			columnCount="4" rowCount="4"
+			imageUrlFormat="/games/game2048/${key}.png"
+			>
+		</ImageGrid>
+	 </center>
+	 <bottom>
+	 	<Label fx:id="statusLabel" text="Status"/>
+	 </bottom>
+</BorderPane>
