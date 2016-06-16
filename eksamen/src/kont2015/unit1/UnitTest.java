@@ -29,6 +29,13 @@ public class UnitTest extends TestCase {
 			fail();
 		}
 	}
+
+	public void testFindCommonBaseUnit() {
+		assertEquals(m, m.findCommonBaseUnit(km));
+		assertEquals(m, km.findCommonBaseUnit(m));
+		assertEquals(m, km.findCommonBaseUnit(dm));
+		assertEquals(m, m.findCommonBaseUnit(m));
+	}
 	
 	public void testConvert() {
 		assertEquals(2000.0, km.convert(2, m));
