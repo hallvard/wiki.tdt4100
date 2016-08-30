@@ -27,7 +27,7 @@ public class Person {
 		return name;
 	}
 	
-	private List<Course> courses = new ArrayList<Course>();
+	private Collection<Course> courses = new ArrayList<Course>();
 	
 	/**
 	 * Adds a Course to this Person,
@@ -111,7 +111,7 @@ public class Person {
 	 * @param code
 	 */
 	public double countCredits() {
-		double sum = 0;
+		// first collect all course codes
 		Collection<String> codes = new ArrayList<String>();
 		for (Exam exam : exams) {
 			String code = exam.getCourse().getCode();
@@ -119,6 +119,8 @@ public class Person {
 				codes.add(code);
 			}
 		}
+		// check last exam result for each course code and add credit if passed
+		double sum = 0;
 		for (String code : codes) {
 			Exam exam = getLastExam(code);
 			if (exam.isPass()) {

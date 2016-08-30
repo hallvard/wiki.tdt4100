@@ -33,7 +33,11 @@ public class ExamRequirement implements IExamRequirement {
 	 * @param course
 	 */
 	private boolean acceptsCourse(Course course) {
-		return (! this.course.equals(course.getCode())) && course.getYear() < sinceYear;
+		return (! acceptsCourseCode(course.getCode())) && course.getYear() < sinceYear;
+	}
+
+	protected boolean acceptsCourseCode(String course) {
+		return course.equals(this.course);
 	}
 
 	/**
