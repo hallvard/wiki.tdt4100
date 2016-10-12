@@ -53,6 +53,12 @@ public class FeatureListTest extends TestCase {
     
   }
   
+  @JExercise(tests = "null()", description = "Tests \n\t\tinitialization\n")
+  public void testTestGetNonExistingFeatureValue() {
+    _test__testGetNonExistingFeatureValue_transitions0_effect_state(featureList);
+    
+  }
+  
   @JExercise(tests = "null();void addFeature(String,double)", description = "Tests \n\t\tthe following sequence:\n\t\t<ul>\n\t\t<li>addFeature(\"flink\", 2.0)</li>\n\t\t</ul>\n")
   public void testTestAddNewFeature() {
     _test__testAddNewFeature_transitions0_source_state(featureList);
@@ -174,6 +180,22 @@ public class FeatureListTest extends TestCase {
     Collection<String> _featureNames = it.getFeatureNames();
     int _size = _featureNames.size();
     assertEquals("featureNames.size == 0 failed", 0, _size);
+    
+  }
+  
+  private void _test__testGetNonExistingFeatureValue_transitions0_effect_state(final FeatureList it) {
+    _test__testGetNonExistingFeatureValue_transitions0_effect_state_objectTests0_test(featureList);
+    
+  }
+  
+  private void _test__testGetNonExistingFeatureValue_transitions0_effect_state_objectTests0_test(final FeatureList it) {
+    
+    Collection<String> _featureNames = it.getFeatureNames();
+    int _size = _featureNames.size();
+    assertEquals("featureNames.size == 0 failed", 0, _size);
+    
+    double _featureValue = it.getFeatureValue("a");
+    assertEquals("getFeatureValue(\"a\") == 0.0 failed", 0.0, _featureValue);
     
   }
   

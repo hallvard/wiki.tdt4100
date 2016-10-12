@@ -8,6 +8,22 @@ public class FeatureList {
 
 	private List<String> featureNames = new ArrayList<>();
 	private List<Double> featureValues = new ArrayList<>();
+
+	public FeatureList() {
+	}
+	
+	@Override
+	public String toString() {
+		String result = "(";
+		for (int i = 0; i < featureNames.size(); i++) {
+			if (i > 0) {
+				result += ", ";
+			}
+			result += featureNames.get(i) + ": " + featureValues.get(i);
+		}
+		result += ")";
+		return result;
+	}
 	
 	public Collection<String> getFeatureNames() {
 		return featureNames;
@@ -19,7 +35,7 @@ public class FeatureList {
 
 	public double getFeatureValue(String featureName) {
 		int pos = featureNames.indexOf(featureName);
-		return featureValues.get(pos);
+		return (pos < 0 ? 0.0 : featureValues.get(pos));
 	}
 
 	public void addFeature(String featureName, double value) {
@@ -55,13 +71,8 @@ public class FeatureList {
 
 	public void mult(FeatureList features) {
 		for (String featureName : getFeatureNames()) {
-			double value = getFeatureValue(featureName);
-			if (features.hasFeature(featureName)) {
-				double value2 = features.getFeatureValue(featureName);
-				setFeatureValue(featureName, value * value2);
-			} else {
-				setFeatureValue(featureName, 0.0);
-			}
+			double value1 = getFeatureValue(featureName), value2 = features.getFeatureValue(featureName);
+			setFeatureValue(featureName, value1 * value2);
 		}
 		for (String featureName : features.getFeatureNames()) {
 			if (! hasFeature(featureName)) {
@@ -75,5 +86,14 @@ public class FeatureList {
 		featureList.featureNames = new ArrayList<>(featureNames);
 		featureList.featureValues = new ArrayList<>(featureValues);
 		return featureList;
+	}
+	
+	//
+
+	public static void main(String[] args) {
+		FeatureList featureList = new FeatureList();
+		featureList.addFeature("java", 100.0);
+		featureList.addFeature("c++", 0.0);
+		System.out.println(featureList);
 	}
 }

@@ -1,5 +1,4 @@
 import java.util.Collection
-import java.util.function.BinaryOperator
 import org.junit.Assert
 
 test class objectstructures.FeatureList {
@@ -19,6 +18,13 @@ test class objectstructures.FeatureList {
 sequence testConstructor {
 	--> state {
 		featureNames.size == 0
+	}
+}
+
+sequence testGetNonExistingFeatureValue {
+	--> state {
+		featureNames.size == 0
+		getFeatureValue("a") == 0.0
 	}
 }
 
