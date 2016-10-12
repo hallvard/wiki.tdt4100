@@ -1,0 +1,180 @@
+import java.util.Collection
+import java.util.function.BinaryOperator
+import org.junit.Assert
+
+test class objectstructures.FeatureList {
+	new ()
+	Collection<String> getFeatureNames()
+	boolean hasFeature(String)
+	double getFeatureValue(String)
+	FeatureList toFeatureList()
+
+	void addFeature(String, double)
+	void setFeatureValue(String, double)
+	void increment(double)
+	void add(FeatureList)
+	void mult(FeatureList)
+}
+
+sequence testConstructor {
+	--> state {
+		featureNames.size == 0
+	}
+}
+
+sequence testAddNewFeature {
+	state {
+		featureNames.length
+	}
+	-- addFeature("flink", 2.0) -->
+	state {
+		hasFeature("flink")
+		featureNames == newArrayList("flink")
+		testFeatures("flink" -> 2.0)
+	}
+}
+
+sequence testAddTwoFeatures {
+	state {
+		featureNames.length
+	}
+	-- addFeature("flink", 2.0) -->
+	state {
+		hasFeature("flink")
+		featureNames == newArrayList("flink")
+		testFeatures("flink" -> 2.0)
+	}
+	-- addFeature("god", 3.0) -->
+	state {
+		hasFeature("flink")
+		hasFeature("god")
+		featureNames == newArrayList("flink", "god")
+		testFeatures("flink" -> 2.0, "god" -> 3.0)
+	}
+}
+
+sequence testAddExistingFeature {
+	-- addFeature("flink", 2.0) -->
+	state {
+		hasFeature("flink")
+		featureNames == newArrayList("flink")
+		testFeatures("flink" -> 2.0)
+	}
+	-- addFeature("flink", 3.0) -->
+	state {
+		hasFeature("flink")
+		featureNames == newArrayList("flink")
+		testFeatures("flink" -> 2.0)
+	}
+}
+
+sequence testSetExistingFeature {
+	-- addFeature("flink", 2.0) -->
+	state {
+		hasFeature("flink")
+	}
+	-- setFeatureValue("flink", 3.0) -->
+	state {
+		hasFeature("flink")
+		testFeatures("flink" -> 3.0)
+	}
+}
+
+sequence testSetNewFeature {
+	state {
+		featureNames.size == 0
+	}
+	-- setFeatureValue("flink", 3.0) -->
+	state {
+		featureNames.size == 0
+	}
+}
+
+sequence testIncrementFeatures {
+	-- addFeature("flink", 2.0), addFeature("god", 3.0) -->
+	state {
+		featureNames == newArrayList("flink", "god")
+	}
+	-- increment(2.5) -->
+	state {
+		featureNames == newArrayList("flink", "god")
+		testFeatures("flink" -> 4.5, "god" -> 5.5)
+	}
+}
+
+sequence testAddFeatureVectorSameFeatures {
+	val features2 = new FeatureList()
+	--
+	addFeature("flink", 2.0), addFeature("god", 3.0),
+	features2.addFeature("flink", 3.0), features2.addFeature("god", 4.0),
+	add(features2)
+	 -->
+	 state {
+	 	featureNames == newArrayList("flink", "god")
+		testFeatures("flink" -> 5.0, "god" -> 7.0)
+	 }
+}
+
+sequence testAddFeatureVectorOverlappingFeatures {
+	val features2 = new FeatureList()
+	--
+	addFeature("flink", 2.0), addFeature("god", 3.0),
+	features2.addFeature("god", 2.0), features2.addFeature("bra", 4.0),
+	add(features2)
+	 -->
+	 state {
+	 	featureNames == newArrayList("flink", "god", "bra")
+		testFeatures("flink" -> 2.0, "god" -> 5.0, "bra" -> 4.0)
+	 }
+}
+
+sequence testMultFeatureVectorSameFeatures {
+	val features2 = new FeatureList()
+	--
+	addFeature("flink", 2.0), addFeature("god", 3.0),
+	features2.addFeature("flink", 3.0), features2.addFeature("god", 4.0),
+	mult(features2)
+	 -->
+	 state {
+	 	featureNames == newArrayList("flink", "god")
+		testFeatures("flink" -> 6.0, "god" -> 12.0)
+	 }
+}
+
+sequence testMultFeatureVectorOverlappingFeatures {
+	val features2 = new FeatureList()
+	--
+	addFeature("flink", 2.0), addFeature("god", 3.0),
+	features2.addFeature("god", 2.0), features2.addFeature("bra", 4.0),
+	mult(features2)
+	 -->
+	 state {
+	 	featureNames == newArrayList("flink", "god", "bra")
+		testFeatures("flink" -> 0.0, "god" -> 6.0, "bra" -> 0.0)
+	 }
+}
+
+sequence testToFeatureList {
+	state {
+	 	toFeatureList.featureNames.size == 0
+	 	testFeatures(toFeatureList)
+	}
+	-- addFeature("flink", 2.0), addFeature("god", 3.0) -->
+	state {
+		toFeatureList.featureNames.size == 2
+		testFeatures("flink" -> 2.0, "god" -> 3.0)
+	}
+}
+
+//
+
+method == (Collection<?> col1, Collection<?> col2) {
+	col1.containsAll(col2) && col2.containsAll(col1)
+}
+
+method testFeatures(FeatureList features, Pair<String, Double>... namesValues) {
+	for (nameValue : namesValues) {
+		Assert.assertTrue("Expected a " + nameValue.key + " feature", features.hasFeature(nameValue.key))
+		Assert.assertEquals("Expected " + nameValue.value + " as value for " + nameValue.key, nameValue.value, features.getFeatureValue(nameValue.key), 0.000001)
+	}
+}
