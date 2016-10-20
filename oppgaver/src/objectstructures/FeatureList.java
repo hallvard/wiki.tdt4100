@@ -12,6 +12,14 @@ public class FeatureList {
 	public FeatureList() {
 	}
 	
+	// extra constructor
+	public FeatureList(Object... namesValues) {
+		for (int i  = 0; i  < namesValues.length; i += 2) {
+			featureNames.add((String) namesValues[i]);
+			featureValues.add((Double) namesValues[i + 1]);
+		}
+	}
+	
 	@Override
 	public String toString() {
 		String result = "(";
@@ -91,9 +99,7 @@ public class FeatureList {
 	//
 
 	public static void main(String[] args) {
-		FeatureList featureList = new FeatureList();
-		featureList.addFeature("java", 100.0);
-		featureList.addFeature("c++", 0.0);
+		FeatureList featureList = new FeatureList("java", 100.0, "c++", 0.1);
 		System.out.println(featureList);
 	}
 }

@@ -4,15 +4,15 @@ import org.junit.Assert
 test class objectstructures.FeatureList {
 	new ()
 	Collection<String> getFeatureNames()
-	boolean hasFeature(String)
-	double getFeatureValue(String)
+	boolean hasFeature(String featureName)
+	double getFeatureValue(String featureName)
 	FeatureList toFeatureList()
 
-	void addFeature(String, double)
-	void setFeatureValue(String, double)
-	void increment(double)
-	void add(FeatureList)
-	void mult(FeatureList)
+	void addFeature(String featureName, double value)
+	void setFeatureValue(String featureName, double value)
+	void increment(double value)
+	void add(FeatureList features)
+	void mult(FeatureList features)
 }
 
 sequence testConstructor {
@@ -168,6 +168,16 @@ sequence testToFeatureList {
 	-- addFeature("flink", 2.0), addFeature("god", 3.0) -->
 	state {
 		toFeatureList.featureNames.size == 2
+		testFeatures("flink" -> 2.0, "god" -> 3.0)
+	}
+	"Adding a feature to a copy shouldn't change the original"
+	-- toFeatureList.addFeature("flott", -3.0) -->
+	state {
+		featureNames.size == 2
+	}
+	"Setting a feature of a copy shouldn't change the original"
+	-- toFeatureList.setFeatureValue("flink", -5.0) -->
+	state {
 		testFeatures("flink" -> 2.0, "god" -> 3.0)
 	}
 }
