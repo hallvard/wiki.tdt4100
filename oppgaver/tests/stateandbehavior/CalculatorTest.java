@@ -2,7 +2,6 @@ package stateandbehavior;
 
 import junit.framework.TestCase;
 import no.hal.jex.runtime.JExercise;
-import no.hal.jex.standalone.JexStandalone;
 
 @JExercise(
 	description="A Calculator must contain two double fields for first and second operand, a char for operand and methods for setting these fields and calculating the result."
@@ -96,9 +95,5 @@ public class CalculatorTest extends TestCase {
 		} catch (IllegalArgumentException e) {
 			assertTrue(true);
 		}
-	}
-
-	public static void main(String[] args) {
-		JexStandalone.main(CalculatorTest.class);
 	}
 }

@@ -976,8 +976,4 @@ public class FeatureListTest extends TestCase {
     }
     
   }
-  
-  public static void main(final String[] args) {
-    no.hal.jex.standalone.JexStandalone.main(FeatureListTest.class);
-  }
 }

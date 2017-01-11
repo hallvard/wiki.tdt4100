@@ -1,4 +1,11 @@
-test stateandbehavior.Location
+test class stateandbehavior.Location {
+	int getX()
+	int getY()
+	void left()
+	void right()
+	void up()
+	void down()
+}
 
 sequence constructor "Konstruktør" {
 	-->

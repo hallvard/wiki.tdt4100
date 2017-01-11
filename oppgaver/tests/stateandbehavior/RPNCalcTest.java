@@ -2,7 +2,6 @@ package stateandbehavior;
 
 import junit.framework.TestCase;
 import no.hal.jex.runtime.JExercise;
-import no.hal.jex.standalone.JexStandalone;
 
 @JExercise(
 	description="A RPNCalc must support stack functionality and performing operation."
@@ -116,9 +115,5 @@ public class RPNCalcTest extends TestCase {
 		rpncalc.performOperation('~');
 		assertEquals(2.5d, rpncalc.peek(0));
 		assertEquals(5d, rpncalc.peek(1));
-	}
-
-	public static void main(String[] args) {
-		JexStandalone.main(RPNCalcTest.class);
 	}
 }

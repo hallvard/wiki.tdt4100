@@ -9,6 +9,18 @@ public class Account {
 		return String.format("[Account balance=%f interestRate=%f", balance, interestRate);
 	}
 	
+	double getBalance() {
+		return balance;
+	}
+	
+	double getInterestRate() {
+		return interestRate;
+	}
+	
+	void setInterestRate(double interestRate) {
+		this.interestRate = interestRate;
+	}
+	
 	void deposit(double amount) {
 		if (amount > 0) {
 			balance = balance + amount;

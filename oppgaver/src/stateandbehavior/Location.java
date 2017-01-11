@@ -4,6 +4,13 @@ public class Location {
 	
 	int x, y;
 	
+	int getX() {
+		return x;
+	}
+	int getY() {
+		return y;
+	}
+
 	@Override
 	public String toString() {
 		return String.format("[Location x=%d, y=%d]", x, y);

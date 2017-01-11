@@ -1,4 +1,11 @@
-test stateandbehavior.VotingMachine
+test class stateandbehavior.VotingMachine {
+	int getDemocratTally()
+	int getRepublicanTally()
+	void voteDemocrat()
+	void voteRepublican()
+	void clear()
+}
+
 "Stemme-maskin" @ "https://www.ntnu.no/wiki/display/tdt4100/State+and+behavior+-+Voting+machine+exercise"
 
 sequence constructor "Konstruktør" {

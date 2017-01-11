@@ -4,6 +4,11 @@ public class Rectangle {
 
 	private int x = 0, y = 0, width = 0, height = 0;
 	
+	@Override
+	public String toString() {
+		return String.format("[Rectangle %s-%s,%s-%s %sx%s]", getMinX(), getMaxX(), getMinY(), getMaxY(), getWidth(), getHeight());
+	}
+	
 	public int getWidth() {
 		return width;
 	}

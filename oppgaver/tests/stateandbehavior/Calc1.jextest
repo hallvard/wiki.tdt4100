@@ -1,4 +1,14 @@
-test stateandbehavior.Calc1
+test class stateandbehavior.Calc1 {
+	double getValue()
+	void setValue(double value)
+	void add(double value)
+	void subtract(double value)
+	void multiply(double value)
+	void divide(double value)
+	void percent(double value)
+	void negate()
+	void pi()
+}
 
 sequence constructor "Konstruktør" {
 	-->
@@ -52,7 +62,7 @@ sequence pi "Pi" {
 	state { value == Math.PI; }
 }
 
-method boolean == (double d1, double d2) {
-	val epsilon = 0.000001d
-	d1 >= d2 - epsilon && d1 <= d2 + epsilon
+method == (double d1, double d2) {
+    val epsilon = 0.000001d
+	d1 - epsilon < d2 && d1 + epsilon > d2
 }

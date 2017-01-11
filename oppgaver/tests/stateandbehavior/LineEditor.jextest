@@ -1,4 +1,14 @@
-test stateandbehavior.LineEditor
+test class stateandbehavior.LineEditor {
+	String getText()
+	void setText(String s)
+	int getInsertionIndex()
+	void setInsertionIndex(int index)
+	void left()
+	void right()
+	void deleteLeft()
+	void deleteRight()
+	void insertString(String s)
+}
 
 sequence constructor "Konstruktør" {
 	-->

@@ -5,6 +5,19 @@ public class LineEditor {
 	String text = "";
 	int insertionIndex = 0;
 	
+	String getText() {
+		return text;
+	}
+	void setText(String text) {
+		this.text = text;
+	}
+	int getInsertionIndex() {
+		return insertionIndex;
+	}
+	void setInsertionIndex(int insertionIndex) {
+		this.insertionIndex = insertionIndex;
+	}
+	
 	@Override
 	public String toString() {
 		return String.format("[LineEditor \"%s|%s\"]", text.substring(0, insertionIndex), text.substring(insertionIndex));

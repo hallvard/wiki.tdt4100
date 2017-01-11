@@ -1,4 +1,11 @@
-test stateandbehavior.Account
+test class stateandbehavior.Account {
+	double getBalance()
+	double getInterestRate()
+	double setInterestRate(double rate)
+	void deposit(double amount)	
+	void withdraw(double amount)
+	void addInterest()
+}
 
 sequence constructor "Konstruktør" {
 	-->
@@ -38,6 +45,6 @@ sequence addInterest "Legge til renter" {
 }
 
 method == (double d1, double d2) {
-	val epsilon = 0.000001d
-	d1 >= d2 - epsilon && d1 <= d2 + epsilon
+    val epsilon = 0.000001d
+	d1 - epsilon < d2 && d1 + epsilon > d2
 }
