@@ -1,8 +1,18 @@
-test objectstructures.CardDeck
+test class objectstructures.CardDeck {
+	new(int size)
+	int getCardCount()
+	Card getCard(int pos)
+	void deal(CardHand hand, int count)
+	void shufflePerfectly()
+}
+class Card {
+}
+class CardHand {
+}
 
 import java.util.Collection
 
-instance deck = new CardDeck(2)
+instance CardDeck deck = new CardDeck(2)
 
 sequence constructor {
 	-->

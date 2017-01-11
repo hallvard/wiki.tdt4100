@@ -89,21 +89,21 @@ public class CardComparatorTest extends TestCase {
     
   }
   
-  @JExercise(tests = "CardComparator(boolean,char)", description = "Tests \n\t\tthe following sequence:\n\t\t<ul>\n\t\t<li>Collections.sort(cards, new CardComparator(false, \' \'))</li>\n\t\t</ul>\n")
+  @JExercise(tests = "null(boolean,char)", description = "Tests \n\t\tthe following sequence:\n\t\t<ul>\n\t\t<li>Collections.sort(cards, new CardComparator(false, \' \'))</li>\n\t\t</ul>\n")
   public void testNormal() {
     _transition_exprAction__normal_transitions0_actions0();
     _test__normal_transitions0_effects0_state();
     
   }
   
-  @JExercise(tests = "CardComparator(boolean,char)", description = "Tests \n\t\tthe following sequence:\n\t\t<ul>\n\t\t<li>Collections.sort(cards, new CardComparator(true, \' \'))</li>\n\t\t</ul>\n")
+  @JExercise(tests = "null(boolean,char)", description = "Tests \n\t\tthe following sequence:\n\t\t<ul>\n\t\t<li>Collections.sort(cards, new CardComparator(true, \' \'))</li>\n\t\t</ul>\n")
   public void testAceIsHighest() {
     _transition_exprAction__aceIsHighest_transitions0_actions0();
     _test__aceIsHighest_transitions0_effects0_state();
     
   }
   
-  @JExercise(tests = "CardComparator(boolean,char)", description = "Tests \n\t\tthe following sequence:\n\t\t<ul>\n\t\t<li>Collections.sort(cards, new CardComparator(false, \'D\'))</li>\n\t\t</ul>\n")
+  @JExercise(tests = "null(boolean,char)", description = "Tests \n\t\tthe following sequence:\n\t\t<ul>\n\t\t<li>Collections.sort(cards, new CardComparator(false, \'D\'))</li>\n\t\t</ul>\n")
   public void testDiamondIsTrumph() {
     _transition_exprAction__diamondIsTrumph_transitions0_actions0();
     _test__diamondIsTrumph_transitions0_effects0_state();

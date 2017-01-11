@@ -1,4 +1,15 @@
-test objectstructures.Person
+test class objectstructures.Person {
+	new(String name, char gender)
+
+	Person getMother()
+	void setMother(Person mother)
+	Person getFather()
+	void setFather(Person father)
+
+	int getChildCount()	
+	Person getChild(int pos)
+	void addChild(Person child)
+}
 
 import java.util.Collection
 

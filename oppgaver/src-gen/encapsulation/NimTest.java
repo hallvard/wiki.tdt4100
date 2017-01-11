@@ -24,13 +24,13 @@ public class NimTest extends TestCase {
     return (((legal == game.isValidMove(pieces, 0)) && (legal == game.isValidMove(pieces, 1))) && (legal == game.isValidMove(pieces, 2)));
   }
   
-  @JExercise(tests = "Nim(int)", description = "<h3>Konstrukt\u00F8r</h3>Tests \n\t\tinitialization\n")
+  @JExercise(tests = "null(int)", description = "<h3>Konstrukt\u00F8r</h3>Tests \n\t\tinitialization\n")
   public void testConstructor() {
     _test__constructor_transitions0_effects0_state(nim);
     
   }
   
-  @JExercise(tests = "Nim(int);void removePieces(int,int)", description = "<h3>Fjerning av brikker</h3>Tests \n\t\tthe following sequence:\n\t\t<ul>\n\t\t<li>Fjerner brikker: removePieces(3, 0), removePieces(2, 1), removePieces(1, 2)</li>\n\t\t<li>Fjerner negativt antall: removePieces(-1, 0)</li>\n\t\t<li>Fjerner for f\u00E5 brikker: removePieces(0, 0)</li>\n\t\t<li>Fjerner for mange brikker: removePieces(6, 0)</li>\n\t\t</ul>\n")
+  @JExercise(tests = "null(int);void removePieces(int,int)", description = "<h3>Fjerning av brikker</h3>Tests \n\t\tthe following sequence:\n\t\t<ul>\n\t\t<li>Fjerner brikker: removePieces(3, 0), removePieces(2, 1), removePieces(1, 2)</li>\n\t\t<li>Fjerner negativt antall: removePieces(-1, 0)</li>\n\t\t<li>Fjerner for f\u00E5 brikker: removePieces(0, 0)</li>\n\t\t<li>Fjerner for mange brikker: removePieces(6, 0)</li>\n\t\t</ul>\n")
   public void testRemovePieces() {
     _transition_exprAction__removePieces_transitions0_actions0(nim);
     _transition_exprAction__removePieces_transitions0_actions1(nim);
@@ -57,7 +57,7 @@ public class NimTest extends TestCase {
     
   }
   
-  @JExercise(tests = "Nim(int);void removePieces(int,int)", description = "<h3>Avsluttet spill</h3>Tests \n\t\tthe following sequence:\n\t\t<ul>\n\t\t<li>Fjerner brikker: removePieces(5, 0)</li>\n\t\t<li>Fjerner brikker etter avsluttet spill : removePieces(5, 0)</li>\n\t\t</ul>\n")
+  @JExercise(tests = "null(int);void removePieces(int,int)", description = "<h3>Avsluttet spill</h3>Tests \n\t\tthe following sequence:\n\t\t<ul>\n\t\t<li>Fjerner brikker: removePieces(5, 0)</li>\n\t\t<li>Fjerner brikker etter avsluttet spill : removePieces(5, 0)</li>\n\t\t</ul>\n")
   public void testGameOver() {
     _test__gameOver_transitions0_effects0_state(nim);
     _transition_exprAction__gameOver_transitions1_actions0(nim);
@@ -71,7 +71,7 @@ public class NimTest extends TestCase {
     
   }
   
-  @JExercise(tests = "Nim(int);void removePieces(int,int)", description = "<h3>Gyldige trekk</h3>Tests \n\t\tthe following sequence:\n\t\t<ul>\n\t\t<li>Avslutter spillet: removePieces(5, 0)</li>\n\t\t</ul>\n")
+  @JExercise(tests = "null(int);void removePieces(int,int)", description = "<h3>Gyldige trekk</h3>Tests \n\t\tthe following sequence:\n\t\t<ul>\n\t\t<li>Avslutter spillet: removePieces(5, 0)</li>\n\t\t</ul>\n")
   public void testIsValidMove() {
     _test__isValidMove_transitions0_effects0_state(nim);
     _transition_exprAction__isValidMove_transitions1_actions0(nim);

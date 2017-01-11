@@ -1,4 +1,14 @@
-test objectstructures.Tweet
+test class objectstructures.Tweet {
+	new(TwitterAccount account, String text)
+	new(TwitterAccount account, Tweet tweet)
+	TwitterAccount getOwner()
+	Tweet getOriginalTweet()
+	int getRetweetCount()
+	String getText()
+}
+class objectstructures.TwitterAccount {
+	new(String name)
+}
 
 import objectstructures.TwitterAccount
 

@@ -1,7 +1,17 @@
-test interfaces.Person1
+test class interfaces.Person1 implements Named {
+	new(String givenName, String familyName)
+}
+interface Named {
+	String getGivenName()
+	void setGivenName(String name)
+	String getFamilyName()
+	void setFamilyName(String name)
+	String getFullName()
+	void setFullName(String name)
+}
 
 instance String h = "Hallvard", String t = "Trætteberg", String j = "Jens" 
-instance person1 = new Person1(h, t)
+instance Person1 person1 = new Person1(h, t)
 
 sequence Person1 {
 	-->

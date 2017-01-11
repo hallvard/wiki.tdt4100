@@ -1,13 +1,17 @@
-test interfaces.BinaryComputingIterator
+test class interfaces.BinaryComputingIterator implements Iterator<Double> {
+	new(Iterator<Double> iterator1, Iterator<Double> iterator2, Double default1, Double default2, BinaryOperator<Double> operator)
+	new(Iterator<Double> iterator1, Iterator<Double> iterator2, BinaryOperator<Double> operator)
+}
 
 import java.util.Iterator
+import java.util.function.BinaryOperator
 
 instance Iterator<Double> iterator1 = #[0.5, -2.0].iterator
 instance Iterator<Double> iterator2 = #[5.0,  3.0].iterator
 instance Iterator<Double> iteratorShort = #[5.0].iterator
 
 sequence computeResultsMultiplication "BinaryOperator som multipliserer" {
-	instance binaryIterator = new BinaryComputingIterator(iterator1, iterator2,  [x, y | x * y])
+	instance binaryIterator = new BinaryComputingIterator(iterator1, iterator2,  [Double x, Double y | x * y])
 	"Sjekker første verdi" -- binaryIterator.next ?=  2.5 --> state {   binaryIterator.hasNext }
 	"Sjekker andre verdi"  -- binaryIterator.next ?= -6.0 --> state { ! binaryIterator.hasNext }
 }

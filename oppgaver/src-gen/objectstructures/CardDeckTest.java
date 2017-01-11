@@ -57,20 +57,20 @@ public class CardDeckTest extends TestCase {
     return _xblockexpression;
   }
   
-  @JExercise(tests = "CardDeck(int)", description = "Tests \n\t\tinitialization\n")
+  @JExercise(tests = "null(int)", description = "Tests \n\t\tinitialization\n")
   public void testConstructor() {
     _test__constructor_transitions0_effects0_state(deck);
     
   }
   
-  @JExercise(tests = "CardDeck(int);void shufflePerfectly()", description = "Tests \n\t\tthe following sequence:\n\t\t<ul>\n\t\t<li>shufflePerfectly</li>\n\t\t</ul>\n")
+  @JExercise(tests = "null(int);void shufflePerfectly()", description = "Tests \n\t\tthe following sequence:\n\t\t<ul>\n\t\t<li>shufflePerfectly</li>\n\t\t</ul>\n")
   public void testShufflePerfectly() {
     _transition_exprAction__shufflePerfectly_transitions0_actions0(deck);
     _test__shufflePerfectly_transitions0_effects0_state(deck);
     
   }
   
-  @JExercise(tests = "CardDeck(int);void deal(objectstructures.CardHand,int)", description = "Tests \n\t\tthe following sequence:\n\t\t<ul>\n\t\t<li>deal(hand, 3)</li>\n\t\t</ul>\n")
+  @JExercise(tests = "null(int);void deal(objectstructures.CardHand,int)", description = "Tests \n\t\tthe following sequence:\n\t\t<ul>\n\t\t<li>deal(hand, 3)</li>\n\t\t</ul>\n")
   public void testDeal() {
     CardHand hand = _init__deal_hand();
     _transition_exprAction__deal_transitions0_actions0(deck, hand);

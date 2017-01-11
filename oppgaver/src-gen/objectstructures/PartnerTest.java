@@ -28,13 +28,13 @@ public class PartnerTest extends TestCase {
     
   }
   
-  @JExercise(tests = "Partner(String)", description = "<h3>Ingen partnerskap</h3>Tests \n\t\tinitialization\n")
+  @JExercise(tests = "null(String)", description = "<h3>Ingen partnerskap</h3>Tests \n\t\tinitialization\n")
   public void testConstructor() {
     _test__constructor_transitions0_effects0_state();
     
   }
   
-  @JExercise(tests = "Partner(String);void setPartner(objectstructures.Partner)", description = "<h3>Enkelt partnerskap</h3>Tests \n\t\tthe following sequence:\n\t\t<ul>\n\t\t<li>Partnerskap inng\u00E5s: p1.setPartner(p2)</li>\n\t\t</ul>\n")
+  @JExercise(tests = "null(String);void setPartner(objectstructures.Partner)", description = "<h3>Enkelt partnerskap</h3>Tests \n\t\tthe following sequence:\n\t\t<ul>\n\t\t<li>Partnerskap inng\u00E5s: p1.setPartner(p2)</li>\n\t\t</ul>\n")
   public void testPartner() {
     _test__partner_transitions0_source_state();
     _transition_exprAction__partner_transitions0_actions0();
@@ -42,7 +42,7 @@ public class PartnerTest extends TestCase {
     
   }
   
-  @JExercise(tests = "Partner(String);void setPartner(objectstructures.Partner)", description = "<h3>Partnerskap med etterf\u00F8lgende brudd</h3>Tests \n\t\tthe following sequence:\n\t\t<ul>\n\t\t<li>Partnerskap inng\u00E5s: p1.setPartner(p2)</li>\n\t\t<li>Partnerskap brytes: p1.setPartner(null)</li>\n\t\t</ul>\n")
+  @JExercise(tests = "null(String);void setPartner(objectstructures.Partner)", description = "<h3>Partnerskap med etterf\u00F8lgende brudd</h3>Tests \n\t\tthe following sequence:\n\t\t<ul>\n\t\t<li>Partnerskap inng\u00E5s: p1.setPartner(p2)</li>\n\t\t<li>Partnerskap brytes: p1.setPartner(null)</li>\n\t\t</ul>\n")
   public void testDivorce() {
     _transition_exprAction__divorce_transitions0_actions0();
     _test__divorce_transitions0_effects0_state();
@@ -51,7 +51,7 @@ public class PartnerTest extends TestCase {
     
   }
   
-  @JExercise(tests = "Partner(String);void setPartner(objectstructures.Partner)", description = "<h3>Partnerskap med etterf\u00F8lgende kombinert brudd og nytt partnerskap</h3>Tests \n\t\tthe following sequence:\n\t\t<ul>\n\t\t<li>Partnerskap inng\u00E5s: p1.setPartner(p2), p3.setPartner(p4)</li>\n\t\t<li>Kombinert brudd og nytt partnerskap: p1.setPartner(p4)</li>\n\t\t</ul>\n")
+  @JExercise(tests = "null(String);void setPartner(objectstructures.Partner)", description = "<h3>Partnerskap med etterf\u00F8lgende kombinert brudd og nytt partnerskap</h3>Tests \n\t\tthe following sequence:\n\t\t<ul>\n\t\t<li>Partnerskap inng\u00E5s: p1.setPartner(p2), p3.setPartner(p4)</li>\n\t\t<li>Kombinert brudd og nytt partnerskap: p1.setPartner(p4)</li>\n\t\t</ul>\n")
   public void testSwinger() {
     Partner p3 = _init__swinger_p3();
     Partner p4 = _init__swinger_p4();

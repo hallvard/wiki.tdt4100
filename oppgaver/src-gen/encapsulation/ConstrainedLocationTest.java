@@ -20,21 +20,21 @@ public class ConstrainedLocationTest extends TestCase {
     
   }
   
-  @JExercise(tests = "ConstrainedLocation(int,int,int,int,int,int);ConstrainedLocation()", description = "<h3>Konstrukt\u00F8r</h3>Tests \n\t\tinitialization\n")
+  @JExercise(tests = "null(int,int,int,int,int,int);null()", description = "<h3>Konstrukt\u00F8r</h3>Tests \n\t\tinitialization\n")
   public void testEmptyConstructor() {
     ConstrainedLocation emptyConstructorLocation = _init__emptyConstructor_emptyConstructorLocation();
     _test__emptyConstructor_transitions0_effects0_state(location, emptyConstructorLocation);
     
   }
   
-  @JExercise(tests = "ConstrainedLocation(int,int,int,int,int,int)", description = "<h3>Konstrukt\u00F8r med startposisjon (2, 3) og begrensninger</h3>Tests \n\t\tinitialization\n")
+  @JExercise(tests = "null(int,int,int,int,int,int)", description = "<h3>Konstrukt\u00F8r med startposisjon (2, 3) og begrensninger</h3>Tests \n\t\tinitialization\n")
   public void testConstrainingConstructor() {
     ConstrainedLocation constrainingConstructorLocation = _init__constrainingConstructor_constrainingConstructorLocation();
     _test__constrainingConstructor_transitions0_effects0_state(location, constrainingConstructorLocation);
     
   }
   
-  @JExercise(tests = "ConstrainedLocation(int,int,int,int,int,int);void left()", description = "<h3>Venstre</h3>Tests \n\t\tthe following sequence:\n\t\t<ul>\n\t\t<li>Flytter til venstre: left</li>\n\t\t<li>Flytter forbi begrensning: left, left</li>\n\t\t</ul>\n")
+  @JExercise(tests = "null(int,int,int,int,int,int);void left()", description = "<h3>Venstre</h3>Tests \n\t\tthe following sequence:\n\t\t<ul>\n\t\t<li>Flytter til venstre: left</li>\n\t\t<li>Flytter forbi begrensning: left, left</li>\n\t\t</ul>\n")
   public void testLeft() {
     _transition_exprAction__left_transitions0_actions0(location);
     _test__left_transitions0_effects0_state(location);
@@ -44,7 +44,7 @@ public class ConstrainedLocationTest extends TestCase {
     
   }
   
-  @JExercise(tests = "ConstrainedLocation(int,int,int,int,int,int);void right()", description = "<h3>H\u00F8yre</h3>Tests \n\t\tthe following sequence:\n\t\t<ul>\n\t\t<li>Flytter til h\u00F8yre: right</li>\n\t\t<li>Flytter forbi begrensning: right, right</li>\n\t\t</ul>\n")
+  @JExercise(tests = "null(int,int,int,int,int,int);void right()", description = "<h3>H\u00F8yre</h3>Tests \n\t\tthe following sequence:\n\t\t<ul>\n\t\t<li>Flytter til h\u00F8yre: right</li>\n\t\t<li>Flytter forbi begrensning: right, right</li>\n\t\t</ul>\n")
   public void testRight() {
     _transition_exprAction__right_transitions0_actions0(location);
     _test__right_transitions0_effects0_state(location);
@@ -54,7 +54,7 @@ public class ConstrainedLocationTest extends TestCase {
     
   }
   
-  @JExercise(tests = "ConstrainedLocation(int,int,int,int,int,int);void up()", description = "<h3>Opp</h3>Tests \n\t\tthe following sequence:\n\t\t<ul>\n\t\t<li>Flytter opp: up</li>\n\t\t<li>Flytter forbi begrensning: up, up</li>\n\t\t</ul>\n")
+  @JExercise(tests = "null(int,int,int,int,int,int);void up()", description = "<h3>Opp</h3>Tests \n\t\tthe following sequence:\n\t\t<ul>\n\t\t<li>Flytter opp: up</li>\n\t\t<li>Flytter forbi begrensning: up, up</li>\n\t\t</ul>\n")
   public void testUp() {
     _transition_exprAction__up_transitions0_actions0(location);
     _test__up_transitions0_effects0_state(location);
@@ -64,7 +64,7 @@ public class ConstrainedLocationTest extends TestCase {
     
   }
   
-  @JExercise(tests = "ConstrainedLocation(int,int,int,int,int,int);void down()", description = "<h3>Ned</h3>Tests \n\t\tthe following sequence:\n\t\t<ul>\n\t\t<li>Flytter ned: down</li>\n\t\t<li>Flytter forbi begrensning: down, down</li>\n\t\t</ul>\n")
+  @JExercise(tests = "null(int,int,int,int,int,int);void down()", description = "<h3>Ned</h3>Tests \n\t\tthe following sequence:\n\t\t<ul>\n\t\t<li>Flytter ned: down</li>\n\t\t<li>Flytter forbi begrensning: down, down</li>\n\t\t</ul>\n")
   public void testNed() {
     _transition_exprAction__ned_transitions0_actions0(location);
     _test__ned_transitions0_effects0_state(location);
@@ -74,7 +74,7 @@ public class ConstrainedLocationTest extends TestCase {
     
   }
   
-  @JExercise(tests = "ConstrainedLocation(int,int,int,int,int,int)", description = "<h3>Validering av koordinater</h3>Tests \n\t\tinitialization\n")
+  @JExercise(tests = "null(int,int,int,int,int,int)", description = "<h3>Validering av koordinater</h3>Tests \n\t\tinitialization\n")
   public void testIsValidCoordinates() {
     _test__isValidCoordinates_transitions0_effects0_state(location);
     

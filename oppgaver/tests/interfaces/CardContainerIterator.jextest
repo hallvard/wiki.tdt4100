@@ -1,5 +1,18 @@
-test interfaces.CardContainerIterator
-
+test class interfaces.CardContainerIterator implements Iterator<Card> {
+	new(CardDeck deck)
+}
+interface interfaces.CardContainer extends Iterable<Card> {
+	int getCardCount()
+	int getCard(int pos)
+}
+class interfaces.CardDeck implements CardContainer {
+	new(int count)
+}
+class interfaces.Card {
+	new(char suit, int face)
+	char getSuit()
+	int getFace()
+}
 import java.util.Iterator
 
 instance CardContainerIterator cardContainerIterator = new CardContainerIterator(new CardDeck(2))
@@ -16,7 +29,7 @@ sequence cardContainerIterator {
 	}
 }
 
-static method void testCards(Iterator<Card> actual, Iterator<Card> expected) {
+method void testCards(Iterator<Card> actual, Iterator<Card> expected) {
 	while (expected.hasNext) {
 		assertTrue(actual.hasNext)
 		val expectedCard = expected.next

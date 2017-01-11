@@ -108,7 +108,7 @@ public class CardContainerIteratorTest extends TestCase {
     }
   }
   
-  @JExercise(tests = "CardContainerIterator(interfaces.CardContainer)", description = "Tests \n\t\tinitialization\n")
+  @JExercise(tests = "null(interfaces.CardDeck)", description = "Tests \n\t\tinitialization\n")
   public void testCardContainerIterator() {
     _test__cardContainerIterator_transitions0_effects0_state();
     

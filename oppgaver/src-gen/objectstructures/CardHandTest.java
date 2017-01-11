@@ -44,13 +44,13 @@ public class CardHandTest extends TestCase {
     return _xblockexpression;
   }
   
-  @JExercise(tests = "CardHand()", description = "Tests \n\t\tinitialization\n")
+  @JExercise(description = "Tests \n\t\tinitialization\n")
   public void testConstructor() {
     _test__constructor_transitions0_effects0_state(cardHand);
     
   }
   
-  @JExercise(tests = "CardHand()", description = "Tests \n\t\tthe following sequence:\n\t\t<ul>\n\t\t<li>deck.deal(cardHand, 3)</li>\n\t\t</ul>\n")
+  @JExercise(description = "Tests \n\t\tthe following sequence:\n\t\t<ul>\n\t\t<li>deck.deal(cardHand, 3)</li>\n\t\t</ul>\n")
   public void testDeal() {
     CardDeck deck = _init__deal_deck();
     _transition_exprAction__deal_transitions0_actions0(cardHand, deck);
@@ -58,7 +58,7 @@ public class CardHandTest extends TestCase {
     
   }
   
-  @JExercise(tests = "CardHand();objectstructures.Card play(int)", description = "Tests \n\t\tthe following sequence:\n\t\t<ul>\n\t\t<li>deck.deal(cardHand, 3)</li>\n\t\t<li>play(1)</li>\n\t\t<li>play(0)</li>\n\t\t<li>play(0)</li>\n\t\t</ul>\n")
+  @JExercise(tests = "void play(int)", description = "Tests \n\t\tthe following sequence:\n\t\t<ul>\n\t\t<li>deck.deal(cardHand, 3)</li>\n\t\t<li>play(1)</li>\n\t\t<li>play(0)</li>\n\t\t<li>play(0)</li>\n\t\t</ul>\n")
   public void testDealPlay() {
     CardDeck deck = _init__dealPlay_deck();
     _transition_exprAction__dealPlay_transitions0_actions0(cardHand, deck);

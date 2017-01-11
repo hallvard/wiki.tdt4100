@@ -1,6 +1,13 @@
-test encapsulation.Nim
+test class encapsulation.Nim {
+	new(int pileCount)
+	
+	int getPile(int pileNum)
+	boolean isGameOver()
+	boolean isValidMove(int count, int pileNum)
+	void removePieces(int count, int pileNum)
+}
 
-instance nim = new Nim(5)
+instance Nim nim = new Nim(5)
 
 sequence constructor "Konstruktør" {
 	-->

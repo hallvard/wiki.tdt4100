@@ -1,4 +1,15 @@
-test interfaces.CardHand
+test class interfaces.CardHand implements CardContainer {
+	void addCard(Card card)
+}
+interface interfaces.CardContainer extends Iterable<Card> {
+	int getCardCount()
+	Card getCard(int pos)
+}
+class interfaces.Card {
+	new(char suit, int face)
+	char getSuit()
+	int getFace()
+}
 
 import java.util.Collection
 import java.util.Iterator

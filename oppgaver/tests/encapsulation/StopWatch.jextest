@@ -1,5 +1,5 @@
 test class encapsulation.StopWatch {
-	void tick(int milliSeconds)
+	void tick(int n)
 	void start()
 	boolean isStarted()
 	void lap()

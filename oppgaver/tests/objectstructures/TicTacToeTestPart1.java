@@ -2,7 +2,6 @@ package objectstructures;
 
 import junit.framework.TestCase;
 import no.hal.jex.runtime.JExercise;
-import no.hal.jex.standalone.JexStandalone;
 
 @JExercise(
 	description="A TicTacToe class must hold all logic necessary for playing the Tic-Tac-Toe game."
@@ -43,9 +42,5 @@ public class TicTacToeTestPart1 extends TestCase {
 			)
 	public void testGetCurrentPlayer() {
 		assertEquals('x', ttt.getCurrentPlayer());
-	}
-	
-	public static void main(String[] args) {
-		JexStandalone.main(TicTacToeTestPart1.class);
 	}
 }

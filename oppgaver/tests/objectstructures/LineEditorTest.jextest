@@ -2,12 +2,12 @@ test objectstructures.LineEditor
 
 import java.util.List
 
-instance empty = new LineEditor()
-instance left = new LineEditor("Hallvard", 0, -1)
-instance middle = new LineEditor("Hallvard", 4, -1)
-instance regionLeft = new LineEditor("Hallvard", 3, 5)
-instance regionRight = new LineEditor("Hallvard", 5, 3)
-instance right = new LineEditor("Hallvard", 8, -1)
+instance LineEditor empty = new LineEditor()
+instance LineEditor left = new LineEditor("Hallvard", 0, -1)
+instance LineEditor middle = new LineEditor("Hallvard", 4, -1)
+instance LineEditor regionLeft = new LineEditor("Hallvard", 3, 5)
+instance LineEditor regionRight = new LineEditor("Hallvard", 5, 3)
+instance LineEditor right = new LineEditor("Hallvard", 8, -1)
 
 sequence constructor "Konstruktør" {
 	-->

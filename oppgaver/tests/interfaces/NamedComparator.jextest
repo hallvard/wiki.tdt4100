@@ -1,4 +1,15 @@
-test interfaces.NamedComparator
+test class interfaces.NamedComparator implements Comparator<Named> {
+	
+}
+interface Named {
+}
+class Person1 implements Named {
+	new(String givenName, String familyName)
+}
+class Person2 implements Named {
+	new(String fullName)
+}
+import java.util.Comparator
 
 sequence namedComparator {
 	instance Person1 ht = new Person1("Hallvard", "Trætteberg")

@@ -1,4 +1,8 @@
-test objectstructures.Partner
+test class objectstructures.Partner {
+	new(String name)
+	Partner getPartner()
+	void setPartner(Partner partner)
+}
 
 instance
 	p1 = new Partner("1"),

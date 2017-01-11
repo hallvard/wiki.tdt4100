@@ -99,7 +99,7 @@ public class CardHandTest extends TestCase {
     return _xblockexpression;
   }
   
-  @JExercise(tests = "CardHand();void addCard(interfaces.Card);java.util.Iterator<interfaces.Card> iterator()", description = "Tests \n\t\tthe following sequence:\n\t\t<ul>\n\t\t<li>hand.addCard(s1), hand.addCard(c2), hand.iterator</li>\n\t\t</ul>\n")
+  @JExercise(tests = "void addCard(interfaces.Card)", description = "Tests \n\t\tthe following sequence:\n\t\t<ul>\n\t\t<li>hand.addCard(s1), hand.addCard(c2), hand.iterator</li>\n\t\t</ul>\n")
   public void testCardContainer() {
     _transition_exprAction__cardContainer_transitions0_actions0();
     _transition_exprAction__cardContainer_transitions0_actions1();
@@ -108,7 +108,7 @@ public class CardHandTest extends TestCase {
     
   }
   
-  @JExercise(tests = "CardHand();void addCard(interfaces.Card);java.util.Iterator<interfaces.Card> iterator()", description = "Tests \n\t\tthe following sequence:\n\t\t<ul>\n\t\t<li>hand.addCard(s1), hand.addCard(c2), hand.iterator</li>\n\t\t</ul>\n")
+  @JExercise(tests = "void addCard(interfaces.Card)", description = "Tests \n\t\tthe following sequence:\n\t\t<ul>\n\t\t<li>hand.addCard(s1), hand.addCard(c2), hand.iterator</li>\n\t\t</ul>\n")
   public void testHandIterator() {
     _transition_exprAction__handIterator_transitions0_actions0();
     _transition_exprAction__handIterator_transitions0_actions1();

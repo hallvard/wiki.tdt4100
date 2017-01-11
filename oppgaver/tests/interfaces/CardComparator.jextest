@@ -1,5 +1,8 @@
-test interfaces.CardComparator
+test class interfaces.CardComparator implements Comparator<Card> {
+	new(boolean aceIsHighest, char trumph)
+}
 
+import java.util.Comparator
 import java.util.List
 import java.util.Collections
 

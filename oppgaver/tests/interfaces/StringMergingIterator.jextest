@@ -1,4 +1,6 @@
-test interfaces.StringMergingIterator
+test class interfaces.StringMergingIterator implements Iterator<String> {
+	new(Iterator<String> iterator1, Iterator<String> iterator2)
+}
 
 import java.util.Iterator
 

@@ -11,6 +11,14 @@ test class objectstructures.StopWatchManager {
 	Collection<StopWatch> getStartedWatches()
 	Collection<StopWatch> getStoppedWatches()
 }
+class objectstructures.StopWatch {
+	void start()
+	boolean isStarted()
+	void stop()
+	boolean isStopped()
+
+	int getTicks()
+}
 
 instance stopWatchManager = new StopWatchManager
 

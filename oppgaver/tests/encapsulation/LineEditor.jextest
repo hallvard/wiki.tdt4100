@@ -2,7 +2,7 @@ test class encapsulation.LineEditor {
 	String getText()
 	void setText(String s)
 	int getInsertionIndex()
-	void setInsertionIndex(int i)
+	void setInsertionIndex(int index)
 
 	void left()
 	void right()

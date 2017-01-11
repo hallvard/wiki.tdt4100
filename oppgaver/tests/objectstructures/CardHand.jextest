@@ -1,4 +1,14 @@
-test objectstructures.CardHand
+test class objectstructures.CardHand {
+	int getCardCount()
+	Card getCard(int pos)	
+	void play(int count)
+}
+class Card {
+}
+class objectstructures.CardDeck {
+	new(int size)
+	void deal(CardHand hand, int count)
+}
 
 import java.util.Collection
 

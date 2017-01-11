@@ -1,6 +1,11 @@
-test objectstructures.Card
+test class objectstructures.Card {
+	new(char suit, int face)
+	
+	char getSuit()
+	int getFace()
+}
 
-instance c = null
+instance Card c = null
 
 sequence constructor {
 	-- c = new Card('S', 1)  --> state { suit == 'S'; face == 1; }

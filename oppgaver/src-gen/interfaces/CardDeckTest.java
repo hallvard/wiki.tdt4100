@@ -137,14 +137,14 @@ public class CardDeckTest extends TestCase {
     }
   }
   
-  @JExercise(tests = "CardDeck(int);java.util.Iterator<interfaces.Card> iterator()", description = "Tests \n\t\tthe following sequence:\n\t\t<ul>\n\t\t<li>deck.iterator</li>\n\t\t</ul>\n")
+  @JExercise(tests = "null(int)", description = "Tests \n\t\tthe following sequence:\n\t\t<ul>\n\t\t<li>deck.iterator</li>\n\t\t</ul>\n")
   public void testCardContainer() {
     _transition_exprAction__cardContainer_transitions0_actions0();
     _test__cardContainer_transitions0_effects0_state();
     
   }
   
-  @JExercise(tests = "CardDeck(int);java.util.Iterator<interfaces.Card> iterator()", description = "Tests \n\t\tthe following sequence:\n\t\t<ul>\n\t\t<li>deck.iterator</li>\n\t\t</ul>\n")
+  @JExercise(tests = "null(int)", description = "Tests \n\t\tthe following sequence:\n\t\t<ul>\n\t\t<li>deck.iterator</li>\n\t\t</ul>\n")
   public void testDeckIterator() {
     _transition_exprAction__deckIterator_transitions0_actions0();
     _test__deckIterator_transitions0_effects0_state();

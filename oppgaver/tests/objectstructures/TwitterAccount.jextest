@@ -1,4 +1,22 @@
-test TwitterAccount
+test class objectstructures.TwitterAccount {
+	new(String name)
+	String getUserName()
+
+	boolean isFollowing(TwitterAccount account)
+	boolean isFollowedBy(TwitterAccount account)
+	void follow(TwitterAccount account)
+	void unfollow(TwitterAccount account)
+
+	int getTweetCount()
+	int getRetweetCount()
+	Tweet getTweet(int pos)
+	void tweet(String text)
+	void retweet(Tweet tweet)
+}
+class objectstructures.Tweet {
+	Tweet getOriginalTweet()
+	String getText()
+}
 
 import objectstructures.TwitterAccount
 

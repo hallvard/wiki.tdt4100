@@ -1,6 +1,19 @@
-test encapsulation.ConstrainedLocation
+test class encapsulation.ConstrainedLocation {
+	new()
+	new(int x, int y, int minX, int minY, int maxX, int maxY)
+	
+	int getX()
+	int getY()
 
-instance location = new ConstrainedLocation(0, 0, -2, -2, 2, 2)
+	boolean isValidCoordinates(int x, int y)
+	
+	void left()
+	void right()
+	void up()
+	void down()
+}
+
+instance ConstrainedLocation location = new ConstrainedLocation(0, 0, -2, -2, 2, 2)
 
 sequence emptyConstructor "Konstruktør" {
 	instance emptyConstructorLocation = new ConstrainedLocation()

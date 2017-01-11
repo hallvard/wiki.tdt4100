@@ -15,7 +15,7 @@ public class RPNCalcTest extends TestCase {
     
   }
   
-  @JExercise(tests = "RPNCalc();void push(double)", description = "<h3>Push</h3>Tests \n\t\tthe following sequence:\n\t\t<ul>\n\t\t<li>push(1.0)</li>\n\t\t<li>push(2.0)</li>\n\t\t<li>push(3.0)</li>\n\t\t</ul>\n")
+  @JExercise(tests = "void push(double)", description = "<h3>Push</h3>Tests \n\t\tthe following sequence:\n\t\t<ul>\n\t\t<li>push(1.0)</li>\n\t\t<li>push(2.0)</li>\n\t\t<li>push(3.0)</li>\n\t\t</ul>\n")
   public void testPush() {
     _transition_exprAction__push_transitions0_actions0(rPNCalc);
     _test__push_transitions0_effects0_state(rPNCalc);
@@ -26,7 +26,7 @@ public class RPNCalcTest extends TestCase {
     
   }
   
-  @JExercise(tests = "RPNCalc();void push(double);double pop()", description = "<h3>Pop</h3>Tests \n\t\tthe following sequence:\n\t\t<ul>\n\t\t<li>push(1.0), push(2.0), push(3.0)</li>\n\t\t<li>pop() == 3.0</li>\n\t\t<li>pop() == 2.0</li>\n\t\t<li>push(2.0)</li>\n\t\t<li>pop() == 2.0</li>\n\t\t<li>pop() == 1.0</li>\n\t\t</ul>\n")
+  @JExercise(tests = "void push(double);double pop()", description = "<h3>Pop</h3>Tests \n\t\tthe following sequence:\n\t\t<ul>\n\t\t<li>push(1.0), push(2.0), push(3.0)</li>\n\t\t<li>pop() == 3.0</li>\n\t\t<li>pop() == 2.0</li>\n\t\t<li>push(2.0)</li>\n\t\t<li>pop() == 2.0</li>\n\t\t<li>pop() == 1.0</li>\n\t\t</ul>\n")
   public void testPop() {
     _transition_exprAction__pop_transitions0_actions0(rPNCalc);
     _transition_exprAction__pop_transitions0_actions1(rPNCalc);
@@ -45,7 +45,7 @@ public class RPNCalcTest extends TestCase {
     
   }
   
-  @JExercise(tests = "RPNCalc();void push(double)", description = "<h3>Peek</h3>Tests \n\t\tthe following sequence:\n\t\t<ul>\n\t\t<li>push(0.0), push(1.0), push(2.0)</li>\n\t\t</ul>\n")
+  @JExercise(tests = "void push(double)", description = "<h3>Peek</h3>Tests \n\t\tthe following sequence:\n\t\t<ul>\n\t\t<li>push(0.0), push(1.0), push(2.0)</li>\n\t\t</ul>\n")
   public void testPeek() {
     _transition_exprAction__peek_transitions0_actions0(rPNCalc);
     _transition_exprAction__peek_transitions0_actions1(rPNCalc);
@@ -54,13 +54,13 @@ public class RPNCalcTest extends TestCase {
     
   }
   
-  @JExercise(tests = "RPNCalc()", description = "<h3>Peek empty stack</h3>Tests \n\t\tinitialization\n")
+  @JExercise(description = "<h3>Peek empty stack</h3>Tests \n\t\tinitialization\n")
   public void testPeekEmpty() {
     _test__peekEmpty_transitions0_effects0_state(rPNCalc);
     
   }
   
-  @JExercise(tests = "RPNCalc();void push(double)", description = "<h3>getSize</h3>Tests \n\t\tthe following sequence:\n\t\t<ul>\n\t\t<li>push(1.0)</li>\n\t\t<li>push(2.0)</li>\n\t\t<li>push(3.0)</li>\n\t\t</ul>\n")
+  @JExercise(tests = "void push(double)", description = "<h3>getSize</h3>Tests \n\t\tthe following sequence:\n\t\t<ul>\n\t\t<li>push(1.0)</li>\n\t\t<li>push(2.0)</li>\n\t\t<li>push(3.0)</li>\n\t\t</ul>\n")
   public void testGetSize() {
     _test__getSize_transitions0_effects0_state(rPNCalc);
     _transition_exprAction__getSize_transitions1_actions0(rPNCalc);
@@ -72,7 +72,7 @@ public class RPNCalcTest extends TestCase {
     
   }
   
-  @JExercise(tests = "RPNCalc();void push(double);void performOperation(char)", description = "<h3>+ operation</h3>Tests \n\t\tthe following sequence:\n\t\t<ul>\n\t\t<li>push(3.0), push(4.0), performOperation(\'+\')</li>\n\t\t</ul>\n")
+  @JExercise(tests = "void push(double);void performOperation(char)", description = "<h3>+ operation</h3>Tests \n\t\tthe following sequence:\n\t\t<ul>\n\t\t<li>push(3.0), push(4.0), performOperation(\'+\')</li>\n\t\t</ul>\n")
   public void testAdd() {
     _transition_exprAction__add_transitions0_actions0(rPNCalc);
     _transition_exprAction__add_transitions0_actions1(rPNCalc);
@@ -81,7 +81,7 @@ public class RPNCalcTest extends TestCase {
     
   }
   
-  @JExercise(tests = "RPNCalc();void push(double);void performOperation(char)", description = "<h3>- operation</h3>Tests \n\t\tthe following sequence:\n\t\t<ul>\n\t\t<li>push(7.0), push(2.0), performOperation(\'-\')</li>\n\t\t</ul>\n")
+  @JExercise(tests = "void push(double);void performOperation(char)", description = "<h3>- operation</h3>Tests \n\t\tthe following sequence:\n\t\t<ul>\n\t\t<li>push(7.0), push(2.0), performOperation(\'-\')</li>\n\t\t</ul>\n")
   public void testSub() {
     _transition_exprAction__sub_transitions0_actions0(rPNCalc);
     _transition_exprAction__sub_transitions0_actions1(rPNCalc);
@@ -90,7 +90,7 @@ public class RPNCalcTest extends TestCase {
     
   }
   
-  @JExercise(tests = "RPNCalc();void push(double);void performOperation(char)", description = "<h3>* operation</h3>Tests \n\t\tthe following sequence:\n\t\t<ul>\n\t\t<li>push(5.0), push(2.0), performOperation(\'*\')</li>\n\t\t</ul>\n")
+  @JExercise(tests = "void push(double);void performOperation(char)", description = "<h3>* operation</h3>Tests \n\t\tthe following sequence:\n\t\t<ul>\n\t\t<li>push(5.0), push(2.0), performOperation(\'*\')</li>\n\t\t</ul>\n")
   public void testMult() {
     _transition_exprAction__mult_transitions0_actions0(rPNCalc);
     _transition_exprAction__mult_transitions0_actions1(rPNCalc);
@@ -99,7 +99,7 @@ public class RPNCalcTest extends TestCase {
     
   }
   
-  @JExercise(tests = "RPNCalc();void push(double);void performOperation(char)", description = "<h3>/ operation</h3>Tests \n\t\tthe following sequence:\n\t\t<ul>\n\t\t<li>push(10.0), push(4.0), performOperation(\'/\')</li>\n\t\t</ul>\n")
+  @JExercise(tests = "void push(double);void performOperation(char)", description = "<h3>/ operation</h3>Tests \n\t\tthe following sequence:\n\t\t<ul>\n\t\t<li>push(10.0), push(4.0), performOperation(\'/\')</li>\n\t\t</ul>\n")
   public void testDiv() {
     _transition_exprAction__div_transitions0_actions0(rPNCalc);
     _transition_exprAction__div_transitions0_actions1(rPNCalc);
@@ -108,7 +108,7 @@ public class RPNCalcTest extends TestCase {
     
   }
   
-  @JExercise(tests = "RPNCalc();void push(double);void performOperation(char)", description = "<h3>~ operation</h3>Tests \n\t\tthe following sequence:\n\t\t<ul>\n\t\t<li>push(10.0), push(4.0), performOperation(\'~\')</li>\n\t\t</ul>\n")
+  @JExercise(tests = "void push(double);void performOperation(char)", description = "<h3>~ operation</h3>Tests \n\t\tthe following sequence:\n\t\t<ul>\n\t\t<li>push(10.0), push(4.0), performOperation(\'~\')</li>\n\t\t</ul>\n")
   public void testSwap() {
     _transition_exprAction__swap_transitions0_actions0(rPNCalc);
     _transition_exprAction__swap_transitions0_actions1(rPNCalc);

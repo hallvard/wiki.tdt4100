@@ -17,7 +17,7 @@ public class NamedComparatorTest extends TestCase {
     
   }
   
-  @JExercise(tests = "NamedComparator();int compare(interfaces.Named,interfaces.Named)", description = "Tests \n\t\tthe following sequence:\n\t\t<ul>\n\t\t<li>compare(jt, ht) > 0</li>\n\t\t</ul>\n")
+  @JExercise(description = "Tests \n\t\tthe following sequence:\n\t\t<ul>\n\t\t<li>compare(jt, ht) > 0</li>\n\t\t</ul>\n")
   public void testNamedComparator() {
     Person1 ht = _init__namedComparator_ht();
     Person2 jt = _init__namedComparator_jt();

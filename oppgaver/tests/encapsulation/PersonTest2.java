@@ -3,7 +3,6 @@ package encapsulation;
 import java.util.Date;
 
 import no.hal.jex.runtime.JExercise;
-import no.hal.jex.standalone.JexStandalone;
 
 @JExercise(
 	description="A Person must contain a name, an email, a birthday, gender and social security number. These attributes should be properly encapsulated and have getters and setters that ensure valid attributes"
@@ -67,9 +66,5 @@ public class PersonTest2 extends PersonTest {
 			k2 = 0;
 		}
 		return k1 + "" + k2;
-	}
-	
-	public static void main(String[] args) {
-		JexStandalone.main(PersonTest2.class);
 	}
 }

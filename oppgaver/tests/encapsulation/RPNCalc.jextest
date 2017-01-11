@@ -1,4 +1,10 @@
-test encapsulation.RPNCalc
+test class encapsulation.RPNCalc {
+	int getSize()
+	double peek(int n)
+	double pop()
+	void push(double value)
+	void performOperation(char op)
+}
 
 sequence push "Push" {
 	-- push(1.0) --> state { peek(0) == 1.0 }

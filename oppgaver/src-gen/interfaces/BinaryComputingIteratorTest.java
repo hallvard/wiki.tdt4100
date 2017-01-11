@@ -46,7 +46,7 @@ public class BinaryComputingIteratorTest extends TestCase {
     return true;
   }
   
-  @JExercise(tests = "BinaryComputingIterator(java.util.Iterator<Double>,java.util.Iterator<Double>,java.util.function.BinaryOperator<Double>);Double next()", description = "<h3>BinaryOperator som multipliserer</h3>Tests \n\t\tthe following sequence:\n\t\t<ul>\n\t\t<li>Sjekker f\u00F8rste verdi: binaryIterator.next ?= 2.5</li>\n\t\t<li>Sjekker andre verdi: binaryIterator.next ?= -6.0</li>\n\t\t</ul>\n")
+  @JExercise(tests = "null(java.util.Iterator<Double>,java.util.Iterator<Double>,java.util.function.BinaryOperator<Double>)", description = "<h3>BinaryOperator som multipliserer</h3>Tests \n\t\tthe following sequence:\n\t\t<ul>\n\t\t<li>Sjekker f\u00F8rste verdi: binaryIterator.next ?= 2.5</li>\n\t\t<li>Sjekker andre verdi: binaryIterator.next ?= -6.0</li>\n\t\t</ul>\n")
   public void testComputeResultsMultiplication() {
     BinaryComputingIterator binaryIterator = _init__computeResultsMultiplication_binaryIterator();
     _transition_exprAction__computeResultsMultiplication_transitions0_actions0(binaryIterator);
@@ -56,7 +56,7 @@ public class BinaryComputingIteratorTest extends TestCase {
     
   }
   
-  @JExercise(tests = "BinaryComputingIterator(java.util.Iterator<Double>,java.util.Iterator<Double>,java.util.function.BinaryOperator<Double>);Double next()", description = "<h3>BinaryOperator som adderer</h3>Tests \n\t\tthe following sequence:\n\t\t<ul>\n\t\t<li>Sjekker f\u00F8rste verdi: binaryIterator.next ?= 5.5</li>\n\t\t<li>Sjekker andre verdi: binaryIterator.next ?= 1.0</li>\n\t\t</ul>\n")
+  @JExercise(tests = "null(java.util.Iterator<Double>,java.util.Iterator<Double>,java.util.function.BinaryOperator<Double>)", description = "<h3>BinaryOperator som adderer</h3>Tests \n\t\tthe following sequence:\n\t\t<ul>\n\t\t<li>Sjekker f\u00F8rste verdi: binaryIterator.next ?= 5.5</li>\n\t\t<li>Sjekker andre verdi: binaryIterator.next ?= 1.0</li>\n\t\t</ul>\n")
   public void testComputeResultsAddition() {
     BinaryComputingIterator binaryIterator = _init__computeResultsAddition_binaryIterator();
     _transition_exprAction__computeResultsAddition_transitions0_actions0(binaryIterator);
@@ -66,7 +66,7 @@ public class BinaryComputingIteratorTest extends TestCase {
     
   }
   
-  @JExercise(tests = "BinaryComputingIterator(java.util.Iterator<Double>,java.util.Iterator<Double>,java.util.function.BinaryOperator<Double>);Double next()", description = "<h3>Multiplisering med ujevnt antall verdier i interne iteratorer</h3>Tests \n\t\tthe following sequence:\n\t\t<ul>\n\t\t<li>Henter verdi: binaryIterator.next ?= 2.5</li>\n\t\t</ul>\n")
+  @JExercise(tests = "null(java.util.Iterator<Double>,java.util.Iterator<Double>,java.util.function.BinaryOperator<Double>)", description = "<h3>Multiplisering med ujevnt antall verdier i interne iteratorer</h3>Tests \n\t\tthe following sequence:\n\t\t<ul>\n\t\t<li>Henter verdi: binaryIterator.next ?= 2.5</li>\n\t\t</ul>\n")
   public void testComputeResultsWithShortIterator() {
     BinaryComputingIterator binaryIterator = _init__computeResultsWithShortIterator_binaryIterator();
     _transition_exprAction__computeResultsWithShortIterator_transitions0_actions0(binaryIterator);
@@ -74,7 +74,7 @@ public class BinaryComputingIteratorTest extends TestCase {
     
   }
   
-  @JExercise(tests = "BinaryComputingIterator(java.util.Iterator<Double>,java.util.Iterator<Double>,Double,Double,java.util.function.BinaryOperator<Double>);Double next()", description = "<h3>Multiplisering med ujevnt antall verdier i interne iteratorer og default</h3>Tests \n\t\tthe following sequence:\n\t\t<ul>\n\t\t<li>Sjekker f\u00F8rste verdi: binaryIterator.next ?= 2.5</li>\n\t\t<li>Sjekker andre verdi: binaryIterator.next ?= -4.0</li>\n\t\t</ul>\n")
+  @JExercise(tests = "null(java.util.Iterator<Double>,java.util.Iterator<Double>,Double,Double,java.util.function.BinaryOperator<Double>)", description = "<h3>Multiplisering med ujevnt antall verdier i interne iteratorer og default</h3>Tests \n\t\tthe following sequence:\n\t\t<ul>\n\t\t<li>Sjekker f\u00F8rste verdi: binaryIterator.next ?= 2.5</li>\n\t\t<li>Sjekker andre verdi: binaryIterator.next ?= -4.0</li>\n\t\t</ul>\n")
   public void testComputeResultsWithShortIteratorAndDefault() {
     BinaryComputingIterator binaryIterator = _init__computeResultsWithShortIteratorAndDefault_binaryIterator();
     _transition_exprAction__computeResultsWithShortIteratorAndDefault_transitions0_actions0(binaryIterator);
@@ -84,14 +84,14 @@ public class BinaryComputingIteratorTest extends TestCase {
     
   }
   
-  @JExercise(tests = "BinaryComputingIterator(java.util.Iterator<Double>,java.util.Iterator<Double>,java.util.function.BinaryOperator<Double>)", description = "<h3>Multiplisering med tomme interne iteratorer</h3>Tests \n\t\tinitialization\n")
+  @JExercise(tests = "null(java.util.Iterator<Double>,java.util.Iterator<Double>,java.util.function.BinaryOperator<Double>)", description = "<h3>Multiplisering med tomme interne iteratorer</h3>Tests \n\t\tinitialization\n")
   public void testComputeResultsWithEmptyIterator() {
     BinaryComputingIterator binaryIterator = _init__computeResultsWithEmptyIterator_binaryIterator();
     _test__computeResultsWithEmptyIterator_transitions0_effects0_state(binaryIterator);
     
   }
   
-  @JExercise(tests = "BinaryComputingIterator(java.util.Iterator<Double>,java.util.Iterator<Double>,Double,Double,java.util.function.BinaryOperator<Double>)", description = "<h3>Multiplisering med tomme interne iteratorer og default</h3>Tests \n\t\tinitialization\n")
+  @JExercise(tests = "null(java.util.Iterator<Double>,java.util.Iterator<Double>,Double,Double,java.util.function.BinaryOperator<Double>)", description = "<h3>Multiplisering med tomme interne iteratorer og default</h3>Tests \n\t\tinitialization\n")
   public void testComputeResultsWithEmptyIteratorAndDefault() {
     BinaryComputingIterator binaryIterator = _init__computeResultsWithEmptyIteratorAndDefault_binaryIterator();
     _test__computeResultsWithEmptyIteratorAndDefault_transitions0_effects0_state(binaryIterator);

@@ -59,13 +59,13 @@ public class TweetTest extends TestCase {
     
   }
   
-  @JExercise(tests = "Tweet(objectstructures.TwitterAccount,String)", description = "<h3>Konstrukt\u00F8r for ny tweet</h3>Tests \n\t\tinitialization\n")
+  @JExercise(tests = "null(objectstructures.TwitterAccount,String)", description = "<h3>Konstrukt\u00F8r for ny tweet</h3>Tests \n\t\tinitialization\n")
   public void testConstructorNewTweet() {
     _test__constructorNewTweet_transitions0_effects0_state();
     
   }
   
-  @JExercise(tests = "Tweet(objectstructures.TwitterAccount,String);Tweet(objectstructures.TwitterAccount,objectstructures.Tweet)", description = "<h3>Konstrukt\u00F8r for retweet</h3>Tests \n\t\tthe following sequence:\n\t\t<ul>\n\t\t<li>retweet1 = new Tweet(ole, tweet)</li>\n\t\t<li>Kan ikke retweete seg selv: new Tweet(nils, tweet)</li>\n\t\t</ul>\n")
+  @JExercise(tests = "null(objectstructures.TwitterAccount,String);null(objectstructures.TwitterAccount,objectstructures.Tweet)", description = "<h3>Konstrukt\u00F8r for retweet</h3>Tests \n\t\tthe following sequence:\n\t\t<ul>\n\t\t<li>retweet1 = new Tweet(ole, tweet)</li>\n\t\t<li>Kan ikke retweete seg selv: new Tweet(nils, tweet)</li>\n\t\t</ul>\n")
   public void testConstructorRetweet() {
     _transition_exprAction__constructorRetweet_transitions0_actions0();
     _test__constructorRetweet_transitions0_effects0_state();
@@ -78,7 +78,7 @@ public class TweetTest extends TestCase {
     
   }
   
-  @JExercise(tests = "Tweet(objectstructures.TwitterAccount,String);Tweet(objectstructures.TwitterAccount,objectstructures.Tweet)", description = "<h3>Originalforfatter av retweets</h3>Tests \n\t\tthe following sequence:\n\t\t<ul>\n\t\t<li>retweet1 = new Tweet(ole, tweet)</li>\n\t\t<li>retweet2 = new Tweet(kari, tweet)</li>\n\t\t</ul>\n")
+  @JExercise(tests = "null(objectstructures.TwitterAccount,String);null(objectstructures.TwitterAccount,objectstructures.Tweet)", description = "<h3>Originalforfatter av retweets</h3>Tests \n\t\tthe following sequence:\n\t\t<ul>\n\t\t<li>retweet1 = new Tweet(ole, tweet)</li>\n\t\t<li>retweet2 = new Tweet(kari, tweet)</li>\n\t\t</ul>\n")
   public void testGetOriginalTweet() {
     _test__getOriginalTweet_transitions0_effects0_state();
     _transition_exprAction__getOriginalTweet_transitions1_actions0();
@@ -88,7 +88,7 @@ public class TweetTest extends TestCase {
     
   }
   
-  @JExercise(tests = "Tweet(objectstructures.TwitterAccount,String);Tweet(objectstructures.TwitterAccount,objectstructures.Tweet)", description = "<h3>Retweet count</h3>Tests \n\t\tthe following sequence:\n\t\t<ul>\n\t\t<li>new Tweet(ole, tweet)</li>\n\t\t<li>new Tweet(kari, tweet)</li>\n\t\t</ul>\n")
+  @JExercise(tests = "null(objectstructures.TwitterAccount,String);null(objectstructures.TwitterAccount,objectstructures.Tweet)", description = "<h3>Retweet count</h3>Tests \n\t\tthe following sequence:\n\t\t<ul>\n\t\t<li>new Tweet(ole, tweet)</li>\n\t\t<li>new Tweet(kari, tweet)</li>\n\t\t</ul>\n")
   public void testGetRetweetCount() {
     _test__getRetweetCount_transitions0_effects0_state();
     _transition_exprAction__getRetweetCount_transitions1_actions0();

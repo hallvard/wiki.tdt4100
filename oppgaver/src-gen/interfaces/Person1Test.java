@@ -41,7 +41,7 @@ public class Person1Test extends TestCase {
     
   }
   
-  @JExercise(tests = "Person1(String,String);void setGivenName(String)", description = "Tests \n\t\tthe following sequence:\n\t\t<ul>\n\t\t<li>person1.givenName = j</li>\n\t\t</ul>\n")
+  @JExercise(tests = "null(String,String)", description = "Tests \n\t\tthe following sequence:\n\t\t<ul>\n\t\t<li>person1.givenName = j</li>\n\t\t</ul>\n")
   public void testPerson1() {
     _test__Person1_transitions0_effects0_state();
     _transition_exprAction__Person1_transitions1_actions0();

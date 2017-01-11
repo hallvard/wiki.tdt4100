@@ -5,7 +5,6 @@ import java.util.Random;
 
 import junit.framework.TestCase;
 import no.hal.jex.runtime.JExercise;
-import no.hal.jex.standalone.JexStandalone;
 
 @JExercise(
 	description="A Person must contain a name, an email, a birthday and gender. These attributes should be properly encapsulated and have getters and setters that ensure valid attributes"
@@ -163,9 +162,5 @@ public class PersonTest extends TestCase {
 				}
 			}
 		}
-	}
-	
-	public static void main(String[] args) {
-		JexStandalone.main(PersonTest.class);
 	}
 }

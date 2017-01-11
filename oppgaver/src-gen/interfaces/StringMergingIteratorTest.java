@@ -51,7 +51,7 @@ public class StringMergingIteratorTest extends TestCase {
     
   }
   
-  @JExercise(tests = "StringMergingIterator(java.util.Iterator<String>,java.util.Iterator<String>);boolean hasNext();String next()", description = "Tests \n\t\tthe following sequence:\n\t\t<ul>\n\t\t<li>mergingIterator.hasNext, mergingIterator.next==\"a\"</li>\n\t\t<li>mergingIterator.hasNext, mergingIterator.next==\"c\"</li>\n\t\t<li>mergingIterator.hasNext, mergingIterator.next==\"b\"</li>\n\t\t<li>mergingIterator.hasNext, mergingIterator.next==\"d\"</li>\n\t\t</ul>\n")
+  @JExercise(tests = "null(java.util.Iterator<String>,java.util.Iterator<String>)", description = "Tests \n\t\tthe following sequence:\n\t\t<ul>\n\t\t<li>mergingIterator.hasNext, mergingIterator.next==\"a\"</li>\n\t\t<li>mergingIterator.hasNext, mergingIterator.next==\"c\"</li>\n\t\t<li>mergingIterator.hasNext, mergingIterator.next==\"b\"</li>\n\t\t<li>mergingIterator.hasNext, mergingIterator.next==\"d\"</li>\n\t\t</ul>\n")
   public void testMergeLists() {
     StringMergingIterator mergingIterator = _init__mergeLists_mergingIterator();
     _transition_exprAction__mergeLists_transitions0_actions0(mergingIterator);
@@ -69,7 +69,7 @@ public class StringMergingIteratorTest extends TestCase {
     
   }
   
-  @JExercise(tests = "StringMergingIterator(java.util.Iterator<String>,java.util.Iterator<String>);boolean hasNext();String next()", description = "Tests \n\t\tthe following sequence:\n\t\t<ul>\n\t\t<li>mergingIterator.hasNext, mergingIterator.next==\"a\"</li>\n\t\t<li>mergingIterator.hasNext, mergingIterator.next==\"b\"</li>\n\t\t</ul>\n")
+  @JExercise(tests = "null(java.util.Iterator<String>,java.util.Iterator<String>)", description = "Tests \n\t\tthe following sequence:\n\t\t<ul>\n\t\t<li>mergingIterator.hasNext, mergingIterator.next==\"a\"</li>\n\t\t<li>mergingIterator.hasNext, mergingIterator.next==\"b\"</li>\n\t\t</ul>\n")
   public void testMergeOneEmpty() {
     StringMergingIterator mergingIterator = _init__mergeOneEmpty_mergingIterator();
     _transition_exprAction__mergeOneEmpty_transitions0_actions0(mergingIterator);
@@ -81,7 +81,7 @@ public class StringMergingIteratorTest extends TestCase {
     
   }
   
-  @JExercise(tests = "StringMergingIterator(java.util.Iterator<String>,java.util.Iterator<String>)", description = "Tests \n\t\tinitialization\n")
+  @JExercise(tests = "null(java.util.Iterator<String>,java.util.Iterator<String>)", description = "Tests \n\t\tinitialization\n")
   public void testMergeBothEmpty() {
     StringMergingIterator mergingIterator = _init__mergeBothEmpty_mergingIterator();
     _test__mergeBothEmpty_transitions0_effects0_state(mergingIterator);

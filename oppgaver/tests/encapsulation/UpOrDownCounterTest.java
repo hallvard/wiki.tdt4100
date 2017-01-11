@@ -2,7 +2,6 @@ package encapsulation;
 
 import junit.framework.TestCase;
 import no.hal.jex.runtime.JExercise;
-import no.hal.jex.standalone.JexStandalone;
 
 @JExercise(
 		tests="", // We don't want to test this element as a whole, since we can test the parts.
@@ -77,11 +76,5 @@ public class UpOrDownCounterTest extends TestCase {
 	public void testCountDown() {
 		UpOrDownCounter counter31 = new UpOrDownCounter(3, 1);
 		testCount(counter31, 1, -1);
-	}
-
-	//
-
-	public static void main(String[] args) {
-		JexStandalone.main(UpOrDownCounterTest.class);
 	}
 }

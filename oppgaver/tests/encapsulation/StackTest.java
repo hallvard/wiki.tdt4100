@@ -2,7 +2,6 @@ package encapsulation;
 
 import junit.framework.TestCase;
 import no.hal.jex.runtime.JExercise;
-import no.hal.jex.standalone.JexStandalone;
 
 @JExercise(
 	description="A Stack must support operations for pushing, peeking, poping, and returning the size of the stack. A RandomStringGenerator must support generation of random strings."
@@ -74,9 +73,5 @@ public class StackTest extends TestCase {
 		stack.push("2");
 		assertEquals(3, stack.getSize());
 		
-	}
-	
-	public static void main(String[] args) {
-		JexStandalone.main(StackTest.class);
 	}
 }
