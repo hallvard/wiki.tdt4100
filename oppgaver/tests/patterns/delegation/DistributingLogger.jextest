@@ -1,6 +1,5 @@
 test patterns.delegation.DistributingLogger
 
-import delegation.StreamLogger
 import java.io.ByteArrayOutputStream
 
 instance String formatString = "%s: %s (%s)"

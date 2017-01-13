@@ -3,7 +3,7 @@ test inheritance.CardDeck
 import java.util.Collection
 import java.util.Iterator
 
-instance deck = new CardDeck(2)
+instance CardDeck deck = new CardDeck(2)
 	
 sequence addCard "Tester maxCardCount" {
 	-->

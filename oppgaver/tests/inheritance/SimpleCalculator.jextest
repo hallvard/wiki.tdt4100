@@ -138,6 +138,5 @@ sequence chainedCalculation "Tester sammenhengende regnestykker: (3.5+1.1)*2.5" 
 
 method == (double d1, double d2) {
     val epsilon = 0.000001d
-    d1 >= d2 - epsilon && d1 <= d2 + epsilon
+	d1 - epsilon < d2 && d1 + epsilon > d2
 }
-

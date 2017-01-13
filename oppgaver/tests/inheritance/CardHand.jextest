@@ -3,7 +3,7 @@ test inheritance.CardHand
 import java.util.Collection
 import java.util.Iterator
 
-instance hand = new CardHand(2)
+instance CardHand hand = new CardHand(2)
 
 instance Card s1 = new Card('S', 1), Card c2 = new Card('C', 2)
 instance Collection<Card> expected = #[s1, c2] 

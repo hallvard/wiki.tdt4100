@@ -1,6 +1,6 @@
 test inheritance.DebitAccount
 
-instance sub = new DebitAccount()
+instance DebitAccount sub = new DebitAccount()
 
 sequence deposit "Setter inn midler"{
 	state {

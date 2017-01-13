@@ -1,10 +1,10 @@
 test inheritance.SpaceObject
 
 instance
-	spaceObject = new SpaceObject(),
-	asteroid1 = new Asteroid(10, 2),
-	asteroid2 = new Asteroid(10, 3),
-	spaceShip = new SpaceShip()
+	SpaceObject spaceObject = new SpaceObject(),
+	SpaceObject asteroid1 = new Asteroid(10, 2),
+	SpaceObject asteroid2 = new Asteroid(10, 3),
+	SpaceObject spaceShip = new SpaceShip()
 
 sequence mass {
 	-->
@@ -69,10 +69,10 @@ sequence applyForce {
 }
 
 instance
-	so1 = createSpaceObject(0.0d, 0.0d, 7.0, 0.0d,	7.0, 7.0d, 0.0, 7.0d),
-	so2 = createSpaceObject(2.0d, 2.0d, 8.0, 2.0d, 8.0, 8.0d, 2.0, 8.0d),
-	so3 = createSpaceObject(5.0d, 1.0d, 9.0, 5.0d, 5.0, 9.0d, 1.0, 5.0d),
-	so4 = createSpaceObject(9.0d, 6.0d, 13.0, 10.0d, 9.0, 14.0d, 5.0, 10.0d)
+	SpaceObject so1 = createSpaceObject(0.0d, 0.0d, 7.0, 0.0d,	7.0, 7.0d, 0.0, 7.0d),
+	SpaceObject so2 = createSpaceObject(2.0d, 2.0d, 8.0, 2.0d, 8.0, 8.0d, 2.0, 8.0d),
+	SpaceObject so3 = createSpaceObject(5.0d, 1.0d, 9.0, 5.0d, 5.0, 9.0d, 1.0, 5.0d),
+	SpaceObject so4 = createSpaceObject(9.0d, 6.0d, 13.0, 10.0d, 9.0, 14.0d, 5.0, 10.0d)
 
 sequence intersects1 {
 	--> 
@@ -118,7 +118,7 @@ method SpaceObject createSpaceObject(double... xys) {
 	so;
 }
 
-method boolean operator_equals(double n1, double n2) {
-	val epsilon = 0.000001d
-	n1 + epsilon >= n2 && n1 - epsilon <= n2
+method == (double d1, double d2) {
+    val epsilon = 0.000001d
+	d1 - epsilon < d2 && d1 + epsilon > d2
 }

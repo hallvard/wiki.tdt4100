@@ -1,6 +1,6 @@
 test inheritance.SavingsAccount2
 
-instance sub = new SavingsAccount2(1, 50.0)
+instance SavingsAccount2 sub = new SavingsAccount2(1, 50.0)
 
 sequence deposit "Setter inn midler" {
 	state {

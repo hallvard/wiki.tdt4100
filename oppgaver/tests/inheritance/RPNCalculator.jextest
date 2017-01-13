@@ -52,5 +52,5 @@ sequence complexCalculation "Regner ut ((1.1 + 2.1) * (7.0 / 2.0)" {
 
 method == (double d1, double d2) {
     val epsilon = 0.000001d
-    d1 >= d2 - epsilon && d1 <= d2 + epsilon
+	d1 - epsilon < d2 && d1 + epsilon > d2
 }

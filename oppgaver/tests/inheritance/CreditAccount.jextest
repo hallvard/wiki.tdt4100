@@ -1,6 +1,6 @@
 test inheritance.CreditAccount
 
-instance sub = new CreditAccount(10000.0)
+instance CreditAccount sub = new CreditAccount(10000.0)
 
 sequence deposit "Setter inn midler"{
 	state {
