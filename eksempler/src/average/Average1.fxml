@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+
+<FlowPane xmlns:fx="http://javafx.com/fxml/1" fx:controller="average.FxmlAverage1">
+	<TextField fx:id="numInput" promptText="another num"/>
+	<Button text="Another" onAction="#handleAnotherNumAction"/>
+	<Label fx:id="averageOutput"  text="Current average: "/>
+</FlowPane>
+
