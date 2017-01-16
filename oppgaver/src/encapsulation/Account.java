@@ -10,6 +10,10 @@ public class Account {
 		this.balance = balance;
 		setInterestRate(interestRate);
 	}
+	
+	public Account(){
+		
+	}
 
 	protected void checkNotNegative(double value, String valueName) {
 		if (value < 0) {
