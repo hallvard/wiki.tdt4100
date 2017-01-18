@@ -9,7 +9,7 @@
 <?import javafx.collections.*?>
 <?import java.lang.String?>
 
-<VBox xmlns:fx="http://javafx.com/fxml" spacing="30">
+<VBox xmlns:fx="http://javafx.com/fxml" spacing="30" fx:controller="encapsulation.NimController">
 	<HBox spacing="5">
 		<Text text="New Nim game with pile sizes " />
 		<TextField fx:id="pileSizeField" promptText="pileSize"/>
