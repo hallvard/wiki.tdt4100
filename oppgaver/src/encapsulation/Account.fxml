@@ -9,7 +9,7 @@
 
 <HBox style="-fx-padding: 0px 150px 0px 0px" xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1" fx:controller="encapsulation.AccountController">
 	
-	<VBox spacing="15">
+	<VBox prefHeight="531.0" prefWidth="630.0" spacing="15">
 		<HBox.margin>
 	        <Insets>
 	            <bottom>10</bottom>
@@ -19,7 +19,7 @@
 	        </Insets>
 	    </HBox.margin>
 	    
-	    <Text fx:id="toStringText" text="LOL">
+	    <Text fx:id="toStringText" text="Account">
 	    	<font>
                 <Font name="Arial Black" size="16.0" />
             </font>
@@ -45,10 +45,12 @@
 	    
 	    <HBox spacing="10">
 	    	<TextField fx:id="setInterestRateTextField" />
-	    	<Button onAction="#handleSetInterestRate" text="Set interest rate" />
+	    	<Button onAction="#handleSetInterestRate" text="Set new interest rate" />
 	    </HBox>
 	    
     	<Button onAction="#handleAddInterest" text="Add interest" />
+      <Label text="Exception" />
+      <TextArea fx:id="exceptionTextArea" prefHeight="253.0" prefWidth="630.0" />
 		
 	</VBox>
 </HBox>
