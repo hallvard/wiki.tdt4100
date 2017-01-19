@@ -51,7 +51,7 @@ public class Vehicle {
 		checkValidFuel(fuel);
 		checkValidVehicleType(vehicleType);
 		if(fuel == 'H' && vehicleType == 'M'){
-			throw new IllegalStateException("fuel can not be hydrogen (H) when vehicle type is motorcycle (C)");
+			throw new IllegalArgumentException("fuel can not be hydrogen (H) when vehicle type is motorcycle (C)");
 		}
 	}
 

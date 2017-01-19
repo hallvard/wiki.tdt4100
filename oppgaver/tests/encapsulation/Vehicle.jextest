@@ -30,7 +30,7 @@ sequence constructorCorrectUse "Korrekt bruk av konstruktør" {
 sequence constructorInvalidFuel "Ugyldig drivstoff" {
 	-- vehicle = new Vehicle('Y', 'C', "BN12345") throws IllegalArgumentException
 	
-	-- vehicle = new Vehicle('H', 'M', "HY1234") throws IllegalStateException
+	-- vehicle = new Vehicle('H', 'M', "HY1234") throws IllegalArgumentException
 }
 
 sequence constructorInvalidVehicleType "Ugyldig kjøretøytype" {
