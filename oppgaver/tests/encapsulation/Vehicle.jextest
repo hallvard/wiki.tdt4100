@@ -2,7 +2,7 @@ test class encapsulation.Vehicle {
 	new(char fuel, char vehicleType, String registrationNumber)
 	
 	String getRegistrationNumber()
-	char getFuel()
+	char getFuelType()
 	char getVehicleType()
 	
 	void setRegistrationNumber(String regNr)
@@ -12,94 +12,94 @@ test class encapsulation.Vehicle {
 instance Vehicle vehicle = null
 
 sequence constructorCorrectUse "Korrekt bruk av konstruktør" {
-	-- vehicle = new Vehicle('D', 'C', "BN12345") -->
+	-- vehicle = new Vehicle('C', 'D', "BN12345") -->
 	state {
 		getRegistrationNumber() == "BN12345";
-		getFuel() == 'D';
+		getFuelType() == 'D';
 		getVehicleType() == 'C';
 	}
 	
-	-- vehicle = new Vehicle('E', 'M', "EL1234") -->
+	-- vehicle = new Vehicle('M', 'E', "EL1234") -->
 	state {
 		getRegistrationNumber() == "EL1234";
-		getFuel() == 'E';
+		getFuelType() == 'E';
 		getVehicleType() == 'M';
 	}
 }
 
 sequence constructorInvalidFuel "Ugyldig drivstoff" {
-	-- vehicle = new Vehicle('Y', 'C', "BN12345") throws IllegalArgumentException
+	-- vehicle = new Vehicle('C', 'Y', "BN12345") throws IllegalArgumentException
 	
-	-- vehicle = new Vehicle('H', 'M', "HY1234") throws IllegalArgumentException
+	-- vehicle = new Vehicle('M', 'H', "HY1234") throws IllegalArgumentException
 }
 
 sequence constructorInvalidVehicleType "Ugyldig kjøretøytype" {
-	-- vehicle = new Vehicle('D', 'P', "BN12345") throws IllegalArgumentException
+	-- vehicle = new Vehicle('P', 'D', "BN12345") throws IllegalArgumentException
 }
 
 sequence constructorInvalidRegistrationNumber "Ugyldig registreringsnumber" {
-	-- vehicle = new Vehicle('B', 'C', "A1234") throws IllegalArgumentException
-	-- vehicle = new Vehicle('B', 'C', "A12345") throws IllegalArgumentException
-	-- vehicle = new Vehicle('B', 'C', "AB1234") throws IllegalArgumentException
-	-- vehicle = new Vehicle('B', 'C', "AB123456") throws IllegalArgumentException
-	-- vehicle = new Vehicle('B', 'C', "ABC1234") throws IllegalArgumentException
-	-- vehicle = new Vehicle('B', 'C', "AÆ12345") throws IllegalArgumentException
-	-- vehicle = new Vehicle('B', 'C', "ab12345") throws IllegalArgumentException
-	-- vehicle = new Vehicle('B', 'C', "A1B2345") throws IllegalArgumentException
+	-- vehicle = new Vehicle('C', 'G', "A1234") throws IllegalArgumentException
+	-- vehicle = new Vehicle('C', 'G', "A12345") throws IllegalArgumentException
+	-- vehicle = new Vehicle('C', 'G', "AB1234") throws IllegalArgumentException
+	-- vehicle = new Vehicle('C', 'G', "AB123456") throws IllegalArgumentException
+	-- vehicle = new Vehicle('C', 'G', "ABC1234") throws IllegalArgumentException
+	-- vehicle = new Vehicle('C', 'G', "AÆ12345") throws IllegalArgumentException
+	-- vehicle = new Vehicle('C', 'G', "ab12345") throws IllegalArgumentException
+	-- vehicle = new Vehicle('C', 'G', "A1B2345") throws IllegalArgumentException
 	
-	-- vehicle = new Vehicle('B', 'M', "A1234") throws IllegalArgumentException
-	-- vehicle = new Vehicle('B', 'M', "A12345") throws IllegalArgumentException
-	-- vehicle = new Vehicle('B', 'M', "AB123") throws IllegalArgumentException
-	-- vehicle = new Vehicle('B', 'M', "AB12345") throws IllegalArgumentException
-	-- vehicle = new Vehicle('B', 'M', "ABC1234") throws IllegalArgumentException
-	-- vehicle = new Vehicle('B', 'M', "ABC12345") throws IllegalArgumentException
-	-- vehicle = new Vehicle('B', 'C', "AÅ1234") throws IllegalArgumentException
-	-- vehicle = new Vehicle('B', 'C', "ab1234") throws IllegalArgumentException
-	
-	
-	-- vehicle = new Vehicle('B', 'C', "EL12345") throws IllegalArgumentException
-	-- vehicle = new Vehicle('B', 'C', "EK12345") throws IllegalArgumentException
-	-- vehicle = new Vehicle('B', 'C', "HY12345") throws IllegalArgumentException
-	
-	-- vehicle = new Vehicle('D', 'C', "EL12345") throws IllegalArgumentException
-	-- vehicle = new Vehicle('D', 'C', "EK12345") throws IllegalArgumentException
-	-- vehicle = new Vehicle('D', 'C', "HY12345") throws IllegalArgumentException
-	
-	-- vehicle = new Vehicle('H', 'C', "EL12345") throws IllegalArgumentException
-	-- vehicle = new Vehicle('H', 'C', "EK12345") throws IllegalArgumentException
-	-- vehicle = new Vehicle('H', 'C', "BN12345") throws IllegalArgumentException
-	
-	-- vehicle = new Vehicle('E', 'C', "HY12345") throws IllegalArgumentException
-	-- vehicle = new Vehicle('E', 'C', "BN12345") throws IllegalArgumentException
+	-- vehicle = new Vehicle('M', 'G', "A1234") throws IllegalArgumentException
+	-- vehicle = new Vehicle('M', 'G', "A12345") throws IllegalArgumentException
+	-- vehicle = new Vehicle('M', 'G', "AB123") throws IllegalArgumentException
+	-- vehicle = new Vehicle('M', 'G', "AB12345") throws IllegalArgumentException
+	-- vehicle = new Vehicle('M', 'G', "ABC1234") throws IllegalArgumentException
+	-- vehicle = new Vehicle('M', 'G', "ABC12345") throws IllegalArgumentException
+	-- vehicle = new Vehicle('C', 'G', "AÅ1234") throws IllegalArgumentException
+	-- vehicle = new Vehicle('C', 'G', "ab1234") throws IllegalArgumentException
 	
 	
-	-- vehicle = new Vehicle('B', 'M', "EL1234") throws IllegalArgumentException
-	-- vehicle = new Vehicle('B', 'M', "EK1234") throws IllegalArgumentException
-	-- vehicle = new Vehicle('B', 'M', "HY1234") throws IllegalArgumentException
+	-- vehicle = new Vehicle('C', 'G', "EL12345") throws IllegalArgumentException
+	-- vehicle = new Vehicle('C', 'G', "EK12345") throws IllegalArgumentException
+	-- vehicle = new Vehicle('C', 'G', "HY12345") throws IllegalArgumentException
 	
-	-- vehicle = new Vehicle('D', 'M', "EL1234") throws IllegalArgumentException
-	-- vehicle = new Vehicle('D', 'M', "EK1234") throws IllegalArgumentException
-	-- vehicle = new Vehicle('D', 'M', "HY1234") throws IllegalArgumentException
+	-- vehicle = new Vehicle('C', 'D', "EL12345") throws IllegalArgumentException
+	-- vehicle = new Vehicle('C', 'D', "EK12345") throws IllegalArgumentException
+	-- vehicle = new Vehicle('C', 'D', "HY12345") throws IllegalArgumentException
 	
-	-- vehicle = new Vehicle('E', 'M', "HY1234") throws IllegalArgumentException
-	-- vehicle = new Vehicle('E', 'M', "BN1234") throws IllegalArgumentException
+	-- vehicle = new Vehicle('C', 'H', "EL12345") throws IllegalArgumentException
+	-- vehicle = new Vehicle('C', 'H', "EK12345") throws IllegalArgumentException
+	-- vehicle = new Vehicle('C', 'H', "BN12345") throws IllegalArgumentException
+	
+	-- vehicle = new Vehicle('C', 'E', "HY12345") throws IllegalArgumentException
+	-- vehicle = new Vehicle('C', 'E', "BN12345") throws IllegalArgumentException
+	
+	
+	-- vehicle = new Vehicle('M', 'G', "EL1234") throws IllegalArgumentException
+	-- vehicle = new Vehicle('M', 'G', "EK1234") throws IllegalArgumentException
+	-- vehicle = new Vehicle('M', 'G', "HY1234") throws IllegalArgumentException
+	
+	-- vehicle = new Vehicle('M', 'D', "EL1234") throws IllegalArgumentException
+	-- vehicle = new Vehicle('M', 'D', "EK1234") throws IllegalArgumentException
+	-- vehicle = new Vehicle('M', 'D', "HY1234") throws IllegalArgumentException
+	
+	-- vehicle = new Vehicle('M', 'E', "HY1234") throws IllegalArgumentException
+	-- vehicle = new Vehicle('M', 'E', "BN1234") throws IllegalArgumentException
 }
 
 sequence setRegistrationNumberCorrectUse "Endre registreringsnummer på gyldig vis" {
 	
-	-- vehicle = new Vehicle('D', 'C', "BN12345"),
+	-- vehicle = new Vehicle('C', 'D', "BN12345"),
 	setRegistrationNumber("AB54321") -->
 	state {
 		getRegistrationNumber() == "AB54321";
-		getFuel() == 'D';
+		getFuelType() == 'D';
 		getVehicleType() == 'C';
 	}
 	
-	-- vehicle = new Vehicle('E', 'M', "EK1234"),
+	-- vehicle = new Vehicle('M', 'E', "EK1234"),
 	setRegistrationNumber("EL4321") -->
 	state {
 		getRegistrationNumber() == "EL4321";
-		getFuel() == 'E';
+		getFuelType() == 'E';
 		getVehicleType() == 'M';
 	}
 	
@@ -107,26 +107,26 @@ sequence setRegistrationNumberCorrectUse "Endre registreringsnummer på gyldig v
 
 sequence setRegistrationNumberInvalidUseDoesntChangeState "Prøver å endre registreringsnummer uten at tilstanden skal påvirkes" {
 	
-	-- vehicle = new Vehicle('D', 'C', "BN12345"),
+	-- vehicle = new Vehicle('C', 'D', "BN12345"),
 	setRegistrationNumber("AB654321") throws IllegalArgumentException -->
 	state {
 		getRegistrationNumber() == "BN12345";
-		getFuel() == 'D';
+		getFuelType() == 'D';
 		getVehicleType() == 'C';
 	}
 	
-	-- vehicle = new Vehicle('E', 'M', "EL1234"),
+	-- vehicle = new Vehicle('M', 'E', "EL1234"),
 	setRegistrationNumber("HY1234") throws IllegalArgumentException -->
 	state {
 		getRegistrationNumber() == "EL1234";
-		getFuel() == 'E';
+		getFuelType() == 'E';
 		getVehicleType() == 'M';
 	}
 	
 }
 
 sequence setRegistrationNumberInvalidUse "Prøver å endre registreringsnummer til noe ugyldig" {
-	-- vehicle = new Vehicle('B', 'C', "AB12345") --> state {}
+	-- vehicle = new Vehicle('C', 'G', "AB12345") --> state {}
 	-- setRegistrationNumber("A1234") throws IllegalArgumentException
 	-- setRegistrationNumber("A12345") throws IllegalArgumentException
 	-- setRegistrationNumber("AB1234") throws IllegalArgumentException
@@ -136,7 +136,7 @@ sequence setRegistrationNumberInvalidUse "Prøver å endre registreringsnummer t
 	-- setRegistrationNumber("ab12345") throws IllegalArgumentException
 	-- setRegistrationNumber("A1B2345") throws IllegalArgumentException
 	
-	-- vehicle = new Vehicle('B', 'M', "AB1234") --> state {}
+	-- vehicle = new Vehicle('M', 'G', "AB1234") --> state {}
 	-- setRegistrationNumber("A1234") throws IllegalArgumentException
 	-- setRegistrationNumber("A12345") throws IllegalArgumentException
 	-- setRegistrationNumber("AB123") throws IllegalArgumentException
@@ -147,37 +147,37 @@ sequence setRegistrationNumberInvalidUse "Prøver å endre registreringsnummer t
 	-- setRegistrationNumber("ab1234") throws IllegalArgumentException
 	
 	
-	-- vehicle = new Vehicle('B', 'C', "AB12345") --> state {}
+	-- vehicle = new Vehicle('C', 'G', "AB12345") --> state {}
 	-- setRegistrationNumber("EL12345") throws IllegalArgumentException
 	-- setRegistrationNumber("EK12345") throws IllegalArgumentException
 	-- setRegistrationNumber("HY12345") throws IllegalArgumentException
 	
-	-- vehicle = new Vehicle('D', 'C', "AB12345") --> state {}
+	-- vehicle = new Vehicle('C', 'D', "AB12345") --> state {}
 	-- setRegistrationNumber("EL12345") throws IllegalArgumentException
 	-- setRegistrationNumber("EK12345") throws IllegalArgumentException
 	-- setRegistrationNumber("HY12345") throws IllegalArgumentException
 	
-	-- vehicle = new Vehicle('H', 'C', "HY12345") --> state {}
+	-- vehicle = new Vehicle('C', 'H', "HY12345") --> state {}
 	-- setRegistrationNumber("EL12345") throws IllegalArgumentException
 	-- setRegistrationNumber("EK12345") throws IllegalArgumentException
 	-- setRegistrationNumber("BN12345") throws IllegalArgumentException
 	
-	-- vehicle = new Vehicle('E', 'C', "EL12345") --> state {}
+	-- vehicle = new Vehicle('C', 'E', "EL12345") --> state {}
 	-- setRegistrationNumber("HY12345") throws IllegalArgumentException
 	-- setRegistrationNumber("BN12345") throws IllegalArgumentException
 	
 	
-	-- vehicle = new Vehicle('B', 'M', "AB1234") --> state {}
+	-- vehicle = new Vehicle('M', 'G', "AB1234") --> state {}
 	-- setRegistrationNumber("EL1234") throws IllegalArgumentException
 	-- setRegistrationNumber("EK1234") throws IllegalArgumentException
 	-- setRegistrationNumber("HY1234") throws IllegalArgumentException
 	
-	-- vehicle = new Vehicle('D', 'M', "AB1234") --> state {}
+	-- vehicle = new Vehicle('M', 'D', "AB1234") --> state {}
 	-- setRegistrationNumber("EL1234") throws IllegalArgumentException
 	-- setRegistrationNumber("EK1234") throws IllegalArgumentException
 	-- setRegistrationNumber("HY1234") throws IllegalArgumentException
 	
-	-- vehicle = new Vehicle('E', 'M', "EK1234") --> state {}
+	-- vehicle = new Vehicle('M', 'E', "EK1234") --> state {}
 	-- setRegistrationNumber("HY1234") throws IllegalArgumentException
 	-- setRegistrationNumber("BN1234") throws IllegalArgumentException
 }
