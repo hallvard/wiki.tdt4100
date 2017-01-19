@@ -42,9 +42,9 @@ public class VehicleTest extends TestCase {
     }
     try {
       _transition_exprAction__constructorInvalidFuel_transitions1_actions0(vehicle);
-      fail("IllegalStateException should be thrown after vehicle = new Vehicle('H', 'M', \"HY1234\")");
+      fail("IllegalArgumentException should be thrown after vehicle = new Vehicle('H', 'M', \"HY1234\")");
     } catch (Exception e_1) {
-      assertTrue("IllegalStateException should be thrown after vehicle = new Vehicle('H', 'M', \"HY1234\")", e_1 instanceof IllegalStateException);
+      assertTrue("IllegalArgumentException should be thrown after vehicle = new Vehicle('H', 'M', \"HY1234\")", e_1 instanceof IllegalArgumentException);
     }
     
   }
