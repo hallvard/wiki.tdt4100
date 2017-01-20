@@ -1,5 +1,5 @@
 test class encapsulation.Vehicle {
-	new(char fuel, char vehicleType, String registrationNumber)
+	new(char vehicleType, char fuelType, String registrationNumber)
 	
 	String getRegistrationNumber()
 	char getFuelType()
