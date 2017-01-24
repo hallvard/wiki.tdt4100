@@ -79,13 +79,4 @@
     	</HBox>
 		
 	</VBox>
-	
-	<VBox>
-		<Text text="Exception:">
-	    	<font>
-                <Font name="Arial Black" size="14.0" />
-            </font>
-	    </Text>
-		<TextArea fx:id="exceptionTextArea" prefRowCount="30" />
-	</VBox>
 </HBox>
