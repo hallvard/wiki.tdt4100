@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:exercise="platform:/plugin/no.hal.learning.exercise.model/model/exercise.ecore" xmlns:jdt="platform:/plugin/no.hal.learning.exercise.jdt/model/jdt-exercise.ecore" xmlns:junit="platform:/plugin/no.hal.learning.exercise.junit/model/junit-exercise.ecore" xmlns:workbench="platform:/plugin/no.hal.learning.exercise.workbench/model/workbench-exercise.ecore">
   <exercise:Exercise>
-    <parts xsi:type="exercise:ExercisePart" title="Nim">
+    <parts xsi:type="exercise:ExercisePart" title="RPNCalc">
       <tasks xsi:type="exercise:Task">
-        <q xsi:type="exercise:StringQuestion" question="Write source code for the Nim class."/>
-        <a xsi:type="jdt:JdtSourceEditAnswer" className="encapsulation.Nim"/>
+        <q xsi:type="exercise:StringQuestion" question="Write source code for the RPNCalc class."/>
+        <a xsi:type="jdt:JdtSourceEditAnswer" className="encapsulation.RPNCalc"/>
       </tasks>
       <tasks xsi:type="exercise:Task">
-        <q xsi:type="exercise:StringQuestion" question="Run the Nim JUnit test."/>
-        <a xsi:type="junit:JunitTestAnswer" testRunName="encapsulation.NimTest"/>
+        <q xsi:type="exercise:StringQuestion" question="Run the RPNCalc JUnit test."/>
+        <a xsi:type="junit:JunitTestAnswer" testRunName="encapsulation.RPNCalcTest"/>
       </tasks>
     </parts>
     <parts xsi:type="exercise:ExercisePart" title="Tool usage">
