@@ -30,8 +30,6 @@ public class AccountController {
 	@FXML private Button withdrawButton; 
 	@FXML private Button setInterestRateButton;
 	@FXML private Button addInterestButton;
-	
-	@FXML private TextArea exceptionTextArea;
 
 	@FXML
 	private void initialize() {
@@ -70,76 +68,39 @@ public class AccountController {
 		return Double.parseDouble(textField.getText());
 	}
 	
-	private void showException(Exception e) {
-		StringWriter sw = new StringWriter();
-		PrintWriter pw = new PrintWriter(sw);
-		pw.write(e.getMessage() != null ? e.getMessage() : "No message");
-		pw.write("\n\n");
-		e.printStackTrace(pw);
-		exceptionTextArea.setText(sw.toString());
-	}
-	
-	private void clearException() {
-		exceptionTextArea.setText("");
-	}
-	
-	private void tryAccountManipulation(UnaryOperator<Account> operator) {
-		try {
-			account = operator.apply(account);
-		}
-		catch (Exception e) {
-			showException(e);
-			throw e;
-		}
-		finally {
-			update();
-		}
-		
-		clearException();	
-	}
-	
-	private void tryAccountManipulation(Consumer<Account> consumer) {
-		tryAccountManipulation((a) -> {
-			consumer.accept(a);
-			return a;
-		});
-	}
 	
 	@FXML
 	private void handleNewAccount() {
-		tryAccountManipulation((a) -> {
-			double balance = getDoubleFromTextField(newAccountBalanceTextField);
-			double interestRate = getDoubleFromTextField(newAccountInterestRateTextField);
-			return new Account(balance, interestRate);
-		});
+		double balance = getDoubleFromTextField(newAccountBalanceTextField);
+		double interestRate = getDoubleFromTextField(newAccountInterestRateTextField);
+		account =  new Account(balance, interestRate);
+		update();
 	}
 	
 	@FXML
 	private void handleDeposit() {
-		tryAccountManipulation((a) -> {
-			double amount = getDoubleFromTextField(depositTextField);
-			account.deposit(amount);
-		});
+		double amount = getDoubleFromTextField(depositTextField);
+		account.deposit(amount);
+		update();
 	}
 	
 	@FXML
 	private void handleSetInterestRate() {
-		tryAccountManipulation((a) -> {
-			double interestRate = getDoubleFromTextField(setInterestRateTextField);
-			account.setInterestRate(interestRate);
-		});
+		double interestRate = getDoubleFromTextField(setInterestRateTextField);
+		account.setInterestRate(interestRate);
+		update();
 	}
 	
 	@FXML
 	private void handleAddInterest() {
-		tryAccountManipulation((a) -> account.addInterest());
+		account.addInterest();
+		update();
 	}
 	
 	@FXML
 	private void handleWithdrawal() {
-		tryAccountManipulation((a) -> {
-			double amount = getDoubleFromTextField(withdrawTextField);
-			account.withdraw(amount);
-		});
+		double amount = getDoubleFromTextField(withdrawTextField);
+		account.withdraw(amount);
+		update();
 	}
 }

@@ -60,9 +60,4 @@
     	<Button onAction="#handleAddInterest" text="Add interest" fx:id="addInterestButton" />
 		
 	</VBox>
-	
-	<VBox>
-		<Label text="Exception" />
-    	<TextArea fx:id="exceptionTextArea" prefRowCount="30" />
-	</VBox>
 </HBox>

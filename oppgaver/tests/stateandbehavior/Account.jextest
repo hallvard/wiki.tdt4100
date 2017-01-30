@@ -3,7 +3,6 @@ test class stateandbehavior.Account {
 	double getInterestRate()
 	double setInterestRate(double rate)
 	void deposit(double amount)	
-	void withdraw(double amount)
 	void addInterest()
 }
 
