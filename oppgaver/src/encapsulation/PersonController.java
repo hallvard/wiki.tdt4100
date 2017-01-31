@@ -1,14 +1,10 @@
 package encapsulation;
 
-import java.io.PrintWriter;
-import java.io.StringWriter;
 import java.time.ZoneId;
 import java.util.Date;
-import java.util.function.Consumer;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.DatePicker;
-import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 
 public class PersonController {
@@ -26,8 +22,6 @@ public class PersonController {
 	@FXML private TextField setEmailTextField;
 	@FXML private TextField setSSNTextField;
 	@FXML private DatePicker setBirthdayDatePicker;
-	
-	@FXML private TextArea exceptionTextArea;
 	
 	@FXML
 	private void initialize() {
@@ -50,62 +44,37 @@ public class PersonController {
 		}
 	}
 	
-	private void showException(Exception e) {
-		StringWriter sw = new StringWriter();
-		PrintWriter pw = new PrintWriter(sw);
-		pw.write(e.getMessage() != null ? e.getMessage() : "No message");
-		pw.write("\n\n");
-		e.printStackTrace(pw);
-		exceptionTextArea.setText(sw.toString());
-	}
-	
-	private void clearException() {
-		exceptionTextArea.setText("");
-	}
-	
-	private void tryPersonManipulation(Consumer<Person> personConsumer) {
-		try {
-			personConsumer.accept(person);
-		}
-		catch (Exception e) {
-			showException(e);
-			throw e;
-		}
-		finally {
-			update();
-		}
-		
-		clearException();	
-	}
-	
 	@FXML
 	private void onSetName() {
-		tryPersonManipulation((p) -> p.setName(setNameTextField.getText()));
+		person.setName(setNameTextField.getText());
+		update();
 	}
 	
 	@FXML
 	private void onSetGender() {
-		tryPersonManipulation((p) -> {
-			if(setGenderTextField.getText().length() != 1) {
-				throw new IllegalArgumentException("Gender must be one character (this was caught by the FXML-application controller)");
-			}
-			p.setGender(setGenderTextField.getText().charAt(0));
-		});
+		if(setGenderTextField.getText().length() != 1) {
+			throw new IllegalArgumentException("Gender must be one character (this was caught by the FXML-application controller)");
+		}
+		person.setGender(setGenderTextField.getText().charAt(0));
+		update();
 	}
 	
 	@FXML
 	private void onSetEmail() {
-		tryPersonManipulation((p) -> p.setEmail(setEmailTextField.getText()));
+		person.setEmail(setEmailTextField.getText());
+		update();
 	}
 	
 	@FXML
 	private void onSetSSN() {
-		tryPersonManipulation((p) -> p.setSSN(setSSNTextField.getText()));
+		person.setSSN(setSSNTextField.getText());
+		update();
 	}
 	
 	@FXML
 	private void onSetBirthday() {
-		tryPersonManipulation((p) -> p.setBirthday(new Date(setBirthdayDatePicker.getValue().atStartOfDay(ZoneId.systemDefault()).toEpochSecond() * 1000)));
+		person.setBirthday(new Date(setBirthdayDatePicker.getValue().atStartOfDay(ZoneId.systemDefault()).toEpochSecond() * 1000));
+		update();
 	}
 
 }
