@@ -35,6 +35,10 @@ public class TicTacToe {
 		return player;
 	}
 	
+	public void getInput(String s){
+		play(Character.getNumericValue(s.charAt(0)), Character.getNumericValue(s.charAt(1))); 
+	}
+	
 	public String toString() {
 		String str = "";
 		for (int y = 0; y <= 2; y++) {
