@@ -15,11 +15,11 @@ public class GameController {
 	@FXML
 	TextField inputField ; 
 	
-	//Her må du deklarerere spillet ditt
+	//Her maa du deklarerere spillet ditt
 	TicTacToe game ; 
 	
 	public void initialize(){
-		//Her maa du opprette et objekt av spillet ditt med de variablene som behoves for det - resten av koden vil gå ut ifra at du har kalt den game
+		//Her maa du opprette et objekt av spillet ditt med de variablene som behoves for det - resten av koden vil gaa ut ifra at du har kalt den game
 		game = new TicTacToe() ; 
 		console.setText(game.toString());
 	}
@@ -29,6 +29,7 @@ public class GameController {
 	public void sendInput(){
 		String in = inputField.getText(); 
 		System.out.println(in);
+		//Denne metoden kan hete hva som helst, men husk aa endre det her
 		game.getInput(in); 
 		console.setText(game.toString());
 		
