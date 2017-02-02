@@ -7,8 +7,16 @@
         <a xsi:type="jdt:JdtSourceEditAnswer" className="encapsulation.Card"/>
       </tasks>
       <tasks xsi:type="exercise:Task">
+        <q xsi:type="exercise:StringQuestion" question="Test the Card class, by running it."/>
+        <a xsi:type="jdt:JdtLaunchAnswer" className="encapsulation.Card"/>
+      </tasks>
+      <tasks xsi:type="exercise:Task">
         <q xsi:type="exercise:StringQuestion" question="Write source code for the CardDeck class."/>
         <a xsi:type="jdt:JdtSourceEditAnswer" className="encapsulation.CardDeck"/>
+      </tasks>
+      <tasks xsi:type="exercise:Task">
+        <q xsi:type="exercise:StringQuestion" question="Test the CardDeck class, by running it."/>
+        <a xsi:type="jdt:JdtLaunchAnswer" className="encapsulation.CardDeck"/>
       </tasks>
       <tasks xsi:type="exercise:Task">
         <q xsi:type="exercise:StringQuestion" question="Run the Card JUnit test."/>

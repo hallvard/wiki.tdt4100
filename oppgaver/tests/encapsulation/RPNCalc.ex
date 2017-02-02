@@ -7,6 +7,10 @@
         <a xsi:type="jdt:JdtSourceEditAnswer" className="encapsulation.RPNCalc"/>
       </tasks>
       <tasks xsi:type="exercise:Task">
+        <q xsi:type="exercise:StringQuestion" question="Test the RPNCalc class, by running it."/>
+        <a xsi:type="jdt:JdtLaunchAnswer" className="encapsulation.RPNCalc"/>
+      </tasks>
+      <tasks xsi:type="exercise:Task">
         <q xsi:type="exercise:StringQuestion" question="Run the RPNCalc JUnit test."/>
         <a xsi:type="junit:JunitTestAnswer" testRunName="encapsulation.RPNCalcTest"/>
       </tasks>

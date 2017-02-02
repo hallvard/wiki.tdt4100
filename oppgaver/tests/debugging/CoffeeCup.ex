@@ -3,6 +3,10 @@
   <exercise:Exercise>
     <parts xsi:type="exercise:ExercisePart" title="CoffeeCupProgram">
       <tasks xsi:type="exercise:Task">
+        <q xsi:type="exercise:StringQuestion" question="Test the CoffeeCupProgram class, by running it."/>
+        <a xsi:type="jdt:JdtLaunchAnswer" className="debugging.CoffeeCupProgram"/>
+      </tasks>
+      <tasks xsi:type="exercise:Task">
         <q xsi:type="exercise:StringQuestion" question="Correct the error in the CoffeeCupProgram class"/>
         <a xsi:type="jdt:JdtSourceEditAnswer" className="debugging.CoffeeCupProgram"/>
       </tasks>

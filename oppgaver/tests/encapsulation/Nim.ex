@@ -7,6 +7,10 @@
         <a xsi:type="jdt:JdtSourceEditAnswer" className="encapsulation.Nim"/>
       </tasks>
       <tasks xsi:type="exercise:Task">
+        <q xsi:type="exercise:StringQuestion" question="Test the Nim class, by running it."/>
+        <a xsi:type="jdt:JdtLaunchAnswer" className="encapsulation.Nim"/>
+      </tasks>
+      <tasks xsi:type="exercise:Task">
         <q xsi:type="exercise:StringQuestion" question="Run the Nim JUnit test."/>
         <a xsi:type="junit:JunitTestAnswer" testRunName="encapsulation.NimTest"/>
       </tasks>
