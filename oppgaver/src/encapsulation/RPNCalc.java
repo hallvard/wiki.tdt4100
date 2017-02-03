@@ -45,6 +45,7 @@ public class RPNCalc {
 		return operandStack.get(operandStack.size() - n - 1);
 	}
 
+	// Method used in earlier versions. Currently not a part of the assignment.
 	public double pop(double def) {
 		if (operandStack.isEmpty()) {
 			return def;

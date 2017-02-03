@@ -79,7 +79,7 @@ public class RPNCalcController {
 		String text = getEventButtonText(actionEvent);
 		if ("backspace".equals(text)) {
 			if (input == null || input.length() == 0) {
-				input = String.valueOf(rpn.pop(0.0));
+				input = String.valueOf(rpn.pop());
 			}
 			input = input.substring(0, input.length() - 1);
 		}
