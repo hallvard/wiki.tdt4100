@@ -11,6 +11,10 @@
       <a xsi:type="jdt:JdtSourceEditAnswer" className="objectstructures.StopWatchManager"/>
     </tasks>
     <tasks xsi:type="exercise:Task">
+      <q xsi:type="exercise:StringQuestion" question="Test the StopWatchManager class, by running its main method."/>
+      <a xsi:type="jdt:JdtLaunchAnswer" className="objectstructures.StopWatchManager"/>
+    </tasks>
+    <tasks xsi:type="exercise:Task">
       <q xsi:type="exercise:StringQuestion" question="Run the StopWatchManagerTest."/>
       <a xsi:type="junit:JunitTestAnswer" testRunName="objectstructures.StopWatchManagerTest"/>
     </tasks>
@@ -18,7 +22,7 @@
   <parts xsi:type="exercise:ExercisePart" title="Tool usage">
       <tasks xsi:type="exercise:Task">
         <q xsi:type="exercise:StringQuestion" question="Use breakpoints to debug code."/>
-        <a xsi:type="workbench:DebugEventAnswer" action="suspend.breakpoint"/>
+        <a xsi:type="workbench:DebugEventAnswer" action="suspend.breakpoint" elementId="objectstructures.StopWatch*"/>
       </tasks>
       <tasks xsi:type="exercise:Task">
         <q xsi:type="exercise:StringQuestion" question="Use the debug command Step Over"/>
