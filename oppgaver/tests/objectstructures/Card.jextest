@@ -3,6 +3,7 @@ test class objectstructures.Card {
 	
 	char getSuit()
 	int getFace()
+	String toString()
 }
 
 instance Card c = null
