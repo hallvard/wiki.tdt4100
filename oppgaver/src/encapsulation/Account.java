@@ -47,7 +47,7 @@ public class Account {
 		checkNotNegative(amount, "Amount");
 		double newBalance = balance - amount;
 		if (newBalance < 0) {
-			throw new IllegalStateException("The balance cannot become negative: " + newBalance);
+			throw new IllegalArgumentException("The balance cannot become negative: " + newBalance);
 		}
 		balance = newBalance;
 	}
