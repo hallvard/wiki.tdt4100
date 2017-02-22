@@ -15,6 +15,14 @@
       <q xsi:type="exercise:StringQuestion" question="Write source code for the Person2 class."/>
       <a xsi:type="jdt:JdtSourceEditAnswer" className="interfaces.Person2"/>
     </tasks>
+      <tasks xsi:type="exercise:Task">
+        <q xsi:type="exercise:StringQuestion" question="Test the Person1 class, by running its main method."/>
+        <a xsi:type="jdt:JdtLaunchAnswer" className="interfaces.Person1"/>
+      </tasks>
+      <tasks xsi:type="exercise:Task">
+        <q xsi:type="exercise:StringQuestion" question="Test the Person2 class, by running its main method."/>
+        <a xsi:type="jdt:JdtLaunchAnswer" className="interfaces.Person2"/>
+      </tasks>
     <tasks xsi:type="exercise:Task">
       <q xsi:type="exercise:StringQuestion" question="Run the Person1Test JUnit test."/>
       <a xsi:type="junit:JunitTestAnswer" testRunName="interfaces.Person1Test"/>
@@ -29,6 +37,10 @@
       <q xsi:type="exercise:StringQuestion" question="Write source code for the NamedComparator class."/>
       <a xsi:type="jdt:JdtSourceEditAnswer" className="interfaces.NamedComparator"/>
     </tasks>
+      <tasks xsi:type="exercise:Task">
+        <q xsi:type="exercise:StringQuestion" question="Test the NamedComparator class, by running its main method."/>
+        <a xsi:type="jdt:JdtLaunchAnswer" className="interfaces.NamedComparator"/>
+      </tasks>
     <tasks xsi:type="exercise:Task">
       <q xsi:type="exercise:StringQuestion" question="Run the NamedComparatorTest JUnit test."/>
       <a xsi:type="junit:JunitTestAnswer" testRunName="interfaces.NamedComparatorTest"/>
@@ -36,8 +48,12 @@
   </parts>
   <parts xsi:type="exercise:ExercisePart" title="Tool usage">
     <tasks xsi:type="exercise:Task">
-      <q xsi:type="exercise:StringQuestion" question="Use breakpoints to debug code."/>
-      <a xsi:type="workbench:DebugEventAnswer" action="suspend.breakpoint"/>
+      <q xsi:type="exercise:StringQuestion" question="Use breakpoints to debug the Person classes."/>
+      <a xsi:type="workbench:DebugEventAnswer" elementId="interfaces.Person*" action="suspend.breakpoint"/>
+    </tasks>
+    <tasks xsi:type="exercise:Task">
+      <q xsi:type="exercise:StringQuestion" question="Use breakpoints to debug the NamedComparator class."/>
+      <a xsi:type="workbench:DebugEventAnswer" elementId="interfaces.Named*" action="suspend.breakpoint"/>
     </tasks>
     <tasks xsi:type="exercise:Task">
       <q xsi:type="exercise:StringQuestion" question="Use the debug command Step Over"/>

@@ -9,12 +9,20 @@
       <q xsi:type="exercise:StringQuestion" question="Write source code for the StringGridImpl class."/>
       <a xsi:type="jdt:JdtSourceEditAnswer" className="interfaces.StringGridImpl"/>
     </tasks>
+      <tasks xsi:type="exercise:Task">
+        <q xsi:type="exercise:StringQuestion" question="Test the StringGridImpl class, by running its main method."/>
+        <a xsi:type="jdt:JdtLaunchAnswer" className="interfaces.StringGridImpl"/>
+      </tasks>
   </parts>
   <parts xsi:type="exercise:ExercisePart" title="StringGridIterator">
     <tasks xsi:type="exercise:Task">
       <q xsi:type="exercise:StringQuestion" question="Write source code for the StringGridIterator class."/>
       <a xsi:type="jdt:JdtSourceEditAnswer" className="interfaces.StringGridIterator"/>
     </tasks>
+      <tasks xsi:type="exercise:Task">
+        <q xsi:type="exercise:StringQuestion" question="Test the StringGridIterator class, by running its main method."/>
+        <a xsi:type="jdt:JdtLaunchAnswer" className="interfaces.StringGridIterator"/>
+      </tasks>
     <tasks xsi:type="exercise:Task">
       <q xsi:type="exercise:StringQuestion" question="Run the StringGridTest JUnit test."/>
       <a xsi:type="junit:JunitTestAnswer" testRunName="interfaces.StringGridTest"/>
@@ -23,7 +31,7 @@
   <parts xsi:type="exercise:ExercisePart" title="Tool usage">
     <tasks xsi:type="exercise:Task">
       <q xsi:type="exercise:StringQuestion" question="Use breakpoints to debug code."/>
-      <a xsi:type="workbench:DebugEventAnswer" action="suspend.breakpoint"/>
+      <a xsi:type="workbench:DebugEventAnswer" elementId="interfaces.StringGrid*" action="suspend.breakpoint"/>
     </tasks>
     <tasks xsi:type="exercise:Task">
       <q xsi:type="exercise:StringQuestion" question="Use the debug command Step Over"/>

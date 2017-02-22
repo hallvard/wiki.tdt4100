@@ -13,6 +13,18 @@
       <q xsi:type="exercise:StringQuestion" question="Write source code for the TweetsCountComparator class."/>
       <a xsi:type="jdt:JdtSourceEditAnswer" className="interfaces.twitter.TweetsCountComparator"/>
     </tasks>
+      <tasks xsi:type="exercise:Task">
+        <q xsi:type="exercise:StringQuestion" question="Test the UserNameComparator class, by running its main method."/>
+        <a xsi:type="jdt:JdtLaunchAnswer" className="interfaces.twitter.UserNameComparator"/>
+      </tasks>
+      <tasks xsi:type="exercise:Task">
+        <q xsi:type="exercise:StringQuestion" question="Test the FollowersCountComparator class, by running its main method."/>
+        <a xsi:type="jdt:JdtLaunchAnswer" className="interfaces.twitter.FollowersCountComparator"/>
+      </tasks>
+      <tasks xsi:type="exercise:Task">
+        <q xsi:type="exercise:StringQuestion" question="Test the UserNameComparator class, by running its main method."/>
+        <a xsi:type="jdt:JdtLaunchAnswer" className="interfaces.twitter.UserNameComparator"/>
+      </tasks>
     <tasks xsi:type="exercise:Task">
       <q xsi:type="exercise:StringQuestion" question="Run the TwitterAccountTest JUnit test."/>
       <a xsi:type="junit:JunitTestAnswer" testRunName="interfaces.twitter.TwitterAccountTest"/>
@@ -33,7 +45,7 @@
   <parts xsi:type="exercise:ExercisePart" title="Tool usage">
     <tasks xsi:type="exercise:Task">
       <q xsi:type="exercise:StringQuestion" question="Use breakpoints to debug code."/>
-      <a xsi:type="workbench:DebugEventAnswer" action="suspend.breakpoint"/>
+      <a xsi:type="workbench:DebugEventAnswer" elementId="interfaces.twitter.*" action="suspend.breakpoint"/>
     </tasks>
     <tasks xsi:type="exercise:Task">
       <q xsi:type="exercise:StringQuestion" question="Use the debug command Step Over"/>

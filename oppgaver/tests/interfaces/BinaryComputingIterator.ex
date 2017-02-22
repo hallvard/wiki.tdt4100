@@ -5,6 +5,10 @@
       <q xsi:type="exercise:StringQuestion" question="Write source code for the BinaryComputingIterator class."/>
       <a xsi:type="jdt:JdtSourceEditAnswer" className="interfaces.BinaryComputingIterator"/>
     </tasks>
+      <tasks xsi:type="exercise:Task">
+        <q xsi:type="exercise:StringQuestion" question="Test the BinaryComputingIterator class, by running its main method."/>
+        <a xsi:type="jdt:JdtLaunchAnswer" className="interfaces.BinaryComputingIterator"/>
+      </tasks>
     <tasks xsi:type="exercise:Task">
       <q xsi:type="exercise:StringQuestion" question="Run the BinaryComputingIteratorTest JUnit test."/>
       <a xsi:type="junit:JunitTestAnswer" testRunName="interfaces.BinaryComputingIteratorTest"/>
@@ -13,7 +17,7 @@
   <parts xsi:type="exercise:ExercisePart" title="Tool usage">
     <tasks xsi:type="exercise:Task">
       <q xsi:type="exercise:StringQuestion" question="Use breakpoints to debug code."/>
-      <a xsi:type="workbench:DebugEventAnswer" action="suspend.breakpoint"/>
+      <a xsi:type="workbench:DebugEventAnswer" elementId="interfaces.BinaryComputingIterator" action="suspend.breakpoint"/>
     </tasks>
     <tasks xsi:type="exercise:Task">
       <q xsi:type="exercise:StringQuestion" question="Use the debug command Step Over"/>
