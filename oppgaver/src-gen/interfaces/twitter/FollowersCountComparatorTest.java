@@ -112,8 +112,5 @@ public class FollowersCountComparatorTest extends TestCase {
     assertTrue("comparator.compare(ben, aaron) < 0 failed after charlie.follow(ben)", (_compare_1 < 0));
     
   }
-  
-  public static void main(final String[] args) {
-    no.hal.jex.standalone.JexStandalone.main(FollowersCountComparatorTest.class);
-  }
+ 
 }

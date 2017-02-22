@@ -596,7 +596,5 @@ public class TwitterAccountTest extends TestCase {
     
   }
   
-  public static void main(final String[] args) {
-    no.hal.jex.standalone.JexStandalone.main(TwitterAccountTest.class);
-  }
+ 
 }

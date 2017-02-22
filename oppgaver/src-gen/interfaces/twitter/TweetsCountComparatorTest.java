@@ -115,7 +115,4 @@ public class TweetsCountComparatorTest extends TestCase {
     
   }
   
-  public static void main(final String[] args) {
-    no.hal.jex.standalone.JexStandalone.main(TweetsCountComparatorTest.class);
-  }
 }
