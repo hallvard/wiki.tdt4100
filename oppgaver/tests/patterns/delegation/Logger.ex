@@ -4,39 +4,51 @@
     <parts xsi:type="exercise:ExercisePart" title="Logger">
       <tasks xsi:type="exercise:Task">
         <q xsi:type="exercise:StringQuestion" question="Write source code for the ILogger Interface."/>
-        <a xsi:type="jdt:JdtSourceEditAnswer" className="delegation.ILogger"/>
+        <a xsi:type="jdt:JdtSourceEditAnswer" className="patterns.delegation.ILogger"/>
       </tasks>
     </parts>
     <parts xsi:type="exercise:ExercisePart" title="Implementations">
       <tasks xsi:type="exercise:Task">
         <q xsi:type="exercise:StringQuestion" question="Write source code for the StreamLogger Class."/>
-        <a xsi:type="jdt:JdtSourceEditAnswer" className="delegation.StreamLogger"/>
+        <a xsi:type="jdt:JdtSourceEditAnswer" className="patterns.delegation.StreamLogger"/>
+      </tasks>
+      <tasks xsi:type="exercise:Task">
+        <q xsi:type="exercise:StringQuestion" question="Test the StreamLogger class, by running its main method."/>
+        <a xsi:type="jdt:JdtLaunchAnswer" className="patterns.delegation.StreamLogger"/>
       </tasks>
       <tasks xsi:type="exercise:Task">
         <q xsi:type="exercise:StringQuestion" question="Run the StreamLogger JUnit test."/>
-        <a xsi:type="junit:JunitTestAnswer" testRunName="delegation.StreamLoggerTest"/>
+        <a xsi:type="junit:JunitTestAnswer" testRunName="patterns.delegation.StreamLoggerTest"/>
       </tasks>
       <tasks xsi:type="exercise:Task">
         <q xsi:type="exercise:StringQuestion" question="Write source code for the FilteringLogger Class."/>
-        <a xsi:type="jdt:JdtSourceEditAnswer" className="delegation.FilteringLogger"/>
+        <a xsi:type="jdt:JdtSourceEditAnswer" className="patterns.delegation.FilteringLogger"/>
+      </tasks>
+      <tasks xsi:type="exercise:Task">
+        <q xsi:type="exercise:StringQuestion" question="Test the FilteringLogger class, by running its main method."/>
+        <a xsi:type="jdt:JdtLaunchAnswer" className="patterns.delegation.FilteringLogger"/>
       </tasks>
       <tasks xsi:type="exercise:Task">
         <q xsi:type="exercise:StringQuestion" question="Run the FilteringLogger JUnit test."/>
-        <a xsi:type="junit:JunitTestAnswer" testRunName="delegation.FilteringLoggerTest"/>
+        <a xsi:type="junit:JunitTestAnswer" testRunName="patterns.delegation.FilteringLoggerTest"/>
       </tasks>
       <tasks xsi:type="exercise:Task">
         <q xsi:type="exercise:StringQuestion" question="Write source code for the DistributingLogger Class."/>
-        <a xsi:type="jdt:JdtSourceEditAnswer" className="delegation.DistributingLogger"/>
+        <a xsi:type="jdt:JdtSourceEditAnswer" className="patterns.delegation.DistributingLogger"/>
+      </tasks>
+      <tasks xsi:type="exercise:Task">
+        <q xsi:type="exercise:StringQuestion" question="Test the DistributingLogger class, by running its main method."/>
+        <a xsi:type="jdt:JdtLaunchAnswer" className="patterns.delegation.DistributingLogger"/>
       </tasks>
       <tasks xsi:type="exercise:Task">
         <q xsi:type="exercise:StringQuestion" question="Run the DistributingLogger JUnit test."/>
-        <a xsi:type="junit:JunitTestAnswer" testRunName="delegation.DistributingLoggerTest"/>
+        <a xsi:type="junit:JunitTestAnswer" testRunName="patterns.delegation.DistributingLoggerTest"/>
       </tasks>
     </parts>
     <parts xsi:type="exercise:ExercisePart" title="Tool usage">
       <tasks xsi:type="exercise:Task">
         <q xsi:type="exercise:StringQuestion" question="Use breakpoints to debug code."/>
-        <a xsi:type="workbench:DebugEventAnswer" action="suspend.breakpoint"/>
+        <a xsi:type="workbench:DebugEventAnswer" elementId="patterns.delegation.*Logger" action="suspend.breakpoint"/>
       </tasks>
       <tasks xsi:type="exercise:Task">
         <q xsi:type="exercise:StringQuestion" question="Use the debug command Step Over"/>
@@ -50,19 +62,6 @@
         <q xsi:type="exercise:StringQuestion" question="Use the Variables view"/>
         <a xsi:type="workbench:PartTaskAnswer" elementId="org.eclipse.debug.ui.VariableView" action="activated"/>
       </tasks>
-       <tasks xsi:type="exercise:Task">
-     <q xsi:type="exercise:StringQuestion" question="Run the FilteringLogger class."/>
-     <a xsi:type="jdt:JdtLaunchAnswer" className="delegation.FilteringLogger"/>
-   </tasks>
-   <tasks xsi:type="exercise:Task">
-     <q xsi:type="exercise:StringQuestion" question="Run the StreamLogger class."/>
-     <a xsi:type="jdt:JdtLaunchAnswer" className="delegation.StreamLogger"/>
-   </tasks>
-   <tasks xsi:type="exercise:Task">
-     <q xsi:type="exercise:StringQuestion" question="Run the DistributingLogger class."/>
-     <a xsi:type="jdt:JdtLaunchAnswer" className="delegation.DistributingLogger"/>
-   </tasks>
     </parts>
   </exercise:Exercise>
-
 </xmi:XMI>
