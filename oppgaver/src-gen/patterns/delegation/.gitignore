@@ -6,3 +6,11 @@
 /.StreamLoggerTest.java._trace
 /.SummingIteratorTest.java._trace
 /.DistributingLoggerTest.java._trace
+/AppendingIteratorTest.java
+/DistributingLoggerTest.java
+/EvenIteratorTest.java
+/FilteringLoggerTest.java
+/MergingIteratorTest.java
+/SkippingIteratorTest.java
+/StreamLoggerTest.java
+/SummingIteratorTest.java
