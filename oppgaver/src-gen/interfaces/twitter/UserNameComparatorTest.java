@@ -47,16 +47,16 @@ public class UserNameComparatorTest extends TestCase {
   
   @JExercise(tests = "UserNameComparator()", description = "<h3>Sammenligner TwitterAccounts p\u00E5 username.</h3>Tests \n\t\tinitialization\n")
   public void testCompare() {
-    _test__compare_transitions0_effect_state();
+    _test__compare_transitions0_effects0_state();
     
   }
   
-  private void _test__compare_transitions0_effect_state() {
-    _test__compare_transitions0_effect_state_objectTests0_test();
+  private void _test__compare_transitions0_effects0_state() {
+    _test__compare_transitions0_effects0_state_objectTests0_test();
     
   }
   
-  private void _test__compare_transitions0_effect_state_objectTests0_test() {
+  private void _test__compare_transitions0_effects0_state_objectTests0_test() {
     
     int _compare = this.comparator.compare(this.aaron1, this.ben);
     boolean _lessThan = (_compare < 0);
@@ -70,6 +70,4 @@ public class UserNameComparatorTest extends TestCase {
     assertEquals("comparator.compare(aaron1, aaron2) == 0 failed", 0, _compare_2);
     
   }
-  
-  
 }

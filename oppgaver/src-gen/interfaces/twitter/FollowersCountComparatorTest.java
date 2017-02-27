@@ -49,9 +49,9 @@ public class FollowersCountComparatorTest extends TestCase {
   public void testCompare() {
     _transition_exprAction__compare_transitions0_actions0();
     _transition_exprAction__compare_transitions0_actions1();
-    _test__compare_transitions0_effect_state();
+    _test__compare_transitions0_effects0_state();
     _transition_exprAction__compare_transitions1_actions0();
-    _test__compare_transitions1_effect_state();
+    _test__compare_transitions1_effects0_state();
     
   }
   
@@ -75,12 +75,12 @@ public class FollowersCountComparatorTest extends TestCase {
     
   }
   
-  private void _test__compare_transitions0_effect_state() {
-    _test__compare_transitions0_effect_state_objectTests0_test();
+  private void _test__compare_transitions0_effects0_state() {
+    _test__compare_transitions0_effects0_state_objectTests0_test();
     
   }
   
-  private void _test__compare_transitions0_effect_state_objectTests0_test() {
+  private void _test__compare_transitions0_effects0_state_objectTests0_test() {
     
     int _compare = this.comparator.compare(this.aaron, this.ben);
     assertEquals("comparator.compare(aaron, ben) == 0 failed after aaron.follow(ben) ,ben.follow(aaron)", 0, _compare);
@@ -97,12 +97,12 @@ public class FollowersCountComparatorTest extends TestCase {
     
   }
   
-  private void _test__compare_transitions1_effect_state() {
-    _test__compare_transitions1_effect_state_objectTests0_test();
+  private void _test__compare_transitions1_effects0_state() {
+    _test__compare_transitions1_effects0_state_objectTests0_test();
     
   }
   
-  private void _test__compare_transitions1_effect_state_objectTests0_test() {
+  private void _test__compare_transitions1_effects0_state_objectTests0_test() {
     
     int _compare = this.comparator.compare(this.aaron, this.ben);
     boolean _greaterThan = (_compare > 0);
@@ -112,5 +112,4 @@ public class FollowersCountComparatorTest extends TestCase {
     assertTrue("comparator.compare(ben, aaron) < 0 failed after charlie.follow(ben)", (_compare_1 < 0));
     
   }
- 
 }
