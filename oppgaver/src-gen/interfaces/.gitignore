@@ -8,3 +8,13 @@
 /.CardContainerIteratorTest.java._trace
 /.Person2Test.java._trace
 /.Person1Test.java._trace
+/BinaryComputingIteratorTest.java
+/CardComparatorTest.java
+/CardContainerIteratorTest.java
+/CardDeckTest.java
+/CardHandTest.java
+/NamedComparatorTest.java
+/Person1Test.java
+/Person2Test.java
+/StringGridTest.java
+/StringMergingIteratorTest.java
