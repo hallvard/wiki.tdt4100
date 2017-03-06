@@ -25,22 +25,22 @@ sequence constructor "Personer uten foreldre og barn" {
 		hallvard {
 			father == null;
 			mother == null;
-			testChildren(#[]);
+			hasChildren(#[]);
 		}
 		marit {
 			father == null;
 			mother == null;
-			testChildren(#[]);
+			hasChildren(#[]);
 		}
 		jens {
 			father == null;
 			mother == null;
-			testChildren(#[]);
+			hasChildren(#[]);
 		}
 		anne {
 			father == null;
 			mother == null;
-			testChildren(#[]);
+			hasChildren(#[]);
 		}
 }
 
@@ -68,29 +68,29 @@ sequence farskapSetFather "Hallvard er far til Jens og Anne" {
 		hallvard {
 			father == null;
 			mother == null;
-			testChildren(#[jens]);
+			hasChildren(#[jens]);
 		}
 		jens {
 			father == hallvard;
 			mother == null;
-			testChildren(#[]);
+			hasChildren(#[]);
 		}
 	-- anne.father = hallvard -->
 	state
 		hallvard {
 			father == null;
 			mother == null;
-			testChildren(#[jens, anne]);
+			hasChildren(#[jens, anne]);
 		}
 		jens {
 			father == hallvard;
 			mother == null;
-			testChildren(#[]);
+			hasChildren(#[]);
 		}
 		anne {
 			father == hallvard;
 			mother == null;
-			testChildren(#[]);
+			hasChildren(#[]);
 		}
 }
 
@@ -100,29 +100,29 @@ sequence farskapAddChild "Hallvard er far til Jens og Anne" {
 		hallvard {
 			father == null;
 			mother == null;
-			testChildren(#[jens]);
+			hasChildren(#[jens]);
 		}
 		jens {
 			father == hallvard;
 			mother == null;
-			testChildren(#[]);
+			hasChildren(#[]);
 		}
 	-- hallvard.addChild(anne) -->
 	state
 		hallvard {
 			father == null;
 			mother == null;
-			testChildren(#[jens, anne]);
+			hasChildren(#[jens, anne]);
 		}
 		jens {
 			father == hallvard;
 			mother == null;
-			testChildren(#[]);
+			hasChildren(#[]);
 		}
 		anne {
 			father == hallvard;
 			mother == null;
-			testChildren(#[]);
+			hasChildren(#[]);
 		}
 }
 
@@ -132,28 +132,28 @@ sequence morskapSetMother "Marit er mor til Jens og Anne" {
 		marit {
 			father == null;
 			mother == null;
-			testChildren(#[jens]); }
+			hasChildren(#[jens]); }
 		jens {
 			father == null;
 			mother == marit;
-			testChildren(#[]);
+			hasChildren(#[]);
 		}
 	-- anne.mother = marit -->
 	state
 		marit {
 			father == null;
 			mother == null;
-			testChildren(#[jens, anne]);
+			hasChildren(#[jens, anne]);
 		}
 		jens {
 			father == null;
 			mother == marit;
-			testChildren(#[]);
+			hasChildren(#[]);
 		}
 		anne  {
 			father == null;
 			mother == marit;
-			testChildren(#[]);
+			hasChildren(#[]);
 		}
 }
 
@@ -163,29 +163,29 @@ sequence morskapAddChild "Marit er mor til Jens og Anne" {
 		marit {
 			father == null;
 			mother == null;
-			testChildren(#[jens]);
+			hasChildren(#[jens]);
 		}
 		jens {
 			father == null;
 			mother == marit;
-			testChildren(#[]);
+			hasChildren(#[]);
 		}
 	-- marit.addChild(anne) -->
 	state
 		marit {
 			father == null;
 			mother == null;
-			testChildren(#[jens, anne]);
+			hasChildren(#[jens, anne]);
 		}
 		jens {
 			father == null;
 			mother == marit;
-			testChildren(#[]);
+			hasChildren(#[]);
 		}
 		anne {
 			father == null;
 			mother == marit;
-			testChildren(#[]);
+			hasChildren(#[]);
 		}
 }
 
@@ -193,56 +193,62 @@ sequence farbytteSetFather "Jens er ikke far til Anne likevel, Hallvard er" {
 	"Angir Jens som Annes far" -- anne.father = jens -->
 	state
 		anne { father == jens }
-		jens { testChildren(#[anne])}
+		jens { hasChildren(#[anne])}
 	"Bytter til Hallvard" -- anne.father = hallvard -->
 	state
 		anne { father == hallvard }
-		jens { testChildren(#[])}
-		hallvard { testChildren(#[anne])}
+		jens { hasChildren(#[])}
+		hallvard { hasChildren(#[anne])}
 }
 
 sequence farbytteAddChild "Jens er ikke far til Anne likevel, Hallvard er" {
 	"Angir Jens som Annes far" -- jens.addChild(anne) -->
 	state
 		anne { father == jens }
-		jens { testChildren(#[anne])}
+		jens { hasChildren(#[anne])}
 	"Bytter til Hallvard" -- hallvard.addChild(anne) -->
 	state
 		anne { father == hallvard }
-		jens { testChildren(#[])}
-		hallvard { testChildren(#[anne])}
+		jens { hasChildren(#[])}
+		hallvard { hasChildren(#[anne])}
 }
 
-sequence morbytteSetFather "Anne er ikke mor til Jens likevel, Marit er" {
+sequence morbytteSetMother "Anne er ikke mor til Jens likevel, Marit er" {
 	"Angir Anne som Jens' mor" -- jens.mother = anne -->
 	state
 		jens { mother == anne }
-		anne { testChildren(#[jens])}
+		anne { hasChildren(#[jens])}
 	"Bytter til Marit" -- jens.mother = marit -->
 	state
 		jens { mother == marit }
-		anne { testChildren(#[])}
-		marit { testChildren(#[jens])}
+		anne { hasChildren(#[])}
+		marit { hasChildren(#[jens])}
 }
 
 sequence morbytteAddChild "Anne er ikke mor til Jens likevel, Marit er" {
 	"Angir Anne som Jens' mor" -- anne.addChild(jens) -->
 	state
 		jens { mother == anne }
-		anne { testChildren(#[jens])}
+		anne { hasChildren(#[jens])}
 	"Bytter til Marit" -- marit.addChild(jens) -->
 	state
 		jens { mother == marit }
-		anne { testChildren(#[])}
-		marit { testChildren(#[jens])}
+		anne { hasChildren(#[])}
+		marit { hasChildren(#[jens])}
 }
 
 
-method void testChildren(Person person, Collection<?> children) {
-	assertEquals(children.size, person.childCount);
-	var i = 0;
+method void hasChildren(Person person, Collection<?> children) {
+	assertEquals(person + " must have " + children.size + " children", children.size, person.childCount);
 	for (child : children) {
-		assertEquals(child, person.getChild(i));
-		i = i + 1;
+		var found = false 
+		var i = 0;
+		while (i < person.childCount) {
+			if (child == person.getChild(i)) {
+				found = true;
+			}
+			i++;
+		}
+		assertTrue(person + " must have " + child + " as child", found);
 	}
 }
