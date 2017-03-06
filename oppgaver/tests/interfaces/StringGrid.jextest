@@ -15,6 +15,14 @@ import java.util.Iterator
 
 instance StringGrid grid = new StringGridImpl(2, 3)
 
+sequence size {
+	-->
+	state grid {
+		rowCount == 2
+		columnCount == 3
+	}
+}
+
 sequence grid {
 	--
 	grid.setElement(0, 0, "0, 0"), grid.setElement(0, 1, "0, 1"), grid.setElement(0, 2, "0, 2"),

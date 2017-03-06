@@ -22,6 +22,12 @@ public class StringGridTest extends TestCase {
     
   }
   
+  @JExercise(description = "Tests \n\t\tinitialization\n")
+  public void testSize() {
+    _test__size_transitions0_effects0_state(grid);
+    
+  }
+  
   @JExercise(tests = "void setElement(int,int,String)", description = "Tests \n\t\tthe following sequence:\n\t\t<ul>\n\t\t<li>grid.setElement(0, 0, \"0, 0\"), grid.setElement(0, 1, \"0, 1\"), grid.setElement(0, 2, \"0, 2\"), grid.setElement(1, 0, \"1, 0\"), grid.setElement(1, 1, \"1, 1\"), grid.setElement(1, 2, \"1, 2\")</li>\n\t\t</ul>\n")
   public void testGrid() {
     _transition_exprAction__grid_transitions0_actions0(grid);
@@ -81,6 +87,21 @@ public class StringGridTest extends TestCase {
     _test__gridIteratorColumnMajor_transitions5_effects0_state(grid, gridIterator);
     _transition_exprAction__gridIteratorColumnMajor_transitions6_actions0(grid, gridIterator);
     _test__gridIteratorColumnMajor_transitions6_effects0_state(grid, gridIterator);
+    
+  }
+  
+  private void _test__size_transitions0_effects0_state(final StringGrid it) {
+    _test__size_transitions0_effects0_state_objectTests0_test(grid);
+    
+  }
+  
+  private void _test__size_transitions0_effects0_state_objectTests0_test(final StringGrid it) {
+    
+    int _rowCount = it.getRowCount();
+    assertEquals("rowCount == 2 failed", 2, _rowCount);
+    
+    int _columnCount = it.getColumnCount();
+    assertEquals("columnCount == 3 failed", 3, _columnCount);
     
   }
   
