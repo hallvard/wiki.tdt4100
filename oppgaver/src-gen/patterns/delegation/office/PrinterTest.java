@@ -3,12 +3,11 @@ package patterns.delegation.office;
 import java.util.Collection;
 import junit.framework.TestCase;
 import no.hal.jex.runtime.JExercise;
+import org.eclipse.xtext.xbase.lib.Conversions;
 import patterns.delegation.office.Clerk;
 import patterns.delegation.office.Printer;
 
-import org.eclipse.xtext.xbase.lib.Conversions;
-
-@JExercise(description = "Tests delegation.office.Printer")
+@JExercise(description = "Tests patterns.delegation.office.Printer")
 @SuppressWarnings("all")
 public class PrinterTest extends TestCase {
   private Printer printer;
@@ -40,42 +39,42 @@ public class PrinterTest extends TestCase {
     
   }
   
-  @JExercise(tests = "Printer();void printDocument(String,delegation.office.Employee)", description = "Tests \n\t\tthe following sequence:\n\t\t<ul>\n\t\t<li>Printer to dokumenter: printer.printDocument(\"dokument1\", clerk1)</li>\n\t\t<li>Printer et dokument til: printer.printDocument(\"dokument2\", clerk1)</li>\n\t\t</ul>\n")
+  @JExercise(tests = "null();void printDocument(String,patterns.delegation.office.Employee)", description = "Tests \n\t\tthe following sequence:\n\t\t<ul>\n\t\t<li>Printer to dokumenter: printer.printDocument(\"dokument1\", clerk1)</li>\n\t\t<li>Printer et dokument til: printer.printDocument(\"dokument2\", clerk1)</li>\n\t\t</ul>\n")
   public void testPrintSingleClerk() {
-    _test__printSingleClerk_transitions0_effect_state();
+    _test__printSingleClerk_transitions0_effects0_state();
     _transition_exprAction__printSingleClerk_transitions1_actions0();
-    _test__printSingleClerk_transitions1_effect_state();
+    _test__printSingleClerk_transitions1_effects0_state();
     _transition_exprAction__printSingleClerk_transitions2_actions0();
-    _test__printSingleClerk_transitions2_effect_state();
+    _test__printSingleClerk_transitions2_effects0_state();
     
   }
   
-  @JExercise(tests = "Printer();void printDocument(String,delegation.office.Employee)", description = "Tests \n\t\tthe following sequence:\n\t\t<ul>\n\t\t<li>Printer dokument for Clerk nr. 1: printer.printDocument(\"dokument1\", clerk1)</li>\n\t\t<li>Printer dokument for Clerk nr. 2: printer.printDocument(\"dokument2\", clerk2)</li>\n\t\t</ul>\n")
+  @JExercise(tests = "null();void printDocument(String,patterns.delegation.office.Employee)", description = "Tests \n\t\tthe following sequence:\n\t\t<ul>\n\t\t<li>Printer dokument for Clerk nr. 1: printer.printDocument(\"dokument1\", clerk1)</li>\n\t\t<li>Printer dokument for Clerk nr. 2: printer.printDocument(\"dokument2\", clerk2)</li>\n\t\t</ul>\n")
   public void testPrintMulipleClerks() {
-    _test__printMulipleClerks_transitions0_effect_state();
+    _test__printMulipleClerks_transitions0_effects0_state();
     _transition_exprAction__printMulipleClerks_transitions1_actions0();
-    _test__printMulipleClerks_transitions1_effect_state();
+    _test__printMulipleClerks_transitions1_effects0_state();
     _transition_exprAction__printMulipleClerks_transitions2_actions0();
-    _test__printMulipleClerks_transitions2_effect_state();
+    _test__printMulipleClerks_transitions2_effects0_state();
     
   }
   
-  @JExercise(tests = "Printer();void printDocument(String,delegation.office.Employee);java.util.Collection<String> getPrintHistory(delegation.office.Employee)", description = "Tests \n\t\tthe following sequence:\n\t\t<ul>\n\t\t<li>Printer to dokumenter: printer.printDocument(\"dokument1\", clerk1), printer.printDocument(\"dokument2\", clerk1)</li>\n\t\t<li>Fjerner et dokument fra historikk og sjekker at printer-historikken er uendret: printer.getPrintHistory(clerk1).remove(0)</li>\n\t\t</ul>\n")
+  @JExercise(tests = "null();void printDocument(String,patterns.delegation.office.Employee);java.util.Collection<String> getPrintHistory(patterns.delegation.office.Employee)", description = "Tests \n\t\tthe following sequence:\n\t\t<ul>\n\t\t<li>Printer to dokumenter: printer.printDocument(\"dokument1\", clerk1), printer.printDocument(\"dokument2\", clerk1)</li>\n\t\t<li>Fjerner et dokument fra historikk og sjekker at printer-historikken er uendret: printer.getPrintHistory(clerk1).remove(0)</li>\n\t\t</ul>\n")
   public void testPrintHistoryModification() {
     _transition_exprAction__printHistoryModification_transitions0_actions0();
     _transition_exprAction__printHistoryModification_transitions0_actions1();
-    _test__printHistoryModification_transitions0_effect_state();
+    _test__printHistoryModification_transitions0_effects0_state();
     _transition_exprAction__printHistoryModification_transitions1_actions0();
-    _test__printHistoryModification_transitions1_effect_state();
+    _test__printHistoryModification_transitions1_effects0_state();
     
   }
   
-  private void _test__printSingleClerk_transitions0_effect_state() {
-    _test__printSingleClerk_transitions0_effect_state_objectTests0_test();
+  private void _test__printSingleClerk_transitions0_effects0_state() {
+    _test__printSingleClerk_transitions0_effects0_state_objectTests0_test();
     
   }
   
-  private void _test__printSingleClerk_transitions0_effect_state_objectTests0_test() {
+  private void _test__printSingleClerk_transitions0_effects0_state_objectTests0_test() {
     
     Collection<String> _printHistory = this.printer.getPrintHistory(this.clerk1);
     int _size = _printHistory.size();
@@ -93,12 +92,12 @@ public class PrinterTest extends TestCase {
     
   }
   
-  private void _test__printSingleClerk_transitions1_effect_state() {
-    _test__printSingleClerk_transitions1_effect_state_objectTests0_test();
+  private void _test__printSingleClerk_transitions1_effects0_state() {
+    _test__printSingleClerk_transitions1_effects0_state_objectTests0_test();
     
   }
   
-  private void _test__printSingleClerk_transitions1_effect_state_objectTests0_test() {
+  private void _test__printSingleClerk_transitions1_effects0_state_objectTests0_test() {
     
     Collection<String> _printHistory = this.printer.getPrintHistory(this.clerk1);
     int _size = _printHistory.size();
@@ -120,12 +119,12 @@ public class PrinterTest extends TestCase {
     
   }
   
-  private void _test__printSingleClerk_transitions2_effect_state() {
-    _test__printSingleClerk_transitions2_effect_state_objectTests0_test();
+  private void _test__printSingleClerk_transitions2_effects0_state() {
+    _test__printSingleClerk_transitions2_effects0_state_objectTests0_test();
     
   }
   
-  private void _test__printSingleClerk_transitions2_effect_state_objectTests0_test() {
+  private void _test__printSingleClerk_transitions2_effects0_state_objectTests0_test() {
     
     Collection<String> _printHistory = this.printer.getPrintHistory(this.clerk1);
     int _size = _printHistory.size();
@@ -137,12 +136,12 @@ public class PrinterTest extends TestCase {
     
   }
   
-  private void _test__printMulipleClerks_transitions0_effect_state() {
-    _test__printMulipleClerks_transitions0_effect_state_objectTests0_test();
+  private void _test__printMulipleClerks_transitions0_effects0_state() {
+    _test__printMulipleClerks_transitions0_effects0_state_objectTests0_test();
     
   }
   
-  private void _test__printMulipleClerks_transitions0_effect_state_objectTests0_test() {
+  private void _test__printMulipleClerks_transitions0_effects0_state_objectTests0_test() {
     
     Collection<String> _printHistory = this.printer.getPrintHistory(this.clerk1);
     int _size = _printHistory.size();
@@ -164,12 +163,12 @@ public class PrinterTest extends TestCase {
     
   }
   
-  private void _test__printMulipleClerks_transitions1_effect_state() {
-    _test__printMulipleClerks_transitions1_effect_state_objectTests0_test();
+  private void _test__printMulipleClerks_transitions1_effects0_state() {
+    _test__printMulipleClerks_transitions1_effects0_state_objectTests0_test();
     
   }
   
-  private void _test__printMulipleClerks_transitions1_effect_state_objectTests0_test() {
+  private void _test__printMulipleClerks_transitions1_effects0_state_objectTests0_test() {
     
     Collection<String> _printHistory = this.printer.getPrintHistory(this.clerk1);
     int _size = _printHistory.size();
@@ -191,12 +190,12 @@ public class PrinterTest extends TestCase {
     
   }
   
-  private void _test__printMulipleClerks_transitions2_effect_state() {
-    _test__printMulipleClerks_transitions2_effect_state_objectTests0_test();
+  private void _test__printMulipleClerks_transitions2_effects0_state() {
+    _test__printMulipleClerks_transitions2_effects0_state_objectTests0_test();
     
   }
   
-  private void _test__printMulipleClerks_transitions2_effect_state_objectTests0_test() {
+  private void _test__printMulipleClerks_transitions2_effects0_state_objectTests0_test() {
     
     Collection<String> _printHistory = this.printer.getPrintHistory(this.clerk1);
     int _size = _printHistory.size();
@@ -228,12 +227,12 @@ public class PrinterTest extends TestCase {
     
   }
   
-  private void _test__printHistoryModification_transitions0_effect_state() {
-    _test__printHistoryModification_transitions0_effect_state_objectTests0_test();
+  private void _test__printHistoryModification_transitions0_effects0_state() {
+    _test__printHistoryModification_transitions0_effects0_state_objectTests0_test();
     
   }
   
-  private void _test__printHistoryModification_transitions0_effect_state_objectTests0_test() {
+  private void _test__printHistoryModification_transitions0_effects0_state_objectTests0_test() {
     
     Collection<String> _printHistory = this.printer.getPrintHistory(this.clerk1);
     int _size = _printHistory.size();
@@ -252,12 +251,12 @@ public class PrinterTest extends TestCase {
     
   }
   
-  private void _test__printHistoryModification_transitions1_effect_state() {
-    _test__printHistoryModification_transitions1_effect_state_objectTests0_test();
+  private void _test__printHistoryModification_transitions1_effects0_state() {
+    _test__printHistoryModification_transitions1_effects0_state_objectTests0_test();
     
   }
   
-  private void _test__printHistoryModification_transitions1_effect_state_objectTests0_test() {
+  private void _test__printHistoryModification_transitions1_effects0_state_objectTests0_test() {
     
     Collection<String> _printHistory = this.printer.getPrintHistory(this.clerk1);
     int _size = _printHistory.size();

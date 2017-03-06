@@ -1,7 +1,25 @@
 import java.util.ArrayList
 import java.util.Arrays
+import java.util.function.BinaryOperator
+import java.util.Collection
 
-test delegation.office.Manager
+test class patterns.delegation.office.Manager implements Employee {
+	new(Collection<Employee> employees)
+}
+class Clerk implements Employee {
+	new(Printer printer)
+}
+interface Employee {
+	double doCalculations(BinaryOperator<Double> operation, double value1, double value2)
+	void printDocument(String document)
+	int getTaskCount()
+	int getResourceCount()
+}
+class Printer {
+	new()
+	void printDocument(String document, Employee employee)
+	Collection<String> getPrintHistory(Employee employee)
+}
 
 instance Printer printer = new Printer()
 instance Clerk clerk = new Clerk(printer)

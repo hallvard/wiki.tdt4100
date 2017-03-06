@@ -1,4 +1,20 @@
-test delegation.office.Clerk
+import java.util.function.BinaryOperator
+import java.util.Collection
+
+test class patterns.delegation.office.Clerk implements Employee {
+	new(Printer printer)
+}
+interface Employee {
+	double doCalculations(BinaryOperator<Double> operation, double value1, double value2)
+	void printDocument(String document)
+	int getTaskCount()
+	int getResourceCount()
+}
+class Printer {
+	new()
+	void printDocument(String document, Employee employee)
+	Collection<String> getPrintHistory(Employee employee)
+}
 
 instance Printer printer = new Printer
 instance Clerk clerk = new Clerk(printer)

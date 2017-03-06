@@ -7,14 +7,13 @@ import java.util.List;
 import java.util.function.BinaryOperator;
 import junit.framework.TestCase;
 import no.hal.jex.runtime.JExercise;
+import org.eclipse.xtext.xbase.lib.Conversions;
 import patterns.delegation.office.Clerk;
 import patterns.delegation.office.Employee;
 import patterns.delegation.office.Manager;
 import patterns.delegation.office.Printer;
 
-import org.eclipse.xtext.xbase.lib.Conversions;
-
-@JExercise(description = "Tests delegation.office.Manager")
+@JExercise(description = "Tests patterns.delegation.office.Manager")
 @SuppressWarnings("all")
 public class ManagerTest extends TestCase {
   private Printer printer;
@@ -60,7 +59,7 @@ public class ManagerTest extends TestCase {
     return true;
   }
   
-  @JExercise(tests = "Manager(java.util.Collection<delegation.office.Employee>)", description = "Tests \n\t\tthe following sequence:\n\t\t<ul>\n\t\t<li>Lager Manager med tom Employee-samling: new Manager(new ArrayList<Employee>)</li>\n\t\t</ul>\n")
+  @JExercise(tests = "null(java.util.Collection<patterns.delegation.office.Employee>)", description = "Tests \n\t\tthe following sequence:\n\t\t<ul>\n\t\t<li>Lager Manager med tom Employee-samling: new Manager(new ArrayList<Employee>)</li>\n\t\t</ul>\n")
   public void testNoEmployeesConstructor() {
     try {
       _transition_exprAction__noEmployeesConstructor_transitions0_actions0();
@@ -71,54 +70,54 @@ public class ManagerTest extends TestCase {
     
   }
   
-  @JExercise(tests = "Manager(java.util.Collection<delegation.office.Employee>);int getResourceCount()", description = "Tests \n\t\tthe following sequence:\n\t\t<ul>\n\t\t<li>Sjekker getResourceCount uten mellomledere: manager.resourceCount == 2</li>\n\t\t</ul>\n")
+  @JExercise(tests = "null(java.util.Collection<patterns.delegation.office.Employee>)", description = "Tests \n\t\tthe following sequence:\n\t\t<ul>\n\t\t<li>Sjekker getResourceCount uten mellomledere: manager.resourceCount == 2</li>\n\t\t</ul>\n")
   public void testResourceCount() {
     _transition_exprAction__resourceCount_transitions0_actions0();
-    _test__resourceCount_transitions0_effect_state();
+    _test__resourceCount_transitions0_effects0_state();
     
   }
   
-  @JExercise(tests = "Manager(java.util.Collection<delegation.office.Employee>);int getResourceCount()", description = "Tests \n\t\tthe following sequence:\n\t\t<ul>\n\t\t<li>Sjekker getResourceCount med mellomleder: topManager.resourceCount == 3</li>\n\t\t</ul>\n")
+  @JExercise(tests = "null(java.util.Collection<patterns.delegation.office.Employee>)", description = "Tests \n\t\tthe following sequence:\n\t\t<ul>\n\t\t<li>Sjekker getResourceCount med mellomleder: topManager.resourceCount == 3</li>\n\t\t</ul>\n")
   public void testMiddleManagementResourceCounts() {
     Manager topManager = _init__middleManagementResourceCounts_topManager();
     _transition_exprAction__middleManagementResourceCounts_transitions0_actions0(topManager);
-    _test__middleManagementResourceCounts_transitions0_effect_state(topManager);
+    _test__middleManagementResourceCounts_transitions0_effects0_state(topManager);
     
   }
   
-  @JExercise(tests = "Manager(java.util.Collection<delegation.office.Employee>);double doCalculations(java.util.function.BinaryOperator<Double>,double,double)", description = "Tests \n\t\tthe following sequence:\n\t\t<ul>\n\t\t<li>Gj\u00F8r en beregning: manager.doCalculations([double x, double y | x + y ], 2.0, 3.5) ?= 5.5</li>\n\t\t</ul>\n")
+  @JExercise(tests = "null(java.util.Collection<patterns.delegation.office.Employee>)", description = "Tests \n\t\tthe following sequence:\n\t\t<ul>\n\t\t<li>Gj\u00F8r en beregning: manager.doCalculations([double x, double y | x + y ], 2.0, 3.5) ?= 5.5</li>\n\t\t</ul>\n")
   public void testDoCalculations() {
-    _test__doCalculations_transitions0_effect_state();
+    _test__doCalculations_transitions0_effects0_state();
     _transition_exprAction__doCalculations_transitions1_actions0();
-    _test__doCalculations_transitions1_effect_state();
+    _test__doCalculations_transitions1_effects0_state();
     
   }
   
-  @JExercise(tests = "Manager(java.util.Collection<delegation.office.Employee>);void printDocument(String)", description = "Tests \n\t\tthe following sequence:\n\t\t<ul>\n\t\t<li>Printer et dokument: manager.printDocument(\"dokument1\")</li>\n\t\t</ul>\n")
+  @JExercise(tests = "null(java.util.Collection<patterns.delegation.office.Employee>)", description = "Tests \n\t\tthe following sequence:\n\t\t<ul>\n\t\t<li>Printer et dokument: manager.printDocument(\"dokument1\")</li>\n\t\t</ul>\n")
   public void testPrintDocuments() {
     _transition_exprAction__printDocuments_transitions0_actions0();
-    _test__printDocuments_transitions0_effect_state();
+    _test__printDocuments_transitions0_effects0_state();
     
   }
   
-  @JExercise(tests = "Manager(java.util.Collection<delegation.office.Employee>);void printDocument(String);double doCalculations(java.util.function.BinaryOperator<Double>,double,double)", description = "Tests \n\t\tthe following sequence:\n\t\t<ul>\n\t\t<li>Printer et dokument: manager.printDocument(\"dokument\")</li>\n\t\t<li>Gj\u00F8r en beregning: manager.doCalculations([double x, double y | x + y ], 2.0, 3.5) ?= 5.5</li>\n\t\t</ul>\n")
+  @JExercise(tests = "null(java.util.Collection<patterns.delegation.office.Employee>)", description = "Tests \n\t\tthe following sequence:\n\t\t<ul>\n\t\t<li>Printer et dokument: manager.printDocument(\"dokument\")</li>\n\t\t<li>Gj\u00F8r en beregning: manager.doCalculations([double x, double y | x + y ], 2.0, 3.5) ?= 5.5</li>\n\t\t</ul>\n")
   public void testTaskCount() {
-    _test__taskCount_transitions0_effect_state();
+    _test__taskCount_transitions0_effects0_state();
     _transition_exprAction__taskCount_transitions1_actions0();
-    _test__taskCount_transitions1_effect_state();
+    _test__taskCount_transitions1_effects0_state();
     _transition_exprAction__taskCount_transitions2_actions0();
-    _test__taskCount_transitions2_effect_state();
+    _test__taskCount_transitions2_effects0_state();
     
   }
   
-  @JExercise(tests = "Manager(java.util.Collection<delegation.office.Employee>);void printDocument(String);double doCalculations(java.util.function.BinaryOperator<Double>,double,double)", description = "Tests \n\t\tthe following sequence:\n\t\t<ul>\n\t\t<li>Printer et dokument: multiManager.printDocument(\"dokument\")</li>\n\t\t<li>Gj\u00F8r en beregning: multiManager.doCalculations([double x, double y | x + y ], 2.0, 3.5) ?= 5.5</li>\n\t\t</ul>\n")
+  @JExercise(tests = "null(java.util.Collection<patterns.delegation.office.Employee>)", description = "Tests \n\t\tthe following sequence:\n\t\t<ul>\n\t\t<li>Printer et dokument: multiManager.printDocument(\"dokument\")</li>\n\t\t<li>Gj\u00F8r en beregning: multiManager.doCalculations([double x, double y | x + y ], 2.0, 3.5) ?= 5.5</li>\n\t\t</ul>\n")
   public void testSeveralClerks() {
     Manager multiManager = _init__severalClerks_multiManager();
-    _test__severalClerks_transitions0_effect_state(multiManager);
+    _test__severalClerks_transitions0_effects0_state(multiManager);
     _transition_exprAction__severalClerks_transitions1_actions0(multiManager);
-    _test__severalClerks_transitions1_effect_state(multiManager);
+    _test__severalClerks_transitions1_effects0_state(multiManager);
     _transition_exprAction__severalClerks_transitions2_actions0(multiManager);
-    _test__severalClerks_transitions2_effect_state(multiManager);
+    _test__severalClerks_transitions2_effects0_state(multiManager);
     
   }
   
@@ -140,12 +139,12 @@ public class ManagerTest extends TestCase {
     
   }
   
-  private void _test__resourceCount_transitions0_effect_state() {
-    _test__resourceCount_transitions0_effect_state_objectTests0_test();
+  private void _test__resourceCount_transitions0_effects0_state() {
+    _test__resourceCount_transitions0_effects0_state_objectTests0_test();
     
   }
   
-  private void _test__resourceCount_transitions0_effect_state_objectTests0_test() {
+  private void _test__resourceCount_transitions0_effects0_state_objectTests0_test() {
     
   }
   
@@ -162,21 +161,21 @@ public class ManagerTest extends TestCase {
     
   }
   
-  private void _test__middleManagementResourceCounts_transitions0_effect_state(final Manager topManager) {
-    _test__middleManagementResourceCounts_transitions0_effect_state_objectTests0_test(topManager);
+  private void _test__middleManagementResourceCounts_transitions0_effects0_state(final Manager topManager) {
+    _test__middleManagementResourceCounts_transitions0_effects0_state_objectTests0_test(topManager);
     
   }
   
-  private void _test__middleManagementResourceCounts_transitions0_effect_state_objectTests0_test(final Manager topManager) {
+  private void _test__middleManagementResourceCounts_transitions0_effects0_state_objectTests0_test(final Manager topManager) {
     
   }
   
-  private void _test__doCalculations_transitions0_effect_state() {
-    _test__doCalculations_transitions0_effect_state_objectTests0_test();
+  private void _test__doCalculations_transitions0_effects0_state() {
+    _test__doCalculations_transitions0_effects0_state_objectTests0_test();
     
   }
   
-  private void _test__doCalculations_transitions0_effect_state_objectTests0_test() {
+  private void _test__doCalculations_transitions0_effects0_state_objectTests0_test() {
     
     int _taskCount = this.clerk.getTaskCount();
     assertEquals("clerk.taskCount == 0 failed", 0, _taskCount);
@@ -188,10 +187,8 @@ public class ManagerTest extends TestCase {
   
   private void _transition_exprAction__doCalculations_transitions1_actions0() {
     
-    final BinaryOperator<Double> _function = new BinaryOperator<Double>() {
-      public Double apply(final Double x, final Double y) {
-        return Double.valueOf((x + y));
-      }
+    final BinaryOperator<Double> _function = (Double x, Double y) -> {
+      return Double.valueOf((x + y));
     };
     double _doCalculations = this.manager.doCalculations(_function, 2.0, 3.5);
     boolean _assertEquals = this.operator_assertEquals(_doCalculations, 5.5);
@@ -199,12 +196,12 @@ public class ManagerTest extends TestCase {
     
   }
   
-  private void _test__doCalculations_transitions1_effect_state() {
-    _test__doCalculations_transitions1_effect_state_objectTests0_test();
+  private void _test__doCalculations_transitions1_effects0_state() {
+    _test__doCalculations_transitions1_effects0_state_objectTests0_test();
     
   }
   
-  private void _test__doCalculations_transitions1_effect_state_objectTests0_test() {
+  private void _test__doCalculations_transitions1_effects0_state_objectTests0_test() {
     
     int _taskCount = this.clerk.getTaskCount();
     assertEquals("clerk.taskCount == 1 failed after manager.doCalculations([double x, double y | x + y ], 2.0, 3.5) ?= 5.5", 1, _taskCount);
@@ -224,12 +221,12 @@ public class ManagerTest extends TestCase {
     
   }
   
-  private void _test__printDocuments_transitions0_effect_state() {
-    _test__printDocuments_transitions0_effect_state_objectTests0_test();
+  private void _test__printDocuments_transitions0_effects0_state() {
+    _test__printDocuments_transitions0_effects0_state_objectTests0_test();
     
   }
   
-  private void _test__printDocuments_transitions0_effect_state_objectTests0_test() {
+  private void _test__printDocuments_transitions0_effects0_state_objectTests0_test() {
     
     Collection<String> _printHistory = this.printer.getPrintHistory(this.clerk);
     String _get = ((String[])Conversions.unwrapArray(_printHistory, String.class))[0];
@@ -247,12 +244,12 @@ public class ManagerTest extends TestCase {
     
   }
   
-  private void _test__taskCount_transitions0_effect_state() {
-    _test__taskCount_transitions0_effect_state_objectTests0_test();
+  private void _test__taskCount_transitions0_effects0_state() {
+    _test__taskCount_transitions0_effects0_state_objectTests0_test();
     
   }
   
-  private void _test__taskCount_transitions0_effect_state_objectTests0_test() {
+  private void _test__taskCount_transitions0_effects0_state_objectTests0_test() {
     
     int _taskCount = this.manager.getTaskCount();
     assertEquals("manager.taskCount == 0 failed", 0, _taskCount);
@@ -272,12 +269,12 @@ public class ManagerTest extends TestCase {
     
   }
   
-  private void _test__taskCount_transitions1_effect_state() {
-    _test__taskCount_transitions1_effect_state_objectTests0_test();
+  private void _test__taskCount_transitions1_effects0_state() {
+    _test__taskCount_transitions1_effects0_state_objectTests0_test();
     
   }
   
-  private void _test__taskCount_transitions1_effect_state_objectTests0_test() {
+  private void _test__taskCount_transitions1_effects0_state_objectTests0_test() {
     
     int _taskCount = this.manager.getTaskCount();
     assertEquals("manager.taskCount == 1 failed after manager.printDocument(\"dokument\")", 1, _taskCount);
@@ -289,10 +286,8 @@ public class ManagerTest extends TestCase {
   
   private void _transition_exprAction__taskCount_transitions2_actions0() {
     
-    final BinaryOperator<Double> _function = new BinaryOperator<Double>() {
-      public Double apply(final Double x, final Double y) {
-        return Double.valueOf((x + y));
-      }
+    final BinaryOperator<Double> _function = (Double x, Double y) -> {
+      return Double.valueOf((x + y));
     };
     double _doCalculations = this.manager.doCalculations(_function, 2.0, 3.5);
     boolean _assertEquals = this.operator_assertEquals(_doCalculations, 5.5);
@@ -300,12 +295,12 @@ public class ManagerTest extends TestCase {
     
   }
   
-  private void _test__taskCount_transitions2_effect_state() {
-    _test__taskCount_transitions2_effect_state_objectTests0_test();
+  private void _test__taskCount_transitions2_effects0_state() {
+    _test__taskCount_transitions2_effects0_state_objectTests0_test();
     
   }
   
-  private void _test__taskCount_transitions2_effect_state_objectTests0_test() {
+  private void _test__taskCount_transitions2_effects0_state_objectTests0_test() {
     
     int _taskCount = this.manager.getTaskCount();
     assertEquals("manager.taskCount == 2 failed after manager.doCalculations([double x, double y | x + y ], 2.0, 3.5) ?= 5.5", 2, _taskCount);
@@ -321,12 +316,12 @@ public class ManagerTest extends TestCase {
     return _manager;
   }
   
-  private void _test__severalClerks_transitions0_effect_state(final Manager multiManager) {
-    _test__severalClerks_transitions0_effect_state_objectTests0_test(multiManager);
+  private void _test__severalClerks_transitions0_effects0_state(final Manager multiManager) {
+    _test__severalClerks_transitions0_effects0_state_objectTests0_test(multiManager);
     
   }
   
-  private void _test__severalClerks_transitions0_effect_state_objectTests0_test(final Manager multiManager) {
+  private void _test__severalClerks_transitions0_effects0_state_objectTests0_test(final Manager multiManager) {
     
     int _resourceCount = multiManager.getResourceCount();
     assertEquals("multiManager.resourceCount == 3 failed", 3, _resourceCount);
@@ -349,52 +344,24 @@ public class ManagerTest extends TestCase {
     
   }
   
-  private void _test__severalClerks_transitions1_effect_state(final Manager multiManager) {
-    _test__severalClerks_transitions1_effect_state_objectTests0_test(multiManager);
+  private void _test__severalClerks_transitions1_effects0_state(final Manager multiManager) {
+    _test__severalClerks_transitions1_effects0_state_objectTests0_test(multiManager);
     
   }
   
-  private void _test__severalClerks_transitions1_effect_state_objectTests0_test(final Manager multiManager) {
+  private void _test__severalClerks_transitions1_effects0_state_objectTests0_test(final Manager multiManager) {
     
     int _taskCount = multiManager.getTaskCount();
     assertEquals("multiManager.taskCount == 1 failed after multiManager.printDocument(\"dokument\")", 1, _taskCount);
     
-    boolean _and = false;
-    boolean _or = false;
-    int _taskCount_1 = this.clerk.getTaskCount();
-    boolean _equals = (_taskCount_1 == 1);
-    if (_equals) {
-      _or = true;
-    } else {
-      int _taskCount_2 = this.secondClerk.getTaskCount();
-      boolean _equals_1 = (_taskCount_2 == 1);
-      _or = _equals_1;
-    }
-    if (!_or) {
-      _and = false;
-    } else {
-      boolean _or_1 = false;
-      int _taskCount_3 = this.clerk.getTaskCount();
-      boolean _equals_2 = (_taskCount_3 == 0);
-      if (_equals_2) {
-        _or_1 = true;
-      } else {
-        int _taskCount_4 = this.secondClerk.getTaskCount();
-        boolean _equals_3 = (_taskCount_4 == 0);
-        _or_1 = _equals_3;
-      }
-      _and = _or_1;
-    }
-    assertTrue("(clerk.taskCount == 1 || secondClerk.taskCount == 1) && (clerk.taskCount == 0 || secondClerk.taskCount == 0) failed after multiManager.printDocument(\"dokument\")", _and);
+    assertTrue("(clerk.taskCount == 1 || secondClerk.taskCount == 1) && (clerk.taskCount == 0 || secondClerk.taskCount == 0) failed after multiManager.printDocument(\"dokument\")", (((this.clerk.getTaskCount() == 1) || (this.secondClerk.getTaskCount() == 1)) && ((this.clerk.getTaskCount() == 0) || (this.secondClerk.getTaskCount() == 0))));
     
   }
   
   private void _transition_exprAction__severalClerks_transitions2_actions0(final Manager multiManager) {
     
-    final BinaryOperator<Double> _function = new BinaryOperator<Double>() {
-      public Double apply(final Double x, final Double y) {
-        return Double.valueOf((x + y));
-      }
+    final BinaryOperator<Double> _function = (Double x, Double y) -> {
+      return Double.valueOf((x + y));
     };
     double _doCalculations = multiManager.doCalculations(_function, 2.0, 3.5);
     boolean _assertEquals = this.operator_assertEquals(_doCalculations, 5.5);
@@ -402,12 +369,12 @@ public class ManagerTest extends TestCase {
     
   }
   
-  private void _test__severalClerks_transitions2_effect_state(final Manager multiManager) {
-    _test__severalClerks_transitions2_effect_state_objectTests0_test(multiManager);
+  private void _test__severalClerks_transitions2_effects0_state(final Manager multiManager) {
+    _test__severalClerks_transitions2_effects0_state_objectTests0_test(multiManager);
     
   }
   
-  private void _test__severalClerks_transitions2_effect_state_objectTests0_test(final Manager multiManager) {
+  private void _test__severalClerks_transitions2_effects0_state_objectTests0_test(final Manager multiManager) {
     
     int _taskCount = multiManager.getTaskCount();
     assertEquals("multiManager.taskCount == 2 failed after multiManager.doCalculations([double x, double y | x + y ], 2.0, 3.5) ?= 5.5", 2, _taskCount);
