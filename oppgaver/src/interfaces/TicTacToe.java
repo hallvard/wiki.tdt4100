@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Stack;
 
-public class TicTacToe {
+public class TicTacToe implements GenericGridGame<Character> {
 
 	private String gridString;
 	private char player;
@@ -34,8 +34,23 @@ public class TicTacToe {
 		}
 	}
 	
-	public char getCell(int x, int y) {
+	@Override
+	public int getRowCount() {
+		return 3;
+	}
+	@Override
+	public int getColumnCount() {
+		return 3;
+	}
+	
+	public Character getCell(int x, int y) {
 		return gridString.charAt(indexAt(x, y));
+	}
+	
+	@Override
+	public String[] getImageNames(Character t) {
+		String imageName = (t == ' ' ? "empty" : String.valueOf(t));
+		return new String[]{imageName};
 	}
 	
 	public void setCell(char c, int x, int y) {
