@@ -6,11 +6,13 @@ import java.util.HashMap;
 import java.util.Map;
 
 import javafx.fxml.FXML;
+import javafx.scene.Node;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.layout.GridPane;
 import javafx.scene.layout.StackPane;
 import javafx.scene.layout.TilePane;
 
@@ -70,7 +72,7 @@ public class GenericGameController {
 		update();
 	}
 	
-	@FXML TilePane gameGrid;
+	@FXML GridPane gameGrid;
 	
 	private Map<String, Image> images = new HashMap<String, Image>();
 	
@@ -86,7 +88,6 @@ public class GenericGameController {
 
 	private void updateGrid() {
 		gameGrid.getChildren().clear();
-		gameGrid.setPrefColumns(game.getColumnCount());
 		for (int y = 0; y < game.getRowCount(); y++) {
 			for (int x = 0; x < game.getColumnCount(); x++) {
 				Character c = game.getCell(x, y);
@@ -96,12 +97,15 @@ public class GenericGameController {
 					ImageView imageView = new ImageView(getImage(imageNames[imageNum]));
 					imageViews[imageNum] = imageView;
 				}
+				Node node = null;
 				if (imageViews.length == 1) {
-					gameGrid.getChildren().add(imageViews[0]);
+					node = imageViews[0];
 				} else {
-					StackPane stackPane = new StackPane(imageViews);
-					gameGrid.getChildren().add(stackPane);
+					node = new StackPane(imageViews);
 				}
+				gameGrid.getChildren().add(node);
+				GridPane.setRowIndex(node, y);
+				GridPane.setColumnIndex(node, x);
 			}
 		}
 	}

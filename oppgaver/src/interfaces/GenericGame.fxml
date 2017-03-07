@@ -7,6 +7,7 @@
 <?import javafx.geometry.*?>
 <?import javafx.shape.*?>
 <?import javafx.scene.layout.TilePane?>
+<?import javafx.scene.layout.GridPane?>
 
 
 <VBox spacing="15" style="-fx-padding: 20px 20px 20px 20px" xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1" fx:controller="interfaces.GenericGameController">
@@ -34,6 +35,6 @@
 			</HBox>
 		</VBox>
 	</HBox>
-	<TilePane fx:id="gameGrid">
-	</TilePane>
+	<GridPane fx:id="gameGrid" prefHeight="400" prefWidth="400">
+	</GridPane>
 </VBox>
