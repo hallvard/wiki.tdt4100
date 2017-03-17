@@ -19,14 +19,26 @@
         <a xsi:type="junit:JunitTestAnswer" testRunName="inheritance.SimpleCalculatorTest"/>
       </tasks>
       <tasks xsi:type="exercise:Task">
+        <q xsi:type="exercise:StringQuestion" question="Test the SimpleCalculator class, by running its main method."/>
+        <a xsi:type="jdt:JdtLaunchAnswer" className="inheritance.SimpleCalculator"/>
+      </tasks>
+      <tasks xsi:type="exercise:Task">
         <q xsi:type="exercise:StringQuestion" question="Run the RPNCalculatorTest JUnit test."/>
         <a xsi:type="junit:JunitTestAnswer" testRunName="inheritance.RPNCalculatorTest"/>
+      </tasks>
+      <tasks xsi:type="exercise:Task">
+        <q xsi:type="exercise:StringQuestion" question="Test the RPNCalculator class, by running its main method."/>
+        <a xsi:type="jdt:JdtLaunchAnswer" className="inheritance.RPNCalculator"/>
+      </tasks>
+      <tasks xsi:type="exercise:Task">
+        <q xsi:type="exercise:StringQuestion" question="Test the CalculatorProgram class, by running its main method."/>
+        <a xsi:type="jdt:JdtLaunchAnswer" className="inheritance.CalculatorProgram"/>
       </tasks>
     </parts>
     <parts xsi:type="exercise:ExercisePart" title="Tool usage">
       <tasks xsi:type="exercise:Task">
         <q xsi:type="exercise:StringQuestion" question="Use breakpoints to debug code."/>
-        <a xsi:type="workbench:DebugEventAnswer" action="suspend.breakpoint"/>
+        <a xsi:type="workbench:DebugEventAnswer" elementId="inheritance.*Calculator*" action="suspend.breakpoint"/>
       </tasks>
       <tasks xsi:type="exercise:Task">
         <q xsi:type="exercise:StringQuestion" question="Use the debug command Step Over"/>
@@ -40,19 +52,6 @@
         <q xsi:type="exercise:StringQuestion" question="Use the Variables view"/>
         <a xsi:type="workbench:PartTaskAnswer" elementId="org.eclipse.debug.ui.VariableView" action="activated"/>
       </tasks>
-       <tasks xsi:type="exercise:Task">
-         <q xsi:type="exercise:StringQuestion" question="Run the SimpleCalculator class."/>
-         <a xsi:type="jdt:JdtLaunchAnswer" className="inheritance.SimpleCalculator"/>
-       </tasks>
-       <tasks xsi:type="exercise:Task">
-         <q xsi:type="exercise:StringQuestion" question="Run the RPNCalculator class."/>
-         <a xsi:type="jdt:JdtLaunchAnswer" className="inheritance.RPNCalculator"/>
-       </tasks>
-       <tasks xsi:type="exercise:Task">
-         <q xsi:type="exercise:StringQuestion" question="Run the CalculatorProgram class."/>
-         <a xsi:type="jdt:JdtLaunchAnswer" className="inheritance.CalculatorProgram"/>
-       </tasks>
     </parts>
   </exercise:Exercise>
-
 </xmi:XMI>

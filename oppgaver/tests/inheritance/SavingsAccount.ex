@@ -11,13 +11,25 @@
         <a xsi:type="jdt:JdtSourceEditAnswer" className="inheritance.SavingsAccount"/>
       </tasks>
       <tasks xsi:type="exercise:Task">
+         <q xsi:type="exercise:StringQuestion" question="Test the SavingsAccount class, by running its main method."/>
+         <a xsi:type="jdt:JdtLaunchAnswer" className="inheritance.SavingsAccount"/>
+       </tasks>
+      <tasks xsi:type="exercise:Task">
         <q xsi:type="exercise:StringQuestion" question="Write the source code for the BSU class."/>
         <a xsi:type="jdt:JdtSourceEditAnswer" className="inheritance.BSU"/>
       </tasks>
       <tasks xsi:type="exercise:Task">
+         <q xsi:type="exercise:StringQuestion" question="Test the BSU class, by running its main method."/>
+         <a xsi:type="jdt:JdtLaunchAnswer" className="inheritance.BSU"/>
+       </tasks>
+      <tasks xsi:type="exercise:Task">
         <q xsi:type="exercise:StringQuestion" question="Write the source code for the ForeldreSpar class."/>
         <a xsi:type="jdt:JdtSourceEditAnswer" className="inheritance.ForeldreSpar"/>
       </tasks>
+      <tasks xsi:type="exercise:Task">
+         <q xsi:type="exercise:StringQuestion" question="Test the ForeldreSpar class, by running its main method."/>
+         <a xsi:type="jdt:JdtLaunchAnswer" className="inheritance.ForeldreSpar"/>
+       </tasks>
       <tasks xsi:type="exercise:Task">
         <q xsi:type="exercise:StringQuestion" question="Run the SavingsAccount JUnit test."/>
         <a xsi:type="junit:JunitTestAnswer" testRunName="inheritance.SavingsAccountTest"/>
@@ -33,8 +45,16 @@
     </parts>
     <parts xsi:type="exercise:ExercisePart" title="Tool usage">
       <tasks xsi:type="exercise:Task">
-        <q xsi:type="exercise:StringQuestion" question="Use breakpoints to debug code."/>
-        <a xsi:type="workbench:DebugEventAnswer" action="suspend.breakpoint"/>
+        <q xsi:type="exercise:StringQuestion" question="Use breakpoints to debug code in the SavingsAccount class."/>
+        <a xsi:type="workbench:DebugEventAnswer" elementId="inheritance.SavingsAccount" action="suspend.breakpoint"/>
+      </tasks>
+      <tasks xsi:type="exercise:Task">
+        <q xsi:type="exercise:StringQuestion" question="Use breakpoints to debug code in the BSU class."/>
+        <a xsi:type="workbench:DebugEventAnswer" elementId="inheritance.BSU" action="suspend.breakpoint"/>
+      </tasks>
+      <tasks xsi:type="exercise:Task">
+        <q xsi:type="exercise:StringQuestion" question="Use breakpoints to debug code in the ForeldreSpar class."/>
+        <a xsi:type="workbench:DebugEventAnswer" elementId="inheritance.ForeldreSpar" action="suspend.breakpoint"/>
       </tasks>
       <tasks xsi:type="exercise:Task">
         <q xsi:type="exercise:StringQuestion" question="Use the debug command Step Over"/>
@@ -48,18 +68,6 @@
         <q xsi:type="exercise:StringQuestion" question="Use the Variables view"/>
         <a xsi:type="workbench:PartTaskAnswer" elementId="org.eclipse.debug.ui.VariableView" action="activated"/>
       </tasks>
-       <tasks xsi:type="exercise:Task">
-         <q xsi:type="exercise:StringQuestion" question="Run the SavingsAccount class."/>
-         <a xsi:type="jdt:JdtLaunchAnswer" className="inheritance.SavingsAccount"/>
-       </tasks>
-       <tasks xsi:type="exercise:Task">
-         <q xsi:type="exercise:StringQuestion" question="Run the BSU class."/>
-         <a xsi:type="jdt:JdtLaunchAnswer" className="inheritance.BSU"/>
-       </tasks>
-       <tasks xsi:type="exercise:Task">
-         <q xsi:type="exercise:StringQuestion" question="Run the ForeldreSpar class."/>
-         <a xsi:type="jdt:JdtLaunchAnswer" className="inheritance.ForeldreSpar"/>
-       </tasks>
     </parts>
   </exercise:Exercise>
 

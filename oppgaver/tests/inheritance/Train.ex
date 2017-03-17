@@ -7,20 +7,44 @@
         <a xsi:type="jdt:JdtSourceEditAnswer" className="inheritance.TrainCar"/>
       </tasks>
       <tasks xsi:type="exercise:Task">
+        <q xsi:type="exercise:StringQuestion" question="Test the TrainCar class, by running its main method."/>
+        <a xsi:type="jdt:JdtLaunchAnswer" className="inheritance.TrainCar"/>
+      </tasks>
+      <tasks xsi:type="exercise:Task">
         <q xsi:type="exercise:StringQuestion" question="Write the source code for the CargoCar class."/>
         <a xsi:type="jdt:JdtSourceEditAnswer" className="inheritance.CargoCar"/>
+      </tasks>
+      <tasks xsi:type="exercise:Task">
+        <q xsi:type="exercise:StringQuestion" question="Test the CargoCar class, by running its main method."/>
+        <a xsi:type="jdt:JdtLaunchAnswer" className="inheritance.CargoCar"/>
       </tasks>
       <tasks xsi:type="exercise:Task">
         <q xsi:type="exercise:StringQuestion" question="Write the source code for the PassengerCar class."/>
         <a xsi:type="jdt:JdtSourceEditAnswer" className="inheritance.PassengerCar"/>
       </tasks>
       <tasks xsi:type="exercise:Task">
+        <q xsi:type="exercise:StringQuestion" question="Test the PassengerCar class, by running its main method."/>
+        <a xsi:type="jdt:JdtLaunchAnswer" className="inheritance.PassengerCar"/>
+      </tasks>
+      <tasks xsi:type="exercise:Task">
         <q xsi:type="exercise:StringQuestion" question="Write the source code for the Train class."/>
         <a xsi:type="jdt:JdtSourceEditAnswer" className="inheritance.Train"/>
       </tasks>
       <tasks xsi:type="exercise:Task">
+        <q xsi:type="exercise:StringQuestion" question="Test the Train class, by running its main method."/>
+        <a xsi:type="jdt:JdtLaunchAnswer" className="inheritance.Train"/>
+      </tasks>
+      <tasks xsi:type="exercise:Task">
         <q xsi:type="exercise:StringQuestion" question="Run the TrainCarTest JUnit test."/>
         <a xsi:type="junit:JunitTestAnswer" testRunName="inheritance.TrainCarTest"/>
+      </tasks>
+      <tasks xsi:type="exercise:Task">
+        <q xsi:type="exercise:StringQuestion" question="Run the PassengerCarTest JUnit test."/>
+        <a xsi:type="junit:JunitTestAnswer" testRunName="inheritance.PassengerCarTest"/>
+      </tasks>
+      <tasks xsi:type="exercise:Task">
+        <q xsi:type="exercise:StringQuestion" question="Run the CargoCarTest JUnit test."/>
+        <a xsi:type="junit:JunitTestAnswer" testRunName="inheritance.CargoCarTest"/>
       </tasks>
       <tasks xsi:type="exercise:Task">
         <q xsi:type="exercise:StringQuestion" question="Run the TrainTest JUnit test."/>
@@ -29,8 +53,12 @@
     </parts>
     <parts xsi:type="exercise:ExercisePart" title="Tool usage">
       <tasks xsi:type="exercise:Task">
-        <q xsi:type="exercise:StringQuestion" question="Use breakpoints to debug code."/>
-        <a xsi:type="workbench:DebugEventAnswer" action="suspend.breakpoint"/>
+        <q xsi:type="exercise:StringQuestion" question="Use breakpoints to debug code in *Car classes."/>
+        <a xsi:type="workbench:DebugEventAnswer" elementId="inheritance.*Car" action="suspend.breakpoint"/>
+      </tasks>
+      <tasks xsi:type="exercise:Task">
+        <q xsi:type="exercise:StringQuestion" question="Use breakpoints to debug code in the Train class."/>
+        <a xsi:type="workbench:DebugEventAnswer" elementId="inheritance.Train" action="suspend.breakpoint"/>
       </tasks>
       <tasks xsi:type="exercise:Task">
         <q xsi:type="exercise:StringQuestion" question="Use the debug command Step Over"/>
@@ -44,23 +72,6 @@
         <q xsi:type="exercise:StringQuestion" question="Use the Variables view"/>
         <a xsi:type="workbench:PartTaskAnswer" elementId="org.eclipse.debug.ui.VariableView" action="activated"/>
       </tasks>
-       <tasks xsi:type="exercise:Task">
-         <q xsi:type="exercise:StringQuestion" question="Run the TrainCar class."/>
-         <a xsi:type="jdt:JdtLaunchAnswer" className="inheritance.TrainCar"/>
-       </tasks>
-       <tasks xsi:type="exercise:Task">
-         <q xsi:type="exercise:StringQuestion" question="Run the CargoCar class."/>
-         <a xsi:type="jdt:JdtLaunchAnswer" className="inheritance.CargoCar"/>
-       </tasks>
-       <tasks xsi:type="exercise:Task">
-         <q xsi:type="exercise:StringQuestion" question="Run the PassengerCar class."/>
-         <a xsi:type="jdt:JdtLaunchAnswer" className="inheritance.PassengerCar"/>
-       </tasks>
-       <tasks xsi:type="exercise:Task">
-         <q xsi:type="exercise:StringQuestion" question="Run the Train class."/>
-         <a xsi:type="jdt:JdtLaunchAnswer" className="inheritance.Train"/>
-       </tasks>
     </parts>
   </exercise:Exercise>
-
 </xmi:XMI>

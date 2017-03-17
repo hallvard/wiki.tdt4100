@@ -11,12 +11,24 @@
         <a xsi:type="jdt:JdtSourceEditAnswer" className="inheritance.DebitAccount"/>
       </tasks>
       <tasks xsi:type="exercise:Task">
+        <q xsi:type="exercise:StringQuestion" question="Test the DebitAccount class, by running its main method."/>
+        <a xsi:type="jdt:JdtLaunchAnswer" className="inheritance.DebitAccount"/>
+      </tasks>
+      <tasks xsi:type="exercise:Task">
         <q xsi:type="exercise:StringQuestion" question="Write the source code for the CreditAccount class."/>
         <a xsi:type="jdt:JdtSourceEditAnswer" className="inheritance.CreditAccount"/>
       </tasks>
       <tasks xsi:type="exercise:Task">
+        <q xsi:type="exercise:StringQuestion" question="Test the CreditAccount class, by running its main method."/>
+        <a xsi:type="jdt:JdtLaunchAnswer" className="inheritance.CreditAccount"/>
+      </tasks>
+      <tasks xsi:type="exercise:Task">
         <q xsi:type="exercise:StringQuestion" question="Write the source code for the SavingsAccount2 class."/>
         <a xsi:type="jdt:JdtSourceEditAnswer" className="inheritance.SavingsAccount2"/>
+      </tasks>
+      <tasks xsi:type="exercise:Task">
+        <q xsi:type="exercise:StringQuestion" question="Test the SavingsAccount2 class, by running its main method."/>
+        <a xsi:type="jdt:JdtLaunchAnswer" className="inheritance.SavingsAccount2"/>
       </tasks>
       <tasks xsi:type="exercise:Task">
         <q xsi:type="exercise:StringQuestion" question="Run the DebitAccountTest JUnit test."/>
@@ -34,7 +46,7 @@
     <parts xsi:type="exercise:ExercisePart" title="Tool usage">
       <tasks xsi:type="exercise:Task">
         <q xsi:type="exercise:StringQuestion" question="Use breakpoints to debug code."/>
-        <a xsi:type="workbench:DebugEventAnswer" action="suspend.breakpoint"/>
+        <a xsi:type="workbench:DebugEventAnswer" elementId="inheritance.*Account*" action="suspend.breakpoint"/>
       </tasks>
       <tasks xsi:type="exercise:Task">
         <q xsi:type="exercise:StringQuestion" question="Use the debug command Step Over"/>
@@ -48,19 +60,6 @@
         <q xsi:type="exercise:StringQuestion" question="Use the Variables view"/>
         <a xsi:type="workbench:PartTaskAnswer" elementId="org.eclipse.debug.ui.VariableView" action="activated"/>
       </tasks>
-       <tasks xsi:type="exercise:Task">
-         <q xsi:type="exercise:StringQuestion" question="Run the DebitAccount class."/>
-         <a xsi:type="jdt:JdtLaunchAnswer" className="inheritance.DebitAccount"/>
-       </tasks>
-       <tasks xsi:type="exercise:Task">
-         <q xsi:type="exercise:StringQuestion" question="Run the CreditAccount class."/>
-         <a xsi:type="jdt:JdtLaunchAnswer" className="inheritance.CreditAccount"/>
-       </tasks>
-       <tasks xsi:type="exercise:Task">
-         <q xsi:type="exercise:StringQuestion" question="Run the SavingsAccount2 class."/>
-         <a xsi:type="jdt:JdtLaunchAnswer" className="inheritance.SavingsAccount2"/>
-       </tasks>
     </parts>
   </exercise:Exercise>
-
 </xmi:XMI>
