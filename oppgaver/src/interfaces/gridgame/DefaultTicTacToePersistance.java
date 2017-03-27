@@ -1,4 +1,4 @@
-package interfaces;
+package interfaces.gridgame;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -16,9 +16,9 @@ public class DefaultTicTacToePersistance implements TicTacToePersistance {
 	@Override
 	public void load(TicTacToe ticTacToe, InputStream inputStream) throws IOException {
 		BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream));
-		List<Move> moves = bufferedReader.lines().map(line -> {
+		List<TicTacToeMove> moves = bufferedReader.lines().map(line -> {
 			String[] parts = line.split(SEPARATOR);
-			return new Move(Integer.parseInt(parts[0]), Integer.parseInt(parts[1]), parts[2].charAt(0));
+			return new TicTacToeMove(Integer.parseInt(parts[0]), Integer.parseInt(parts[1]), parts[2].charAt(0));
 		}).collect(Collectors.toList());
 		ticTacToe.init(moves);
 	}
@@ -26,7 +26,7 @@ public class DefaultTicTacToePersistance implements TicTacToePersistance {
 	@Override
 	public void save(TicTacToe ticTacToe, OutputStream outputStream) throws IOException {
 		PrintWriter writer = new PrintWriter(outputStream);
-		for(Move move : ticTacToe.getMoves()) {
+		for(TicTacToeMove move : ticTacToe.getMoves()) {
 			writer.println(move.x + SEPARATOR + move.y + SEPARATOR + move.player);
 		}
 		writer.flush();

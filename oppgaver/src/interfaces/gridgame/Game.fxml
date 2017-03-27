@@ -6,11 +6,9 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.geometry.*?>
 <?import javafx.shape.*?>
-<?import javafx.scene.layout.TilePane?>
-<?import javafx.scene.layout.GridPane?>
 
 
-<VBox spacing="15" style="-fx-padding: 20px 20px 20px 20px" xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1" fx:controller="interfaces.GenericGameController">
+<VBox spacing="15" style="-fx-padding: 20px 20px 20px 20px" xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1" fx:controller="interfaces.gridgame.GameController">
 	<HBox spacing="10" alignment="CENTER">
 	   <Label text="Input" />
 	   <TextField fx:id="inputField" />
@@ -21,8 +19,8 @@
 	</TextArea>
 	<HBox spacing="50" alignment="CENTER">
 		<HBox spacing="10" alignment="CENTER_LEFT">
-			<Button fx:id="undoButton" text="Undo" onAction="#undo" />
-			<Button fx:id="redoButton" text="Redo" onAction="#redo" />
+			<Button text="Undo" onAction="#undo" />
+			<Button text="Redo" onAction="#redo" />
 		</HBox>
 		<VBox spacing="10">
 			<HBox spacing="10" alignment="CENTER">
@@ -35,6 +33,4 @@
 			</HBox>
 		</VBox>
 	</HBox>
-	<GridPane fx:id="gameGrid" prefHeight="400" prefWidth="400">
-	</GridPane>
 </VBox>

@@ -1,4 +1,4 @@
-package interfaces;
+package interfaces.gridgame;
 
 
 import java.io.IOException;

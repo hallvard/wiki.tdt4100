@@ -1,4 +1,4 @@
-package interfaces;
+package patterns.observable.gridgame;
 
 import java.io.IOException;
 import java.io.InputStream;

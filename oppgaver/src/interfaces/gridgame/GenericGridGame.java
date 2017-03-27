@@ -1,4 +1,4 @@
-package interfaces;
+package interfaces.gridgame;
 
 import java.io.IOException;
 
@@ -19,5 +19,5 @@ public interface GenericGridGame<T> {
 	public int getRowCount();
 	
 	public T getCell(int col, int row);
-	public String[] getImageNames(T t);
+	public String[] getImages(T t);
 }
