@@ -154,7 +154,7 @@ public class DinerTest extends TestCase implements CapacityListener {
 		diner.addSeating(group1);
 		assertEquals(2, changeCount);
 		
-		Seating seating1 = diner.createSeating(group1);
+		Seating seating1 = diner.createSeating(group4);
 		diner.addSeating(seating1);
 		assertEquals(3, changeCount);
 		
@@ -169,5 +169,16 @@ public class DinerTest extends TestCase implements CapacityListener {
 		} catch (Exception e) {
 		}
 		assertEquals(5, changeCount);
+	}
+	
+	public void testGuestManager() {
+		GuestManager guestManager = new GuestManager(diner);
+		guestManager.groupArrived(group8);
+		assertFalse(guestManager.isWaiting(group8));
+		Group anotherGroup8 = new Group(8);
+		guestManager.groupArrived(anotherGroup8);
+		assertTrue(guestManager.isWaiting(anotherGroup8));
+		guestManager.groupDeparted(table8.getNum());
+		assertFalse(guestManager.isWaiting(anotherGroup8));		
 	}
 }

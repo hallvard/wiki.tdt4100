@@ -44,12 +44,19 @@ public class GuestManager implements CapacityListener {
 
 	@Override
 	public void capacityChanged(Diner diner) {
-		Iterator<Group> it = waitingGroups.iterator();
+		Collection<Group> q = new ArrayList<Group>(waitingGroups);
+		waitingGroups.clear();
+		Iterator<Group> it = q.iterator();
 		while (it.hasNext()) {
 			Group waiting = it.next();
 			if (diner.addSeating(waiting)) {
 				it.remove();
 			}
 		}
+		waitingGroups.addAll(q);
+	}
+	
+	public boolean isWaiting(Group group) {
+		return waitingGroups.contains(group);
 	}
 }
