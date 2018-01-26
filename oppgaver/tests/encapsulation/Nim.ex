@@ -7,15 +7,15 @@
         <a xsi:type="jdt:JdtSourceEditAnswer" className="encapsulation.Nim"/>
       </tasks>
       <tasks xsi:type="exercise:Task">
-        <q xsi:type="exercise:StringQuestion" question="Test the Nim class, by running it."/>
+        <q xsi:type="exercise:StringQuestion" question="Run the Nim class, to test it."/>
         <a xsi:type="jdt:JdtLaunchAnswer" className="encapsulation.Nim"/>
       </tasks>
       <tasks xsi:type="exercise:Task">
-        <q xsi:type="exercise:StringQuestion" question="Run the Nim JUnit test."/>
+        <q xsi:type="exercise:StringQuestion" question="Test the Nim class, by running the NimTest JUnit test."/>
         <a xsi:type="junit:JunitTestAnswer" testRunName="encapsulation.NimTest"/>
       </tasks>
     </parts>
-    <parts xsi:type="exercise:ExercisePart" title="Tool usage">
+    <parts xsi:type="exercise:ExercisePart" title="Using Eclipse">
       <tasks xsi:type="exercise:Task">
         <q xsi:type="exercise:StringQuestion" question="Use breakpoints to debug code."/>
         <a xsi:type="workbench:DebugEventAnswer" action="suspend.breakpoint"/>
