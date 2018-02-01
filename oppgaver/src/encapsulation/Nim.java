@@ -21,11 +21,8 @@ public class Nim {
 		if (isGameOver()) {
 			throw new IllegalStateException("Cannot remove pieces when game is over");
 		}
-		if (number <= 0) {
-			throw new IllegalArgumentException("Number must be greater than zero");
-		}
-		if (number > piles[targetPile]) {
-			throw new IllegalArgumentException("Number cannot be greater than the pile (size)");
+		if (!isValidMove(number, targetPile)) {
+			throw new IllegalArgumentException("Move is not valid");
 		}
 		piles[targetPile] -= number;
 	}
