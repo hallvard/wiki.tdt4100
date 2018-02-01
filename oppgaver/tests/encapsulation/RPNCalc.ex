@@ -7,15 +7,15 @@
         <a xsi:type="jdt:JdtSourceEditAnswer" className="encapsulation.RPNCalc"/>
       </tasks>
       <tasks xsi:type="exercise:Task">
-        <q xsi:type="exercise:StringQuestion" question="Test the RPNCalc class, by running it."/>
+        <q xsi:type="exercise:StringQuestion" question="Run the RPNCalc class, to test it."/>
         <a xsi:type="jdt:JdtLaunchAnswer" className="encapsulation.RPNCalc"/>
       </tasks>
       <tasks xsi:type="exercise:Task">
-        <q xsi:type="exercise:StringQuestion" question="Run the RPNCalc JUnit test."/>
+        <q xsi:type="exercise:StringQuestion" question="Test the RPNCalc class, by running the RPNCalcTest JUnit test."/>
         <a xsi:type="junit:JunitTestAnswer" testRunName="encapsulation.RPNCalcTest"/>
       </tasks>
     </parts>
-    <parts xsi:type="exercise:ExercisePart" title="Tool usage">
+    <parts xsi:type="exercise:ExercisePart" title="Using Eclipse">
       <tasks xsi:type="exercise:Task">
         <q xsi:type="exercise:StringQuestion" question="Use breakpoints to debug code."/>
         <a xsi:type="workbench:DebugEventAnswer" action="suspend.breakpoint"/>

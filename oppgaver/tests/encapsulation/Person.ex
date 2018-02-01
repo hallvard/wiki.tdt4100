@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:exercise="platform:/plugin/no.hal.learning.exercise.model/model/exercise.ecore" xmlns:jdt="platform:/plugin/no.hal.learning.exercise.jdt/model/jdt-exercise.ecore" xmlns:junit="platform:/plugin/no.hal.learning.exercise.junit/model/junit-exercise.ecore" xmlns:workbench="platform:/plugin/no.hal.learning.exercise.workbench/model/workbench-exercise.ecore">
   <exercise:Exercise>
-    <parts xsi:type="exercise:ExercisePart" title="Card">
+    <parts xsi:type="exercise:ExercisePart" title="Person">
       <tasks xsi:type="exercise:Task">
-        <q xsi:type="exercise:StringQuestion" question="Write source code for the Card class."/>
-        <a xsi:type="jdt:JdtSourceEditAnswer" className="encapsulation.Card"/>
+        <q xsi:type="exercise:StringQuestion" question="Write source code for the Person class."/>
+        <a xsi:type="jdt:JdtSourceEditAnswer" className="encapsulation.Person"/>
       </tasks>
       <tasks xsi:type="exercise:Task">
-        <q xsi:type="exercise:StringQuestion" question="Run the Card class, to test it."/>
-        <a xsi:type="jdt:JdtLaunchAnswer" className="encapsulation.Card"/>
+        <q xsi:type="exercise:StringQuestion" question="Run the Person class, to test it."/>
+        <a xsi:type="jdt:JdtLaunchAnswer" className="encapsulation.Person"/>
       </tasks>
       <tasks xsi:type="exercise:Task">
-        <q xsi:type="exercise:StringQuestion" question="Test the Card class, by running the CardTest JUnit test."/>
-        <a xsi:type="junit:JunitTestAnswer" testRunName="encapsulation.CardTest"/>
+        <q xsi:type="exercise:StringQuestion" question="Test the Person class, by running the PersonTest JUnit test."/>
+        <a xsi:type="junit:JunitTestAnswer" testRunName="encapsulation.PersonTest"/>
       </tasks>
     </parts>
     <parts xsi:type="exercise:ExercisePart" title="Using Eclipse">
