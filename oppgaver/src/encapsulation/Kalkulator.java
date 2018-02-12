@@ -3,7 +3,8 @@ package encapsulation;
 import javafx.scene.control.Button;
 
 public class Kalkulator {
-	String valueText = "";
+	
+	private String valueText = "";
 	
 	private double memory;
 	
@@ -13,7 +14,7 @@ public class Kalkulator {
 		return valueText;
 	}
 	
-	public void clearValueText() {
+	private void clearValueText() {
 		valueText = "";
 	}
 	
@@ -21,13 +22,17 @@ public class Kalkulator {
 		valueText += digit;
 	}
 	
-	public double getMemory() {
-		return memory;
+	private void setMemory(double value) {
+		this.memory = value;
+	}
+	
+	private void setOperator(String operator) {
+		this.operator = operator;
 	}
 	
 	public void addDecimalPoint() {
 		if (!valueText.contains(".")) {
-			valueText += ".";
+			appendDigit(".");
 		}
 	}
 	
@@ -39,7 +44,7 @@ public class Kalkulator {
 		double value = Double.valueOf(valueText);
 		
 		if (this.operator == null) {
-			memory = value;
+			setMemory(value);
 		} else if (this.operator.equals("+")) {
 			memory += value;
 		} else if (this.operator.equals("-")) {
@@ -51,10 +56,10 @@ public class Kalkulator {
 		}
 
 		if (action.equals("=")) {
-			this.operator = null;
+			setOperator(null);
 			valueText = String.valueOf(memory);
 		} else {
-			this.operator = action;
+			setOperator(action);
 			clearValueText();
 		}
 	}
