@@ -2,6 +2,8 @@ package interfaces;
 
 import java.util.ArrayList;
 import java.util.Iterator;
+import java.util.List;
+import java.util.function.Predicate;
 
 public class CardDeck implements CardContainer {
 
@@ -54,4 +56,33 @@ public class CardDeck implements CardContainer {
 	public Iterator<Card> iterator() {
 		return cards.iterator();
 	}
+	
+	public boolean hasCard(Predicate<Card> p) {
+		for(Card c: cards) {
+			if (p.test(c)){
+				return true; 
+			}
+		};
+		return false; 
+	}
+	
+	public int getCardCount(Predicate<Card> p) {
+		int i = 0; 
+		for(Card c: cards) {
+			if (p.test(c)){
+				i++;
+			}
+		};
+		return i; 
+	}
+	
+	public List<Card> getCards(Predicate<Card> p) {
+		List<Card> matchingCards = (List) cards.clone(); 
+		List<Card> duplicate = (List) cards.clone(); 
+		duplicate.removeIf(p); 
+		matchingCards.removeAll(duplicate);
+		return matchingCards; 	
+	}
+
 }
+
