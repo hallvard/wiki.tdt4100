@@ -18,6 +18,9 @@ public class RPNCalc {
 	public RPNCalc() {
 		operandStack = new Stack<Double>();
 		operators = new HashMap<>();
+		binaryOperators = new HashMap<>();
+		unaryOperators = new HashMap<>();
+		suppliers = new HashMap<>();
 	}
 	
 	@Override
@@ -60,7 +63,9 @@ public class RPNCalc {
 	// each operation pops and pushes values off and onto the operand stack,
 	public void performOperation(char op) { 
 		if (operators.containsKey(op)) {
-			push(operators.get(op).apply(pop(), pop()));
+			double d2 = pop();
+			double d1 = pop();
+			push(operators.get(op).apply(d1, d2));
 		}
 		else {
 			throw new UnsupportedOperationException("The given operation has not been added.");
@@ -91,10 +96,13 @@ public class RPNCalc {
 	// each operation pops and pushes values off and onto the operand stack,
 	public void performOperation1(char op) { 
 		if (binaryOperators.containsKey(op)) {
-			push(binaryOperators.get(op).apply(pop(), pop()));
+			double d2 = pop();
+			double d1 = pop();
+			push(binaryOperators.get(op).apply(d1, d2));
 		}
 		else if (unaryOperators.containsKey(op)) {
-			push(unaryOperators.get(op).apply(pop()));
+			double d = pop();
+			push(unaryOperators.get(op).apply(d));
 		}
 		else if (suppliers.containsKey(op)) {
 			push(suppliers.get(op).get());
@@ -143,10 +151,15 @@ public class RPNCalc {
 	
 	
 	public void performOperation2(char op) {
-		if (binaryOperators.containsKey(op) && getSize() >= 2) 
-			push(binaryOperators.get(op).apply(pop(), pop()));
-		else if (unaryOperators.containsKey(op) && getSize() >= 1)
-			push(unaryOperators.get(op).apply(pop()));
+		if (binaryOperators.containsKey(op) && getSize() >= 2) {
+			double d2 = pop();
+			double d1 = pop();
+			push(binaryOperators.get(op).apply(d1, d2));
+		}
+		else if (unaryOperators.containsKey(op) && getSize() >= 1) {
+			double d = pop();
+			push(unaryOperators.get(op).apply(d));
+		}
 		else if (suppliers.containsKey(op))
 			push(suppliers.get(op).get());
 		else
