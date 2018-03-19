@@ -117,11 +117,4 @@ public class Person {
 			person.setMother(null);
 		}
 	}
-	
-	public static void main(String[] args) {
-		Person hallvard = new Person("Hallvard", 'M');
-		Person bobby =  new Person("Bobby", 'M');
-		hallvard.addChild(bobby);
-		System.out.println(hallvard.getChildCount());
-	}
 }
