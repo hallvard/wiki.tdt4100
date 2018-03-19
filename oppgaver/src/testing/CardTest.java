@@ -1,25 +1,22 @@
 package testing;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertTrue;
-import static org.junit.Assert.fail;
-
 import java.util.ArrayList;
 import java.util.List;
+
 import org.junit.Test;
 
-// Måtte legge til JUnit library i classpath!
+import junit.framework.TestCase;
 
-public class CardTest {
-	
+public class CardTest extends TestCase{
+
 	@Test
-	public void cardContructorTest(){
-		//Sjekker at riktige verdier blir satt
+	public void testCardContructor(){
+		// Sjekker at riktige verdier blir satt
 		Card card = new Card('S', 2);
 		assertEquals("c1.getSuit()",'S',card.getSuit());
 		assertEquals("c1.getFace()", 2, card.getFace());
 		
-		//sjekker at ugyldig type utløser IllegalArgumentException
+		// sjekker at ugyldig type utløser IllegalArgumentException
 		try {
 			card = new Card('A', 2);
 			fail("new Card('A',2) should result in IllegalArgumentException");
@@ -29,9 +26,9 @@ public class CardTest {
 			fail("Expected IllegalArgumentException was " +e.getClass());
 		}
 		
-		//Sjekker at ugyldig tallverdi utløser IllegalArgumentException
+		// Sjekker at ugyldig tallverdi utløser IllegalArgumentException
 		try {
-			card = new Card('S', 50);
+			card = new Card('S', 50); // avdekker feil
 			fail("IllegalArgumentException should be thrown after new Card('S', 50)");
 		} catch (IllegalArgumentException e) {
 			assertTrue(true);
@@ -41,10 +38,10 @@ public class CardTest {
 	}
 	
 	@Test
-	public void CardDeckContructorTest() {
+	public void testCardDeckContructor() {
 		int n = 5;
 		CardDeck deck = new CardDeck(n);
-		assertEquals("deck.getCardCount()", n*4, deck.getCardCount());
+		assertEquals("deck.getCardCount()", n*4, deck.getCardCount()); //avdekker feil
 		String suits = "SHDC";
 		int face = 1;
 		int suit = 0;
@@ -66,7 +63,7 @@ public class CardTest {
 		CardDeck deck = new CardDeck(n);
 		List<Card> fasit = shufflePerfectly(deck);
 		deck.shufflePerfectly();
-		for (int i = 0; i < n*4; i++) {
+		for (int i = 0; i < n*4; i++) { // avdekker feil
 			assertEquals("deck.getCard("+i+").getFace()", fasit.get(i).getFace(), deck.getCard(i).getFace());
 			assertEquals("deck.getCard("+i+").getSuit()", fasit.get(i).getSuit(), deck.getCard(i).getSuit());
 		}
@@ -85,5 +82,5 @@ public class CardTest {
 		}
 		return shuffled;
 	}
-	
+
 }
