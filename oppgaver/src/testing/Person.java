@@ -99,7 +99,7 @@ public class Person {
 		}
 	}
 	
-	public void addChild(Person person) {		
+	public void addChild(Person person) {
 		children.add(person);
 		
 		if (getGender() == MALE) {
@@ -112,6 +112,7 @@ public class Person {
 	public void removeChild(Person person) {
 		if (children.contains(person)) {
 			children.remove(person);
+			
 			person.setFather(null);
 			person.setMother(null);
 		}
