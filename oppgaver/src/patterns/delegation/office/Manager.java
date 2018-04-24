@@ -8,7 +8,6 @@ import java.util.function.BinaryOperator;
 public class Manager implements Employee {
 
 	private List<Employee> employees;
-	private int taskCount = 0;
 	
 	public Manager(Collection<Employee> employees) {
 		if (employees.isEmpty()) {
@@ -18,7 +17,7 @@ public class Manager implements Employee {
 	}
 
 	private Employee getTaskDelegate() {
-		return this.employees.get(taskCount++ % employees.size());
+		return this.employees.get(this.getTaskCount() % employees.size());
 	}
 	
 	@Override
@@ -28,12 +27,13 @@ public class Manager implements Employee {
 
 	@Override
 	public void printDocument(String document) {
+		
 		getTaskDelegate().printDocument(document);
 	}
 
 	@Override
 	public int getTaskCount() {
-		return taskCount;
+		return employees.stream().mapToInt(employee->employee.getTaskCount()).sum(); 
 	}
 
 	@Override
