@@ -33,7 +33,15 @@ public class Manager implements Employee {
 
 	@Override
 	public int getTaskCount() {
+		//Ved hjelp av streams
 		return employees.stream().mapToInt(employee->employee.getTaskCount()).sum(); 
+		/*Tradisjonell metode
+		 int task = 0; 
+		 for(Employee e: employees) {
+		 	task += e.getTaskCount(); 
+		 }
+		 return task; 
+		 */
 	}
 
 	@Override
