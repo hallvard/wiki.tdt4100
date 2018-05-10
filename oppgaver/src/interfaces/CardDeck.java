@@ -57,30 +57,34 @@ public class CardDeck implements CardContainer {
 		return cards.iterator();
 	}
 	
+	// methods using Predicate<Card>
+
 	public boolean hasCard(Predicate<Card> p) {
-		for(Card c: cards) {
-			if (p.test(c)){
+		for (Card card: cards) {
+			if (p.test(card)) {
 				return true; 
 			}
-		};
+		}
 		return false; 
 	}
 	
 	public int getCardCount(Predicate<Card> p) {
-		int i = 0; 
-		for(Card c: cards) {
-			if (p.test(c)){
-				i++;
+		int count = 0; 
+		for (Card card : cards) {
+			if (p.test(card)) {
+				count++;
 			}
-		};
-		return i; 
+		}
+		return count; 
 	}
 	
 	public List<Card> getCards(Predicate<Card> p) {
-		List<Card> matchingCards = (List) cards.clone(); 
-		List<Card> duplicate = (List) cards.clone(); 
-		duplicate.removeIf(p); 
-		matchingCards.removeAll(duplicate);
+		List<Card> matchingCards = new ArrayList<Card>();
+		for (Card card : cards) {
+			if (p.test(card)) {
+				matchingCards.add(card);
+			}
+		}
 		return matchingCards; 	
 	}
 
