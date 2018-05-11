@@ -5,17 +5,17 @@ import ord2015.trip1.Segment;
 
 public class Trip extends AbstractTrip {
 
-	protected Trip(Path path) {
+	protected Trip(final Path path) {
 		super(path);
 	}
 
 	@Override
-	public double estimateTime(double distance, double duration) {
+	public double estimateTime(double distance, final double duration) {
 		double remainingTime = 0.0;
-		for (Segment segment : path) {
+		for (final Segment segment : path) {
 			distance -= segment.getDistance();
 			if (distance < 0) {
-				remainingTime = segment.getSpeed() * (- distance);
+				remainingTime = -distance / segment.getSpeed();
 			} else if (remainingTime > 0.0) {
 				remainingTime += segment.getDuration();
 			}
