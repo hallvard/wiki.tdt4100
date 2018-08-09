@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.text.Text?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
+<?import ord2018.farkle.fx.DiceNode?>
+<?import javafx.scene.control.Label?>
+
+<HBox xmlns:fx="http://javafx.com/fxml/1" fx:controller="ord2018.farkle.fx.DiceController">
+	<TextField fx:id="dieCountInput" promptText="Die count"/>
+	<Button onAction="#handleThrowDice" text="Throw dice"/>
+	<Label fx:id="diceOutput" text="No dice thrown, yet"/>
+</HBox>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.text.Text?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
+<?import ord2018.farkle.fx.DiceNode?>
+
+<BorderPane fx:id="borderPane" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ord2018.farkle.fx.FarkleController">
+	<top>
+		<HBox>
+			<TextField fx:id="numPlayersText" promptText="Number of players"/>
+			<Button onAction="#handleStartGame" text="Start game"/>
+		</HBox>
+	</top>
+	<center>
+		<Text text="No players"/>
+	</center>
+	<right>
+		<VBox>
+			<Text fx:id="currentPlayerNum" text="Player #"/>
+			<ListView fx:id="keptDiceList"/>
+			<HBox>
+				<Button onAction="#handleKeepAndRoll" text="Keep &amp; roll"/>
+				<Button onAction="#handleKeepAllAndRoll" text="Keep all &amp; roll"/>
+				<Button onAction="#handleSaveScore" text="Save score"/>
+			</HBox>
+			<ListView fx:id="dieList"/>
+		</VBox> 
+	</right>
+</BorderPane>
+
