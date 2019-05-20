@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
+
+<HBox xmlns:fx="http://javafx.com/fxml/1" fx:controller="ord2019.part5.TreatmentUnitController">
+	<Label fx:id="patientMessage" text="&lt;Her kommer meldinger til pasienter&gt;">
+		<font>
+			<Font name="Times" size="36"/>
+		</font>
+	</Label>
+</HBox>
