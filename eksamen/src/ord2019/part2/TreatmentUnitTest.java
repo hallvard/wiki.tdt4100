@@ -53,14 +53,27 @@ public class TreatmentUnitTest {
 	 * @startuml
 	 *   "tut : TreatmentUnitTest" as tut -> "tu : TreatmentUnit" as tu: addPatient(patient)
 	 *   tu -> tu: startTreatment(patient)
-	 *   tu -> "doctor : Doctor" as doc: canTreat(patient)
-	 *   doc -> "patient : Patient" as patient: iterator()
-	 *   doc --> tu: 0.5
-	 *   tu -> doc: setPatient(patient)
+	 *   tu -> "doctor1 : Doctor" as doc1: canTreat(patient)
+	 *   doc1 -> "patient : Patient" as patient: iterator()
+	 *   doc1 --> tu: 0.5
+	 *   tu -> doc1: setPatient(patient)
+	 *   tu --> tu: true
 	 *   tut -> tu: getDoctor(patient)
-	 *   tu --> tut: doctor
-	 *   tut -> doc: treat()
-	 *   doc -> patient: removeConditions("flu")
+	 *   tu --> tut: doctor1
+	 *   tut -> doc1: treat()
+	 *   doc1 -> patient: removeConditions("flu")
+	 *   tut -> tu: treatmentFinished(doc1)
+	 *   tu -> doc1: setPatient(null)
+	 *   tu -> patient: requiresTreatment()
+	 *   patient --> tu: true
+	 *   tu -> tu: startTreatment(patient)
+	 *   tu -> "doctor2 : Doctor" as doc2: canTreat(patient)
+	 *   doc2 -> patient: iterator()
+	 *   doc2 --> tu: 1.0
+	 *   tu -> doc2: setPatient(patient)
+	 *   tu --> tu: true
+	 *   tu -> tu: startTreatment(doc1)
+	 *   tu --> tu: false
 	 * @enduml
 	 */
 	@Test
@@ -77,8 +90,8 @@ public class TreatmentUnitTest {
 		assertTrue(! (doctor1.isAvailable() && doctor2.isAvailable()));
 		Doctor patientDoctor = treatmentUnit.getDoctor(patient);
 		patientDoctor.treat();
-		// end sequence diagram
 		treatmentUnit.treatmentFinished(patientDoctor);
+		// end sequence diagram
 		assertTrue(patientDoctor.isAvailable());
 		assertNotSame(patientDoctor, treatmentUnit.getDoctor(patient));
 		patientDoctor = treatmentUnit.getDoctor(patient);

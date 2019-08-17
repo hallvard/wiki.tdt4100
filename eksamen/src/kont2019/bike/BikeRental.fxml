@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.image.Image?>
+
+<VBox xmlns:fx="http://javafx.com/fxml/1" fx:controller="kont2019.bike.BikeRentalController">
+	<ImageView>
+		<image>
+			<Image url="@bikemap.png"/>
+		</image>
+	</ImageView>
+	<HBox>
+		<Label text="From: "/>
+		<TextField fx:id="fromInput" text="10:50" editable="false"/>
+	</HBox>
+	<HBox>
+		<Label text="To: "/>
+		<TextField fx:id="toInput" text="10:50"/>
+		<VBox>
+			<Button onAction="#plus1HourAction" text="+ 1 hour"/>
+			<Button onAction="#minus1HourAction" text="- 1 hour"/>
+		</VBox>
+	</HBox>
+	<Button onAction="#rentAction" text="Rent"/>
+</VBox>
